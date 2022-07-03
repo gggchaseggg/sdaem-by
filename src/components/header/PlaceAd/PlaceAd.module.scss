@@ -1,0 +1,13 @@
+.adButton {
+	margin-left: 92px;
+	color: white;
+	font-weight: 700;
+	width: 224px;
+	height: 37px;
+	background: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+	border-radius: 19px;
+	padding: 10px 18px;
+	&:hover {
+		background: linear-gradient(90deg, #867cfc 0%, #6929f3 94.5%);
+	}
+}

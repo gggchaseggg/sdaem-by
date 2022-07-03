@@ -1,0 +1,100 @@
+header {
+	font-size: 14px;
+}
+
+.container {
+	width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+}
+
+.upper {
+	height: 40px;
+	min-width: 1440px;
+	background-color: #f8f8f8;
+	color: #8291a3;
+	ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	li {
+		width: max-content;
+		height: 40px;
+		margin-right: 57px;
+
+		display: flex;
+		align-items: center;
+
+		&:last-child {
+			margin-right: 0;
+		}
+		&:nth-child(4)::before {
+			content: url(../../images/header/mark.svg);
+			margin-right: 5px;
+		}
+	}
+
+	nav {
+		.active {
+			padding-top: 3px;
+			color: #1e2123;
+			border-bottom: solid 3px #ffd54f;
+		}
+	}
+
+	.profileNav {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: right;
+		font-weight: 500;
+	}
+
+	.favorites {
+		margin-right: 40px;
+		margin-top: 3px;
+		&::after {
+			content: url(../../images/header/heartPNG.png);
+			margin-left: 11px;
+			vertical-align: middle;
+			width: 16px;
+			height: 14.23px;
+			color: #8291a3;
+		}
+	}
+
+	.login {
+		color: #664ef9;
+	}
+}
+
+.lower {
+	height: 60px;
+	min-width: 1440px;
+	background-color: #ffffff;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+	display: flex;
+	align-items: center;
+	.logo {
+		margin-right: 83px;
+	}
+	.type {
+		display: flex;
+		align-items: center;
+		font-size: 14px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 600;
+	}
+	ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	li.rentItem {
+		margin-left: 80px;
+	}
+}
