@@ -70,14 +70,14 @@ export default function Footer() {
 							<div className={style.socials}>
 								<span>Мы в соцсетях</span>
 								<a
-									href="http://www.vk.com"
+									href="http://www.instagram.com"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
 									<img src={inst} alt="Инстаграмм" />
 								</a>
 								<a
-									href="http://www.instagram.com"
+									href="http://www.vk.com"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -93,11 +93,11 @@ export default function Footer() {
 							</div>
 							<div className={style.payments}>
 								<img src={visa} alt="виза" />
-								<img src={webpay} alt="виза" />
-								<img src={verifiedVisa} alt="виза" />
-								<img src={mastercard} alt="виза" />
-								<img src={MCSecure} alt="виза" />
-								<img src={belkart} alt="виза" />
+								<img src={webpay} alt="вебпей" />
+								<img src={verifiedVisa} alt="верификация виза" />
+								<img src={mastercard} alt="мастеркард" />
+								<img src={MCSecure} alt="верификация мастеркард" />
+								<img src={belkart} alt="белкарт" />
 							</div>
 						</div>
 					</div>
