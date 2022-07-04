@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 import News from './components/News/News';
 import Layout from './Layout/Layout';
+import Main from './components/Main/Main';
 
 function App() {
 	return (
@@ -20,7 +21,7 @@ function App() {
 			<Router>
 				<Routes>
 					<Route path="/" element={<Layout />}>
-						{/* <Route index element={<Main />} /> */}
+						<Route index element={<Main />} />
 						<Route path="/news" element={<News />} />
 						{/* <Route path="/tariffs" element={<Tariffs />} />
 						<Route path="/map" element={<Map />} />

@@ -69,9 +69,27 @@ export default function Footer() {
 						<div className={style.socAndPayments}>
 							<div className={style.socials}>
 								<span>Мы в соцсетях</span>
-								<img src={inst} alt="Инстаграмм" />
-								<img src={vk} alt="ВК" />
-								<img src={facebook} alt="Фейсбук" />
+								<a
+									href="http://www.vk.com"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img src={inst} alt="Инстаграмм" />
+								</a>
+								<a
+									href="http://www.instagram.com"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img src={vk} alt="ВК" />
+								</a>
+								<a
+									href="http://www.facebook.com"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img src={facebook} alt="Фейсбук" />
+								</a>
 							</div>
 							<div className={style.payments}>
 								<img src={visa} alt="виза" />

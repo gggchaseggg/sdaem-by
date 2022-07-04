@@ -5,6 +5,7 @@ import logo from '../../images/header/logo.png';
 import ApartmensModal from './ApartmensModal/ApartmensModal';
 import PlaceAd from './PlaceAd/PlaceAd';
 import { routeMenu, rentMenu } from '../../data/layoutData';
+import HeaderContext from './HeaderContext';
 
 export default function Header(props) {
 	const [headerMenu, setHeaderMenu] = React.useState(routeMenu);
@@ -16,7 +17,7 @@ export default function Header(props) {
 				return item;
 			})
 		);
-	}, []);
+	}, [props]);
 
 	return (
 		<>
