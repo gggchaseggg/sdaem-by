@@ -36,6 +36,11 @@ header {
 			content: url(../../images/header/mark.svg);
 			margin-right: 5px;
 		}
+		&:hover {
+			color: #1e2123;
+			border-bottom: solid 3px #ffd54f;
+			transition: border 0.3s ease;
+		}
 	}
 
 	nav {
@@ -98,6 +103,9 @@ header {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+	}
+	li {
+		cursor: pointer;
 	}
 	li.rentItem {
 		margin-left: 80px;

@@ -1,19 +1,9 @@
 import React from 'react';
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Routes,
-	Link,
-	useNavigate,
-	useParams,
-	useSearchParams,
-	useLocation,
-	Outlet,
-} from 'react-router-dom';
-import News from './components/News/News';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import News from './pages/News/News';
 import Layout from './Layout/Layout';
-import Main from './components/Main/Main';
+import Main from './pages/Main/Main';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
 	return (
@@ -26,6 +16,7 @@ function App() {
 						{/* <Route path="/tariffs" element={<Tariffs />} />
 						<Route path="/map" element={<Map />} />
 						<Route path="/contacts" element={<Contacts />} /> */}
+						<Route path="*" element={<NotFound />} />
 					</Route>
 				</Routes>
 			</Router>

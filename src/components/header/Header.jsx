@@ -5,19 +5,20 @@ import logo from '../../images/header/logo.png';
 import ApartmensModal from './ApartmensModal/ApartmensModal';
 import PlaceAd from './PlaceAd/PlaceAd';
 import { routeMenu, rentMenu } from '../../data/layoutData';
-import HeaderContext from './HeaderContext';
+import { useSelector } from 'react-redux';
 
-export default function Header(props) {
+export default function Header() {
 	const [headerMenu, setHeaderMenu] = React.useState(routeMenu);
+	const activePage = useSelector((state) => state.activePage.activePage);
 
 	React.useEffect(() => {
 		setHeaderMenu(
 			headerMenu.map((item, idx) => {
-				idx === props.activePage ? (item.active = true) : (item.active = false);
+				idx === activePage ? (item.active = true) : (item.active = false);
 				return item;
 			})
 		);
-	}, [props]);
+	}, [activePage]);
 
 	return (
 		<>

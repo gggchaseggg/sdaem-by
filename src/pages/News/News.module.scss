@@ -1,0 +1,43 @@
+h1.title {
+	margin-top: 19px;
+	font-weight: 700;
+	font-size: 30px;
+	color: #1e2123;
+}
+
+.container {
+	margin-top: 39px;
+	width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.search {
+	width: max-content;
+	position: relative;
+	top: -31px;
+	left: 658px;
+}
+
+.backgroundRectangle {
+	z-index: -1;
+	position: relative;
+	top: -124px;
+	left: 561px;
+	width: 848.5px;
+	height: 999.21px;
+	background: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
+	opacity: 0.1;
+	border-radius: 40px;
+}
+
+.feed {
+	margin-top: -980px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.newsItem {
+	margin-bottom: 30px;
+}
