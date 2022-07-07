@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import DateLabel from '../DateLabel/DateLabel';
 import style from './NewsItem.module.scss';
 
 export default function NewsItem({ novost }) {
@@ -14,10 +16,10 @@ export default function NewsItem({ novost }) {
 					<div className={style.ItemFooter}>
 						<div className={style.strip}></div>
 						<div className={style.inf}>
-							<div className={style.date}>{novost.date}</div>
-							<button className={style.read}>
-								<div>Читать</div>
-							</button>
+							<DateLabel date={novost.date} isGray={true} />
+							<Link to={`/news/${novost.id}`} className={style.read}>
+								Читать
+							</Link>
 						</div>
 					</div>
 				</div>

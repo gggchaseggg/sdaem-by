@@ -1,10 +1,10 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import activePageReducer from '../Redux-reducer/activePageReducer';
-
-const rootReducer = combineReducers({
-	activePage: activePageReducer,
-});
+import newsListreducer from '../Redux-reducer/newsListreducer';
 
 export const store = configureStore({
-	reducer: rootReducer,
+	reducer: {
+		activePage: activePageReducer,
+		newsList: newsListreducer,
+	},
 });

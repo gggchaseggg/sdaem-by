@@ -7,7 +7,7 @@ export default function Main() {
 
 	React.useEffect(() => {
 		dispath(setActivePage(0));
-	}, [dispath]);
+	}, []);
 
 	return <>main Page</>;
 }

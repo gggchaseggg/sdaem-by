@@ -9,7 +9,7 @@ export default function NotFound() {
 
 	React.useEffect(() => {
 		dispath(setActivePage(-1));
-	}, [dispath]);
+	}, []);
 
 	return (
 		<>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import style from './Breadcrumbs.module.scss';
 
+//В пропс массив объектов с названиями и путями
+//page={[{ title: 'Новости', path: '/news' }]}
 export default function Breadcrumbs(props) {
-	// let location = useLocation().pathname.split('/').shift();
-
 	return (
 		<>
 			<ul className={style.breadcrumbsList}>

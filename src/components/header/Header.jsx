@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 export default function Header() {
 	const [headerMenu, setHeaderMenu] = React.useState(routeMenu);
-	const activePage = useSelector((state) => state.activePage.activePage);
+	const activePage = useSelector((state) => state.activePage.page);
 
 	React.useEffect(() => {
 		setHeaderMenu(
