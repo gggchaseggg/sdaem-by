@@ -1,13 +1,13 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { setActivePage } from '../../Redux/Redux-reducer/activePageReducer';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { setActivePage } from "../../Redux/redux-reducers/activePageReducer";
 
 export default function Main() {
-	const dispath = useDispatch();
+  const dispatch = useDispatch();
 
-	React.useEffect(() => {
-		dispath(setActivePage(0));
-	}, []);
+  React.useEffect(() => {
+    dispatch(setActivePage(0));
+  }, []);
 
-	return <>main Page</>;
+  return <>main Page</>;
 }

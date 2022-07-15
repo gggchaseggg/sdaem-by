@@ -1,108 +1,89 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import style from './Footer.module.scss';
-import logo from '../../images/header/logo.png';
-import inst from '../../images/footer/insta.svg';
-import vk from '../../images/footer/vk.svg';
-import facebook from '../../images/footer/facebook.svg';
-import visa from '../../images/footer/visa.png';
-import webpay from '../../images/footer/webpay.png';
-import verifiedVisa from '../../images/footer/verified-by-visa.png';
-import mastercard from '../../images/footer/mastercard.png';
-import MCSecure from '../../images/footer/securecode.png';
-import belkart from '../../images/footer/belkart.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import style from "./Footer.module.scss";
 import {
-	routeMenu,
-	rentMenu,
-	apartCityShorty as apartCity,
-} from '../../data/layoutData';
+  routeMenu,
+  rentMenu,
+  apartCityShorty as apartCity,
+} from "../../data/layoutData";
+import InstagramIcon from "../SvgIcons/InstagramIcon";
+import VkIcon from "../SvgIcons/VkIcon";
+import FacebookInnerIcon from "../SvgIcons/FacebookInnerIcon";
 
 export default function Footer() {
-	return (
-		<>
-			<footer>
-				<div className={style.container}>
-					<div className={style.info}>
-						<img src={logo} alt="Лого" />
-						<p className={style.sdaem}>СДАЁМ БАЙ</p>
-						<div className={style.IP}>
-							<p>ИП Шушкевич Андрей Викторович</p>
-							<p>УНП 192602485 Минским горисполкомом</p>
-							<p>10.02.2016</p>
-							<p>220068, РБ, г. Минск, ул. Осипенко, 21, кв.23</p>
-							<p>+375 29 621 48 33, sdaem@sdaem.by</p>
-							<p>Режим работы: 08:00-22:00</p>
-						</div>
-					</div>
-					<div className={style.routes}>
-						<div className={style.pages}>
-							<div className={style.rent}>
-								<ul>
-									{rentMenu.map((item) => (
-										<li key={item.key} className={style.rentItem}>
-											<Link to={item.link}>{item.text}</Link>
-										</li>
-									))}
-								</ul>
-							</div>
-							<div className={style.apart}>
-								<p>Квартиры</p>
-								<ul>
-									{apartCity.map((item) => (
-										<li key={item.key}>{item.title}</li>
-									))}
-								</ul>
-							</div>
-							<div className={style.links}>
-								<ul>
-									{routeMenu.map(
-										(item, idx) =>
-											idx !== 0 && (
-												<li key={item.key}>
-													<Link to={item.link}>{item.text}</Link>
-												</li>
-											)
-									)}
-								</ul>
-							</div>
-						</div>
-						<div className={style.socAndPayments}>
-							<div className={style.socials}>
-								<span>Мы в соцсетях</span>
-								<a
-									href="http://www.instagram.com"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<img src={inst} alt="Инстаграмм" />
-								</a>
-								<a
-									href="http://www.vk.com"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<img src={vk} alt="ВК" />
-								</a>
-								<a
-									href="http://www.facebook.com"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<img src={facebook} alt="Фейсбук" />
-								</a>
-							</div>
-							<div className={style.payments}>
-								<img src={visa} alt="виза" />
-								<img src={webpay} alt="вебпей" />
-								<img src={verifiedVisa} alt="верификация виза" />
-								<img src={mastercard} alt="мастеркард" />
-								<img src={MCSecure} alt="верификация мастеркард" />
-								<img src={belkart} alt="белкарт" />
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</>
-	);
+  return (
+    <>
+      <footer>
+        <div className={style.container}>
+          <div className={style.info}>
+            <img src="/img/logo.png" alt="Лого" />
+            <p className={style.sdaem}>СДАЁМ БАЙ</p>
+            <div className={style.IP}>
+              <p>ИП Шушкевич Андрей Викторович</p>
+              <p>УНП 192602485 Минским горисполкомом</p>
+              <p>10.02.2016</p>
+              <p>220068, РБ, г. Минск, ул. Осипенко, 21, кв.23</p>
+              <p>+375 29 621 48 33, sdaem@sdaem.by</p>
+              <p>Режим работы: 08:00-22:00</p>
+            </div>
+          </div>
+          <div className={style.routes}>
+            <div className={style.pages}>
+              <div className={style.rent}>
+                <ul>
+                  {rentMenu.map((item) => (
+                    <li key={item.key} className={style.rentItem}>
+                      <Link to={item.link}>{item.text}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className={style.apart}>
+                <p>Квартиры</p>
+                <ul>
+                  {apartCity.map((item) => (
+                    <li key={item.key}>{item.title}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className={style.links}>
+                <ul>
+                  {routeMenu.map(
+                    (item, idx) =>
+                      idx !== 0 && (
+                        <li key={item.key}>
+                          <Link to={item.link}>{item.text}</Link>
+                        </li>
+                      )
+                  )}
+                </ul>
+              </div>
+            </div>
+            <div className={style.socAndPayments}>
+              <div className={style.socials}>
+                <span>Мы в соцсетях</span>
+                <InstagramIcon width={25} height={25} className={style.Inst} />
+                <VkIcon width={24} height={15} className={style.VK} />
+                <FacebookInnerIcon width={21} height={21} />
+              </div>
+              <div className={style.payments}>
+                <img src="/img/Payments/visa.png" alt="виза" />
+                <img src="/img/Payments/webpay.png" alt="вебпей" />
+                <img
+                  src="/img/Payments/verified-by-visa.png"
+                  alt="верификация виза"
+                />
+                <img src="/img/Payments/mastercard.png" alt="мастеркард" />
+                <img
+                  src="/img/Payments/securecode.png"
+                  alt="верификация мастеркард"
+                />
+                <img src="/img/Payments/belkart.png" alt="белкарт" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
 }

@@ -6,6 +6,7 @@ import Main from './pages/Main/Main';
 import NotFound from './pages/NotFound/NotFound';
 import NewsArticle from './pages/NewsArticle/NewsArticle';
 import ScrollToTop from './util/ScrollToTop';
+import Contacts from './pages/Contacts/Contacts';
 
 function App() {
 	return (
@@ -17,9 +18,9 @@ function App() {
 						<Route index element={<Main />} />
 						<Route path="news" element={<News />} />
 						<Route path="news/:id" element={<NewsArticle />} />
-						{/* <Route path="/tariffs" element={<Tariffs />} />
-						<Route path="/map" element={<Map />} />
-						<Route path="/contacts" element={<Contacts />} /> */}
+						{/* <Route path="/tariffs" element={<Tariffs />} /> */}
+						{/* <Route path="/map" element={<Map />} /> */}
+						<Route path="/contacts" element={<Contacts />} />
 						<Route path="*" element={<NotFound />} />
 					</Route>
 				</Routes>

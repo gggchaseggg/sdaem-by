@@ -22,11 +22,12 @@
 	background: #664ef9;
 	border-radius: 19px;
 	border: none;
-
 	position: relative;
 	top: 4px;
 	left: -47px;
 	&:hover {
 		background: #5c35f9;
 	}
+
+	cursor: pointer;
 }
