@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setActivePage } from "../../Redux/redux-reducers/activePageReducer";
+import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
 export default function Main() {
   const dispatch = useDispatch();

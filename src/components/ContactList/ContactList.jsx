@@ -23,12 +23,27 @@ export default function ContactList() {
         </li>
         <li className={style.contactItem}>
           <PhoneIcon className={style.marker} />
-          <a href={`tel:${contactList.phone}`} className={style.text}>
+          <a
+            href={`tel:${contactList.phone}`}
+            className={[style.text, style.phone].join(" ")}
+          >
             {contactList.phone}
           </a>
-          <ViberIcon className={style.marker} width={14} height={15} />
-          <TelegramIcon className={style.marker} width={14} height={12} />
-          <WhatsappIcon className={style.marker} width={14} height={14} />
+          <ViberIcon
+            className={[style.marker, style.tel].join(" ")}
+            width={14}
+            height={15}
+          />
+          <TelegramIcon
+            className={[style.marker, style.tel].join(" ")}
+            width={14}
+            height={12}
+          />
+          <WhatsappIcon
+            className={[style.marker, style.tel].join(" ")}
+            width={14}
+            height={14}
+          />
         </li>
         <li className={style.contactItem}>
           <MailIcon className={style.marker} width={15} height={12} />

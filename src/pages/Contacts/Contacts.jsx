@@ -3,7 +3,7 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import ContactList from "../../components/ContactList/ContactList";
 import style from "./Contacts.module.scss";
 import { useDispatch } from "react-redux";
-import { setActivePage } from "../../Redux/redux-reducers/activePageReducer";
+import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 import AlertIcon from "../../components/SvgIcons/AlertIcon";
 
 export default function Contacts() {

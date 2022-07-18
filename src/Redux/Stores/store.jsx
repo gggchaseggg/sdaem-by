@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import activePageReducer from "../redux-reducers/activePageReducer";
-import newsListReducer from "../redux-reducers/newsListreducer";
-import contactListReducer from "../redux-reducers/contactListReducer";
+import activePageReducer from "../Reducers/activePageReducer";
+import newsListReducer from "../Reducers/newsListreducer";
+import contactListReducer from "../Reducers/contactListReducer";
 
 export const store = configureStore({
   reducer: {

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import style from "./NotFound.module.scss";
 import { useDispatch } from "react-redux";
-import { setActivePage } from "../../Redux/redux-reducers/activePageReducer";
+import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
 import HomeIcon from "../../components/SvgIcons/HomeIcon";
 

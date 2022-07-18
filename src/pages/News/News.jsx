@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { setActivePage } from "../../Redux/redux-reducers/activePageReducer";
+import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
 import NewsItem from "../../components/NewsItem/NewsItem";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";

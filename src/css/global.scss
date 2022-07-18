@@ -1,45 +1,88 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html {
-	overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 body {
-	margin: 0;
-	font-family: 'Inter', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 ul {
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
 li {
-	list-style: none;
+  list-style: none;
 }
 
 p {
-	margin-top: 0;
-	margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
-	transition: color 0.3s ease;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 h1 {
-	margin: 0;
+  margin: 0;
 }
 
-main {
+input.textInputs {
+  width: 260px;
+  height: 50px;
+  padding: 15px 20px 15px 53px;
+  background: #f8f8f8;
+  border: 2px solid rgba(102, 78, 249, 0);
+  border-radius: 30px;
+  transition: border-color 0.3s ease;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1e2123;
+  &:focus {
+    border-color: rgba(102, 78, 249, 0.8);
+    transition: border-color 0.3s ease;
+    outline: none;
+  }
+  &:focus + .textInputsIcons g {
+    opacity: 1;
+    color: #664ef9;
+    transition: color 0.3s ease;
+  }
+}
+
+.textInputsIcons {
+  width: min-content;
+  height: min-content;
+  position: relative;
+  top: -35px;
+  left: 20px;
+}
+
+.errorInputsIcons {
+  width: min-content;
+  height: min-content;
+  position: relative;
+  top: -35px;
+  left: 199px;
+}
+
+.errorInputBorder {
+  border-color: #eb5757 !important;
 }

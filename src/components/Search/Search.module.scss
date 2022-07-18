@@ -1,33 +1,36 @@
 .search {
-	border: none;
-	width: 616px;
-	height: 37px;
-	background: #ffffff;
-	box-shadow: 0px 10px 20px rgba(0, 96, 206, 0.05);
-	border-radius: 20px;
-	padding-top: 0px;
-	padding-left: 22px;
-	outline: none;
-	&::placeholder {
-		font-weight: 500;
-		font-size: 14px;
-		color: #686868;
-		letter-spacing: 0.04em;
-	}
+  border: none;
+  width: 616px;
+  height: 37px;
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(0, 96, 206, 0.05);
+  border-radius: 20px;
+  padding-top: 0px;
+  padding-left: 22px;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #686868;
+  letter-spacing: 0.04em;
+  &:focus {
+    color: #1e2123;
+  }
 }
 
 .button {
-	width: 53px;
-	height: 37px;
-	background: #664ef9;
-	border-radius: 19px;
-	border: none;
-	position: relative;
-	top: 4px;
-	left: -47px;
-	&:hover {
-		background: #5c35f9;
-	}
+  width: 53px;
+  height: 37px;
+  background: #664ef9;
+  border-radius: 19px;
+  border: none;
+  position: relative;
+  top: 4px;
+  left: -47px;
+  &:hover {
+    background: #5c35f9;
+  }
 
-	cursor: pointer;
+  cursor: pointer;
 }
