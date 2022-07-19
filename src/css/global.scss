@@ -6,14 +6,23 @@
 }
 
 html {
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }
 
 ul {
@@ -69,7 +78,7 @@ input.textInputs {
 
 .textInputsIcons {
   width: min-content;
-  height: min-content;
+  height: 0;
   position: relative;
   top: -35px;
   left: 20px;
@@ -77,7 +86,7 @@ input.textInputs {
 
 .errorInputsIcons {
   width: min-content;
-  height: min-content;
+  height: 0;
   position: relative;
   top: -35px;
   left: 199px;
