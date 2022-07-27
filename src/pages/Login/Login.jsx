@@ -1,24 +1,64 @@
 import React from "react";
-import style from "./Login.module.scss";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { useQuery } from "@tanstack/react-query";
+import { Link, useNavigate } from "react-router-dom";
+
 import UserIcon from "../../components/SvgIcons/UserIcon";
 import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
-import { useForm } from "react-hook-form";
+import { getUsers } from "../../api/getQueries";
 
-export default function Login() {
+import style from "./Login.module.scss";
+
+export default function Login(options) {
   const { register, handleSubmit, reset } = useForm({});
+  const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    //TODO: Сравнение с данными логин пароль на локалсторадже(тестово)
-    console.log(data);
-    reset();
+  const { data, status, error } = useQuery(["users"], getUsers, {
+    onSuccess: () => {
+      console.log("Data loading success");
+    },
+    onError: (err) => {
+      console.log("Ошибка: ", err);
+    },
+  });
+
+  const logUp = (login, password, rememberMe) => {
+    //TODO: При отправлении запроса блокировать кнопку ВОЙТИ и вывести там лоадер
+    //TODO: Сравнение с данными логин пароль на mockapi(если такого нет, то подсветить красным)
+    //
+    // axios
+    //   .get(`https://62c166972af60be89ec64660.mockapi.io/users?login=${login}`)
+    //   .then((response) => {
+    //     const user = response.data[0];
+    //
+    //     if (user === undefined) console.log("Not found user with this login");
+    //     else if (user.password === password) {
+    //       rememberMe && localStorage.setItem("login", login);
+    //       navigate("/");
+    //     } else if (user.password !== password) console.log("Invalid password");
+    //   });
+
+    const user = data.find((elem) => elem.login === login);
+
+    if (user && user.password === password) {
+      rememberMe && localStorage.setItem("login", login);
+      navigate("/");
+    } else {
+      console.log("Something wrong");
+    }
+  };
+
+  const onSubmit = (Udata) => {
+    // console.log(Udata);
+    logUp(Udata.login, Udata.password, Udata.rememberMe);
   };
 
   return (
     <div className={style.main}>
       <div className={style.background}>
         <div className={style.container}>
-          <h2 className={style.title}>Авторизация</h2>
+          <h1 className={style.title}>Авторизация</h1>
           <p className={style.text}>
             Авторизируйтесь, чтобы начать публиковать свои объявления
           </p>
@@ -66,7 +106,6 @@ export default function Login() {
           </form>
           <div className={style.register}>
             <span>Еще нет акканута? </span>
-
             <Link to="/register">Создайте аккаунт</Link>
           </div>
         </div>

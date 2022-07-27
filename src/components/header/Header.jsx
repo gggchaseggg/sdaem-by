@@ -67,7 +67,7 @@ export default function Header() {
               <img src="/img/logo.png" alt="Лого" className={style.logo} />
             </Link>
             <div className={style.type}>
-              <ul>
+              <ul className={style.lowerMenu}>
                 <li>
                   <ApartmensModal />
                 </li>

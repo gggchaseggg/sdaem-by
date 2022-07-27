@@ -10,6 +10,8 @@ import Contacts from "./pages/Contacts/Contacts";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 
+//TODO: Сделать компонент кнопки и компонент инпутов(возможно)))
+
 function App() {
   return (
     <>
