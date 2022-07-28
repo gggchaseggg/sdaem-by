@@ -9,6 +9,10 @@ import ScrollToTop from "./util/ScrollToTop";
 import Contacts from "./pages/Contacts/Contacts";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import { useQuery } from "@tanstack/react-query";
+import { getUsers } from "./api/getQueries";
+import { useDispatch } from "react-redux";
+import { setUser } from "./Redux/Reducers/userReducer";
 
 //TODO: Сделать компонент кнопки и компонент инпутов(возможно)))
 

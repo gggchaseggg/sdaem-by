@@ -9,12 +9,15 @@ import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
 import { getUsers } from "../../api/getQueries";
 
 import style from "./Login.module.scss";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../Redux/Reducers/userReducer";
 
 export default function Login(options) {
   const { register, handleSubmit, reset } = useForm({});
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const { data, status, error } = useQuery(["users"], getUsers, {
+  const { data } = useQuery(["users"], getUsers, {
     onSuccess: () => {
       console.log("Data loading success");
     },
@@ -26,32 +29,22 @@ export default function Login(options) {
   const logUp = (login, password, rememberMe) => {
     //TODO: При отправлении запроса блокировать кнопку ВОЙТИ и вывести там лоадер
     //TODO: Сравнение с данными логин пароль на mockapi(если такого нет, то подсветить красным)
-    //
-    // axios
-    //   .get(`https://62c166972af60be89ec64660.mockapi.io/users?login=${login}`)
-    //   .then((response) => {
-    //     const user = response.data[0];
-    //
-    //     if (user === undefined) console.log("Not found user with this login");
-    //     else if (user.password === password) {
-    //       rememberMe && localStorage.setItem("login", login);
-    //       navigate("/");
-    //     } else if (user.password !== password) console.log("Invalid password");
-    //   });
 
     const user = data.find((elem) => elem.login === login);
 
     if (user && user.password === password) {
-      rememberMe && localStorage.setItem("login", login);
+      rememberMe
+        ? localStorage.setItem("login", login)
+        : localStorage.setItem("login", "");
+      dispatch(setUser({ name: user.name, email: user.email }));
       navigate("/");
     } else {
       console.log("Something wrong");
     }
   };
 
-  const onSubmit = (Udata) => {
-    // console.log(Udata);
-    logUp(Udata.login, Udata.password, Udata.rememberMe);
+  const onSubmit = (formData) => {
+    logUp(formData.login, formData.password, formData.rememberMe);
   };
 
   return (

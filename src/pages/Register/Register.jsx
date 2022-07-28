@@ -3,9 +3,11 @@ import axios from "axios";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useQuery } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
 
+import { getUsers } from "../../api/getQueries";
 import UserIcon from "../../components/SvgIcons/UserIcon";
 import InputMailIcon from "../../components/SvgIcons/InputMailIcon";
 import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
@@ -13,12 +15,16 @@ import InputErrorIcon from "../../components/SvgIcons/InputErrorIcon";
 import SentEmailRegister from "../../components/SentEmailRegister/SentEmailRegister";
 
 import style from "./Register.module.scss";
+import { createUser } from "../../api/postQueries";
 
 export default function Register() {
-  //TODO: Запросы на сервер на проверку наличия такого логина, если такой логин есть, тогда красным подсвечивается(стейт красности формы)), если такого нет, то создать
   const [sentEmail, setSentEmail] = React.useState(false);
+  const [isExistingUser, setIsExistingUser] = React.useState(false);
   const validationSchema = yup.object({
-    login: yup.string().required(),
+    login: yup
+      .string()
+      .required()
+      .test("existing-user", "user-already-exists", () => !isExistingUser),
     email: yup.string().email().required(),
     password: yup.string().required(),
     passwordRepeat: yup
@@ -41,24 +47,30 @@ export default function Register() {
   } = useForm({ resolver: yupResolver(validationSchema) });
   const captchaRef = React.useRef();
 
-  const registry = async (user) => {
-    const data = await axios
-      .get(
-        `https://62c166972af60be89ec64660.mockapi.io/users?login=${user.login}`
-      )
-      .then(({ data }) => data);
+  const { data, status, error } = useQuery(["users"], getUsers, {
+    onSuccess: () => {
+      console.log("Data loading success");
+    },
+    onError: (err) => {
+      console.log("Ошибка: ", err);
+    },
+  });
 
-    if (data === []) {
+  const registry = (formData) => {
+    const user = data.find((elem) => elem.login === formData.login);
+    if (!user) {
       console.log("no user with this login");
       return true;
     } else {
       console.log("user already exist");
+      setIsExistingUser(true);
       return false;
     }
   };
 
   const onSubmit = (user) => {
     if (registry(user)) {
+      createUser(user);
       reset();
       setSentEmail(true);
     }
@@ -83,16 +95,19 @@ export default function Register() {
                       className={[
                         "textInputs",
                         style.textInput,
-                        errors.login ? "errorInputBorder" : "",
+                        errors.login || isExistingUser
+                          ? "errorInputBorder"
+                          : "",
                       ].join(" ")}
                       type="text"
                       placeholder="Логин"
                       {...register("login", { required: true })}
+                      onChange={() => setIsExistingUser(false)}
                     />
                     <span className="textInputsIcons">
                       <UserIcon />
                     </span>
-                    {errors.login && (
+                    {(errors.login || isExistingUser) && (
                       <span className={style.errorIcon}>
                         <InputErrorIcon />
                       </span>

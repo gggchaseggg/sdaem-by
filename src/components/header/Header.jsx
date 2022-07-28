@@ -7,6 +7,7 @@ import { routeMenu, rentMenu } from "../../data/layoutData";
 import { useSelector } from "react-redux";
 import FavoritesHeart from "../SvgIcons/FavoritesHeartIcon";
 import MarkIcon from "../SvgIcons/MarkIcon";
+import UserLabel from "./UserLabel/UserLabel";
 
 export default function Header() {
   const [headerMenu, setHeaderMenu] = React.useState(routeMenu);
@@ -55,9 +56,7 @@ export default function Header() {
                   <FavoritesHeart width={16} header={17} />
                 </Link>
               </div>
-              <div className={style.login}>
-                <Link to="/login">Вход и регистрация</Link>
-              </div>
+              <UserLabel />
             </div>
           </div>
         </div>

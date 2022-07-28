@@ -75,3 +75,11 @@ export const contactListInitialState = {
   email: "sdaem@sdaem.by",
   workTime: "08:00-22:00",
 };
+
+export const userInitialState = {
+  isLogin: false,
+  info: {
+    name: "",
+    email: "",
+  },
+};
