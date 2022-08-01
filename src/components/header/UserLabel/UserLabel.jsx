@@ -15,11 +15,12 @@ const UserLabel = () => {
   const dispatch = useDispatch();
   const { data, status } = useQuery(["users"], getUsers, {
     onSuccess: () => {
-      console.log("Data loading success");
+      console.log("Users loading success");
     },
     onError: (err) => {
       console.log("Ошибка: ", err);
     },
+    staleTime: Infinity,
   });
 
   React.useEffect(() => {

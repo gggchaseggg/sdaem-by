@@ -19,7 +19,7 @@ export default function Login(options) {
 
   const { data } = useQuery(["users"], getUsers, {
     onSuccess: () => {
-      console.log("Data loading success");
+      console.log("Users loading success");
     },
     onError: (err) => {
       console.log("Ошибка: ", err);

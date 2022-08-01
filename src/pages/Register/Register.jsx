@@ -49,7 +49,7 @@ export default function Register() {
 
   const { data, status, error } = useQuery(["users"], getUsers, {
     onSuccess: () => {
-      console.log("Data loading success");
+      console.log("Users loading success");
     },
     onError: (err) => {
       console.log("Ошибка: ", err);
