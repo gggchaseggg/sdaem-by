@@ -7,5 +7,11 @@ export const createUser = (user) => {
       password: user.password,
       email: user.email,
     })
-    .then((response) => console.log(response));
+    .then((r) => console.log(r));
+};
+
+export const addPost = (data) => {
+  axios
+    .post("https://62c166972af60be89ec64660.mockapi.io/posts", data)
+    .then((r) => console.log(r));
 };

@@ -1,11 +1,15 @@
 import React from "react";
+import * as yup from "yup";
 import { useForm } from "react-hook-form";
-import style from "./ContactForm.module.scss";
+import { useMutation } from "@tanstack/react-query";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 import UserIcon from "../SvgIcons/UserIcon";
+import { addPost } from "../../api/postQueries";
 import InputMailIcon from "../SvgIcons/InputMailIcon";
 import InputErrorIcon from "../SvgIcons/InputErrorIcon";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+
+import style from "./ContactForm.module.scss";
 
 export default function ContactForm() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -25,9 +29,11 @@ export default function ContactForm() {
     resolver: yupResolver(validationSchema),
   });
 
+  const mutation = useMutation(addPost);
+
   const onSubmit = (data) => {
-    //TODO: Сделать отправку на импровизированный сервер данных
     console.log(data);
+    mutation.mutate(data);
     setIsOpen((prev) => !prev);
     reset();
   };
