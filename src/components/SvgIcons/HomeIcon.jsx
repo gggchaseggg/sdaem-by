@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function MarkIcon({
+export default function HomeIcon({
   fillColor = "currentColor",
   className = "",
   width = "12",

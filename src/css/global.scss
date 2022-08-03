@@ -95,3 +95,29 @@ input.textInputs {
 .errorInputBorder {
   border-color: #eb5757 !important;
 }
+
+select.select {
+  outline: none;
+  width: 150px;
+  height: 37px;
+  background: #ffffff;
+  border: 2px solid rgba(102, 78, 249, 0.8);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1e2123;
+  cursor: pointer;
+}
+
+option.selectPlaceholder {
+  display: none;
+}
+
+option.selectOption {
+  &:last-of-type {
+    padding-top: 20px;
+  }
+}
+
+@import "../components/Select/Select";

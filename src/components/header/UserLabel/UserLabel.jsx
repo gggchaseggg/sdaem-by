@@ -6,7 +6,7 @@ import style from "./UserLabel.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getUsers } from "../../../api/getQueries";
 import { setUser } from "../../../Redux/Reducers/userReducer";
-import UserInfoIcon from "../../SvgIcons/UserInfoIcon";
+import GreaterSign from "../../SvgIcons/GreaterSign";
 
 const UserLabel = () => {
   const user = useSelector((state) => state.user);
@@ -50,7 +50,7 @@ const UserLabel = () => {
         />
         <span className={style.name}>{user.info.name}</span>
         <button type="button" className={style.arrowButton}>
-          <UserInfoIcon fillColor={"#4E64F9"} />
+          <GreaterSign fillColor={"#4E64F9"} />
         </button>
       </div>
     );

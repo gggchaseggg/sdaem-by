@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UserInfoIcon({
+export default function GreaterSign({
   fillColor = "currentColor",
   className = "",
   width = "12",

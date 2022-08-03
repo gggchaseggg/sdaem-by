@@ -9,10 +9,10 @@ import WhatsappIcon from "../SvgIcons/ViberIcon";
 import MailIcon from "../SvgIcons/MailIcon";
 import ClockIcon from "../SvgIcons/ClockIcon";
 
+//TODO: Брать данные для этой страницы с мока
+
 export default function ContactList() {
   const contactList = useSelector((state) => state.contactList);
-
-  //<div className={style.image}></div>
 
   return (
     <div className={style.container}>

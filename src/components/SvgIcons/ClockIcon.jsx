@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MarkIcon({
+export default function ClockIcon({
   fillColor = "currentColor",
   className = "",
   width = "15",
