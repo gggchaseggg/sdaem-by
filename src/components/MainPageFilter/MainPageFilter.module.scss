@@ -84,6 +84,7 @@ button.button {
   letter-spacing: 0.04em;
   color: #242424;
   display: flex;
+  cursor: pointer;
   &:hover {
     background: #fec100;
   }

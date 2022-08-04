@@ -1,15 +1,17 @@
 import clsx from "clsx";
 import React from "react";
+import * as yup from "yup";
 import Select from "../Select/Select";
+import { Link } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
+import MarkIcon from "../SvgIcons/MarkIcon";
+import GreaterSign from "../SvgIcons/GreaterSign";
+import MoreOptionsIcon from "../SvgIcons/MoreOptionsIcon";
 import VerticalSeparator from "../VerticalSeparator/VerticalSeparator";
 
 import style from "./MainPageFilter.module.scss";
-import { Link } from "react-router-dom";
-import GreaterSign from "../SvgIcons/GreaterSign";
-import MarkIcon from "../SvgIcons/MarkIcon";
-import MoreOptionsIcon from "../SvgIcons/MoreOptionsIcon";
 
 const cities = [
   { id: "1", value: "Минск", label: "Минск" },
@@ -17,8 +19,7 @@ const cities = [
   { id: "3", value: "Брест", label: "Брест" },
   { id: "4", value: "Витебск", label: "Витебск" },
   { id: "5", value: "Гродно", label: "Гродно" },
-  { id: "6", value: "Гродно", label: "Гродно" },
-  { id: "7", value: "Могилев", label: "Могилев" },
+  { id: "6", value: "Могилев", label: "Могилев" },
 ];
 
 const rooms = [
@@ -29,8 +30,33 @@ const rooms = [
 ];
 
 const MainPageFilter = () => {
-  const { register, control, handleSubmit } = useForm({});
-
+  const validationSchema = yup.object({
+    city: yup.string().nullable(),
+    rooms: yup.string().nullable(),
+    priceFrom: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .when("priceTo", {
+        is: (val) => !!val,
+        then: yup
+          .number()
+          .transform((value) => (isNaN(value) ? undefined : value))
+          .lessThan(yup.ref("priceTo")),
+      }),
+    priceTo: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value)),
+  });
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+  // console.log("errors: ", errors);
+  // console.log("yupRef: ", yup.ref("priceFrom"));
   const onSubmit = (data) => {
     console.log("data: ", data);
   };
@@ -75,13 +101,23 @@ const MainPageFilter = () => {
             <input
               type="number"
               placeholder="От"
-              className={clsx("textInputs", style.input)}
+              className={clsx(
+                "textInputs",
+                style.input,
+                errors.priceFrom ? "errorInputBorder" : ""
+              )}
+              {...register("priceFrom")}
             />
             <span className={style.minus}>-</span>
             <input
               type="number"
               placeholder="До"
-              className={clsx("textInputs", style.input)}
+              className={clsx(
+                "textInputs",
+                style.input,
+                errors.priceFrom ? "errorInputBorder" : ""
+              )}
+              {...register("priceTo")}
             />
           </div>
         </label>

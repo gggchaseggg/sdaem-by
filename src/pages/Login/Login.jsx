@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
