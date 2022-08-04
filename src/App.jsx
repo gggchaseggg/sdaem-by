@@ -17,7 +17,6 @@ import Register from "./pages/Register/Register";
 //TODO: Сделать скелетон лоадер для карточек новостей
 //TODO: Ховер эффект у свг элементов
 //TODO: Вынести query в отдельные компоненты
-//TODO: Переписать классы на clsx
 
 function App() {
   return (

@@ -1,7 +1,10 @@
+import clsx from "clsx";
 import React from "react";
-import style from "./ApartmensModal.module.scss";
-import { apartCity } from "../../../data/layoutData";
+
 import MarkIcon from "../../SvgIcons/MarkIcon";
+import { apartCity } from "../../../data/layoutData";
+
+import style from "./ApartmensModal.module.scss";
 
 export default function ApartmensModal() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -9,7 +12,7 @@ export default function ApartmensModal() {
   return (
     <>
       <div
-        className={[style.apartButton, style.active].join(" ")}
+        className={clsx(style.apartButton, style.active)}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <span>Квартиры на сутки</span>

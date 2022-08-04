@@ -8,6 +8,7 @@ import TelegramIcon from "../SvgIcons/TelegramIcon";
 import WhatsappIcon from "../SvgIcons/ViberIcon";
 import MailIcon from "../SvgIcons/MailIcon";
 import ClockIcon from "../SvgIcons/ClockIcon";
+import clsx from "clsx";
 
 //TODO: Брать данные для этой страницы с мока
 
@@ -25,22 +26,22 @@ export default function ContactList() {
           <PhoneIcon className={style.marker} />
           <a
             href={`tel:${contactList.phone}`}
-            className={[style.text, style.phone].join(" ")}
+            className={clsx(style.text, style.phone)}
           >
             {contactList.phone}
           </a>
           <ViberIcon
-            className={[style.marker, style.tel].join(" ")}
+            className={clsx(style.marker, style.tel)}
             width={14}
             height={15}
           />
           <TelegramIcon
-            className={[style.marker, style.tel].join(" ")}
+            className={clsx(style.marker, style.tel)}
             width={14}
             height={12}
           />
           <WhatsappIcon
-            className={[style.marker, style.tel].join(" ")}
+            className={clsx(style.marker, style.tel)}
             width={14}
             height={14}
           />

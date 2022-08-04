@@ -1,18 +1,19 @@
+import clsx from "clsx";
 import React from "react";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useQuery } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm, Controller } from "react-hook-form";
 
+import { useForm, Controller } from "react-hook-form";
 import { getUsers } from "../../api/getQueries";
 import UserIcon from "../../components/SvgIcons/UserIcon";
 import InputMailIcon from "../../components/SvgIcons/InputMailIcon";
 import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
 import InputErrorIcon from "../../components/SvgIcons/InputErrorIcon";
-import SentEmailRegister from "../../components/SentEmailRegister/SentEmailRegister";
 
+import SentEmailRegister from "../../components/SentEmailRegister/SentEmailRegister";
 import style from "./Register.module.scss";
 import { createUser } from "../../api/postQueries";
 
@@ -91,13 +92,11 @@ export default function Register() {
                 <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
                   <label className={style.textInputsLabel}>
                     <input
-                      className={[
+                      className={clsx(
                         "textInputs",
                         style.textInput,
-                        errors.login || isExistingUser
-                          ? "errorInputBorder"
-                          : "",
-                      ].join(" ")}
+                        errors.login || isExistingUser ? "errorInputBorder" : ""
+                      )}
                       type="text"
                       placeholder="Логин"
                       {...register("login", { required: true })}
@@ -115,11 +114,11 @@ export default function Register() {
                   <label className={style.textInputsLabel}>
                     <input
                       type="text"
-                      className={[
+                      className={clsx(
                         "textInputs",
                         style.textInput,
-                        errors.email ? "errorInputBorder" : "",
-                      ].join(" ")}
+                        errors.email ? "errorInputBorder" : ""
+                      )}
                       placeholder="Электронная почта"
                       {...register("email", { required: true })}
                     />
@@ -134,11 +133,11 @@ export default function Register() {
                   </label>
                   <label className={style.textInputsLabel}>
                     <input
-                      className={[
+                      className={clsx(
                         "textInputs",
                         style.textInput,
-                        errors.password ? "errorInputBorder" : "",
-                      ].join(" ")}
+                        errors.password ? "errorInputBorder" : ""
+                      )}
                       type="password"
                       placeholder="Пароль"
                       {...register("password", { required: true })}
@@ -154,11 +153,11 @@ export default function Register() {
                   </label>
                   <label className={style.textInputsLabel}>
                     <input
-                      className={[
+                      className={clsx(
                         "textInputs",
                         style.textInput,
-                        errors.passwordRepeat ? "errorInputBorder" : "",
-                      ].join(" ")}
+                        errors.passwordRepeat ? "errorInputBorder" : ""
+                      )}
                       type="password"
                       placeholder="Повторите пароль"
                       {...register("passwordRepeat", { required: true })}

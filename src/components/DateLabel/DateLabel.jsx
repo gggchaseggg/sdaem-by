@@ -1,4 +1,6 @@
+import clsx from "clsx";
 import React from "react";
+
 import style from "./DateLabel.module.scss";
 
 //В пропсы дата строкой и булеан значение серое ли
@@ -7,9 +9,7 @@ export default function DateLabel(props) {
   return (
     <>
       <div
-        className={[style.date, props.isGray ? style.gray : style.purple].join(
-          " "
-        )}
+        className={clsx(style.date, props.isGray ? style.gray : style.purple)}
       >
         {props.date}
       </div>

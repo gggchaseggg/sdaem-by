@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
@@ -57,7 +58,7 @@ export default function Login(options) {
           <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
             <label className={style.textInputsLabel}>
               <input
-                className={["textInputs", style.textInput].join(" ")}
+                className={clsx("textInputs", style.textInput)}
                 type="text"
                 placeholder="Логин"
                 {...register("login", { required: true })}
@@ -68,7 +69,7 @@ export default function Login(options) {
             </label>
             <label className={style.textInputsLabel}>
               <input
-                className={["textInputs", style.textInput].join(" ")}
+                className={clsx("textInputs", style.textInput)}
                 type="password"
                 placeholder="Пароль"
                 {...register("password", { required: true })}

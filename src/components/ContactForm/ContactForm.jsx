@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -48,11 +49,10 @@ export default function ContactForm() {
               <input
                 {...register("name")}
                 type="text"
-                className={[
+                className={clsx(
                   "textInputs",
-                  errors.name ? "errorInputBorder" : "",
-                ].join(" ")}
-                // className="textInputs"
+                  errors.name ? "errorInputBorder" : ""
+                )}
                 placeholder="Имя"
               />
               <span className="textInputsIcons">
@@ -69,10 +69,10 @@ export default function ContactForm() {
               <input
                 {...register("email")}
                 type="text"
-                className={[
+                className={clsx(
                   "textInputs",
-                  errors.email ? "errorInputBorder" : "",
-                ].join(" ")}
+                  errors.email ? "errorInputBorder" : ""
+                )}
                 placeholder="Почта"
               />
               <span className="textInputsIcons">
@@ -90,10 +90,10 @@ export default function ContactForm() {
               Ваше сообщение
               <textarea
                 {...register("message")}
-                className={[
-                  style.text,
-                  errors.message ? "errorInputBorder" : "",
-                ].join(" ")}
+                className={clsx(
+                  "textInputs",
+                  errors.message ? "errorInputBorder" : ""
+                )}
                 placeholder="Сообщение"
               />
             </label>
