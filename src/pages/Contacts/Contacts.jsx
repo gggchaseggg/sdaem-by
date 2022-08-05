@@ -1,6 +1,6 @@
 import React from "react";
-import ContactForm from "../../components/ContactForm/ContactForm";
-import ContactList from "../../components/ContactList/ContactList";
+import ContactForm from "../../components/ContactPage/ContactForm/ContactForm";
+import ContactList from "../../components/ContactPage/ContactList/ContactList";
 import style from "./Contacts.module.scss";
 import { useDispatch } from "react-redux";
 import { setActivePage } from "../../Redux/Reducers/activePageReducer";

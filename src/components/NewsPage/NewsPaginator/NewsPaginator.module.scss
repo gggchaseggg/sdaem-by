@@ -9,6 +9,9 @@
   color: #686868;
   padding: 0 7px;
   cursor: pointer;
+  &:hover {
+    border-bottom: 2px solid #e4e2e2;
+  }
 }
 
 .activePage {

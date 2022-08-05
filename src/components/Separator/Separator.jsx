@@ -1,6 +1,6 @@
 import React from "react";
 
-const VerticalSeparator = ({ className, height, width, color }) => {
+const Separator = ({ className, height, width, color }) => {
   return (
     <div
       className={className}
@@ -9,4 +9,4 @@ const VerticalSeparator = ({ className, height, width, color }) => {
   );
 };
 
-export default VerticalSeparator;
+export default Separator;

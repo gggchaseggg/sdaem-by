@@ -1,8 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setActivePage } from "../../Redux/Reducers/activePageReducer";
-import axios from "axios";
-import MainPageHeader from "../../components/MainPageHeader/MainPageHeader";
+import MainPageHeader from "../../components/MainPage/MainPageHeader/MainPageHeader";
+import Rent from "../../components/MainPage/Rent/Rent";
+
+import style from "./Main.module.scss";
+import ApartmentsSearch from "../../components/MainPage/ApartmensSearch/ApartmentsSearch";
 
 export default function Main() {
   const dispatch = useDispatch();
@@ -13,7 +16,9 @@ export default function Main() {
 
   return (
     <>
-      <MainPageHeader />
+      <MainPageHeader className={style.header} />
+      <Rent className={style.rent} />
+      <ApartmentsSearch />
     </>
   );
 }

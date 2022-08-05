@@ -13,7 +13,7 @@ import InputMailIcon from "../../components/SvgIcons/InputMailIcon";
 import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
 import InputErrorIcon from "../../components/SvgIcons/InputErrorIcon";
 
-import SentEmailRegister from "../../components/SentEmailRegister/SentEmailRegister";
+import SentEmailRegister from "../../components/Register/SentEmailRegister/SentEmailRegister";
 import style from "./Register.module.scss";
 import { createUser } from "../../api/postQueries";
 

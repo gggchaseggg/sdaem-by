@@ -8,7 +8,7 @@ export const getUsers = () =>
 export const getNews = (page) =>
   axios
     .get(
-      `https://62c166972af60be89ec64660.mockapi.io/news?page=${page}&limit=3`
+      `https://62c166972af60be89ec64660.mockapi.io/news?page=${page}&limit=9`
     )
     .then(({ data }) => data);
 

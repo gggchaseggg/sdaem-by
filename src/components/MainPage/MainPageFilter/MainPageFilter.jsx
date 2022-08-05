@@ -1,15 +1,15 @@
 import clsx from "clsx";
 import React from "react";
 import * as yup from "yup";
-import Select from "../Select/Select";
+import Select from "../../Select/Select";
 import { Link } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
-import MarkIcon from "../SvgIcons/MarkIcon";
-import GreaterSign from "../SvgIcons/GreaterSign";
-import MoreOptionsIcon from "../SvgIcons/MoreOptionsIcon";
-import VerticalSeparator from "../VerticalSeparator/VerticalSeparator";
+import MarkIcon from "../../SvgIcons/MarkIcon";
+import GreaterSign from "../../SvgIcons/GreaterSign";
+import MoreOptionsIcon from "../../SvgIcons/MoreOptionsIcon";
+import Separator from "../../Separator/Separator";
 
 import style from "./MainPageFilter.module.scss";
 
@@ -62,7 +62,7 @@ const MainPageFilter = () => {
   };
 
   const separator = (
-    <VerticalSeparator
+    <Separator
       className={style.separator}
       height={68}
       width={1}

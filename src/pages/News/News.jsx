@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Search from "../../components/Search/Search";
+import Search from "../../components/NewsPage/Search/Search";
 import NewsItem from "../../components/NewsItem/NewsItem";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
 import style from "./News.module.scss";
-import NewsPaginator from "../../components/NewsPaginator/NewsPaginator";
+import NewsPaginator from "../../components/NewsPage/NewsPaginator/NewsPaginator";
 import { getNews } from "../../api/getQueries";
 import { useQuery } from "@tanstack/react-query";
 import { logDOM } from "@testing-library/react";
@@ -21,7 +21,7 @@ export default function News() {
   const { data, status } = useQuery(["news", page], () => getNews(page), {
     onSuccess: (data) => {
       console.log("News loading success");
-      setPageCount(Math.ceil(data.count / 3));
+      setPageCount(Math.ceil(data.count / 9));
       setNewsList(data.items);
     },
     onError: (err) => {
@@ -55,11 +55,15 @@ export default function News() {
             </ul>
           </>
         )}
-        <NewsPaginator
-          className={style.paginator}
-          pageSwitcher={setPage}
-          pageCount={pageCount}
-        />
+        {pageCount !== 1 ? (
+          <NewsPaginator
+            className={style.paginator}
+            pageSwitcher={setPage}
+            pageCount={pageCount}
+          />
+        ) : (
+          <div className={style.paginator}></div>
+        )}
       </div>
     </>
   );

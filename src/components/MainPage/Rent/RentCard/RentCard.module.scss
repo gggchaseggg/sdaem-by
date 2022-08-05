@@ -1,0 +1,59 @@
+.container {
+  background: rgba(0, 0, 0, 0.3);
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.text {
+  padding-top: 37px;
+  padding-left: 37px;
+}
+
+h2.title {
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h4.subtitle {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container:hover > .hoverButtons {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.container:hover > .arrow {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.hoverButtons {
+  width: 74%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  margin-top: 14px;
+  margin-left: 29px;
+}
+
+.arrow {
+  text-align: right;
+  padding-right: 20px;
+  opacity: 1;
+  transition: opacity 0.5s;
+}

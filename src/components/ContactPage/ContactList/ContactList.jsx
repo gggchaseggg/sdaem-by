@@ -1,13 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import style from "./ContactList.module.scss";
-import MarkIcon from "../SvgIcons/MarkIcon";
-import PhoneIcon from "../SvgIcons/PhoneIcon";
-import ViberIcon from "../SvgIcons/WhatsappIcon";
-import TelegramIcon from "../SvgIcons/TelegramIcon";
-import WhatsappIcon from "../SvgIcons/ViberIcon";
-import MailIcon from "../SvgIcons/MailIcon";
-import ClockIcon from "../SvgIcons/ClockIcon";
+import MarkIcon from "../../SvgIcons/MarkIcon";
+import PhoneIcon from "../../SvgIcons/PhoneIcon";
+import ViberIcon from "../../SvgIcons/WhatsappIcon";
+import TelegramIcon from "../../SvgIcons/TelegramIcon";
+import WhatsappIcon from "../../SvgIcons/ViberIcon";
+import MailIcon from "../../SvgIcons/MailIcon";
+import ClockIcon from "../../SvgIcons/ClockIcon";
 import clsx from "clsx";
 
 //TODO: Брать данные для этой страницы с мока

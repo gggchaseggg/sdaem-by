@@ -5,10 +5,10 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import UserIcon from "../SvgIcons/UserIcon";
-import { addPost } from "../../api/postQueries";
-import InputMailIcon from "../SvgIcons/InputMailIcon";
-import InputErrorIcon from "../SvgIcons/InputErrorIcon";
+import UserIcon from "../../SvgIcons/UserIcon";
+import { addPost } from "../../../api/postQueries";
+import InputMailIcon from "../../SvgIcons/InputMailIcon";
+import InputErrorIcon from "../../SvgIcons/InputErrorIcon";
 
 import style from "./ContactForm.module.scss";
 
@@ -91,7 +91,7 @@ export default function ContactForm() {
               <textarea
                 {...register("message")}
                 className={clsx(
-                  "textInputs",
+                  style.text,
                   errors.message ? "errorInputBorder" : ""
                 )}
                 placeholder="Сообщение"

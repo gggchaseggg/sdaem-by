@@ -2,12 +2,12 @@ import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 import style from "./MainPageTabs.module.scss";
-import Select from "../Select/Select";
+import Select from "../../Select/Select";
 import MainPageFilter from "../MainPageFilter/MainPageFilter";
 
-const MainPageTabs = () => {
+const MainPageTabs = ({ className }) => {
   return (
-    <div>
+    <div className={className}>
       <Tabs className={style.tabs}>
         <TabList className={style.tabsList}>
           <Tab
