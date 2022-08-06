@@ -42,7 +42,7 @@ export default function News() {
           <div className={style.search}>
             <Search />
           </div>
-          <div className={style.backgroundRectangle}></div>
+          <div className={style.backgroundRectangle} />
         </div>
         {status === "success" && newsList && (
           <>

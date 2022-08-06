@@ -6,6 +6,8 @@ import "swiper/scss";
 import "swiper/scss/navigation";
 import style from "./Carousel.module.scss";
 import clsx from "clsx";
+import GreaterSign from "../../SvgIcons/GreaterSign";
+import { Link } from "react-router-dom";
 
 const carouselItems = [
   {
@@ -30,6 +32,11 @@ const carouselItems = [
 const Carousel = ({ className }) => {
   return (
     <div className={clsx(style.container, className)}>
+      <h2 className={style.title}>Квартиры на сутки</h2>
+      <h3 className={style.subtitle}>Аренда квартир в Минске</h3>
+      <span>select 1</span>
+      <span>select 2</span>
+      <div className={style.backgroundRectangle} />
       <Swiper
         modules={[Navigation]}
         navigation
@@ -48,6 +55,17 @@ const Carousel = ({ className }) => {
         <SwiperSlide>Slide 9</SwiperSlide>
         <SwiperSlide>Slide 10</SwiperSlide>
       </Swiper>
+      <div className={style.footer}>
+        <h4 className={style.offersAmount}>
+          341 <span className={style.plus}>+</span>
+          <span className={style.offresAmountFooter}>
+            Предложений по Минску
+          </span>
+        </h4>
+        <Link to="/catalog" className={style.button}>
+          <span>Посмотреть все</span> <GreaterSign className={style.sign} />
+        </Link>
+      </div>
     </div>
   );
 };
