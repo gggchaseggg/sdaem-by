@@ -23,5 +23,18 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  top: 100%;
+  width: 39px;
+  height: 39px;
+  border: 1px solid #664ef9;
+  border-radius: 50%;
+  top: 625px;
+  color: #664ef9;
+}
+
+.swiper-button-prev {
+  left: 590px;
+}
+
+.swiper-button-next {
+  right: 598px;
 }
