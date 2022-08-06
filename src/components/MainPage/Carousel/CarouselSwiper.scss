@@ -27,8 +27,14 @@
   height: 39px;
   border: 1px solid #664ef9;
   border-radius: 50%;
-  top: 625px;
+  top: 641px;
   color: #664ef9;
+  background: none;
+  transition: background 0.3s;
+  &:hover {
+    background: rgba(102, 78, 249, 0.1);
+    transition: background 0.3s;
+  }
 }
 
 .swiper-button-prev {
@@ -36,5 +42,5 @@
 }
 
 .swiper-button-next {
-  right: 598px;
+  right: 599px;
 }

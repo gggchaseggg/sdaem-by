@@ -15,7 +15,6 @@ const Carousel = ({ className }) => {
         navigation
         slidesPerView={3}
         spaceBetween={30}
-        loop={true}
         speed={800}
       >
         <SwiperSlide>Slide 1</SwiperSlide>
