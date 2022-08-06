@@ -2,6 +2,10 @@
   height: 993px;
 }
 
+.header {
+  display: flex;
+}
+
 h2.title {
   font-weight: 600;
   font-size: 14px;
@@ -26,10 +30,19 @@ h3.subtitle {
   color: #000000;
 }
 
+.selects {
+  position: relative;
+  top: 82px;
+  left: 553px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .backgroundRectangle {
   z-index: -1;
   position: relative;
-  top: -114px;
+  top: -94px;
   left: 554px;
   width: 848px;
   height: 970px;
@@ -39,7 +52,8 @@ h3.subtitle {
 }
 
 .carousel {
-  margin-top: -1019px;
+  margin-top: -970px;
+  padding-top: 60px;
 }
 
 .footer {

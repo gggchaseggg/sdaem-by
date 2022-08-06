@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UserIcon({
+export default function InputErrorIcon({
   fillColor = "#EB5757",
   className = "",
   width = "21",

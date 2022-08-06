@@ -10,7 +10,7 @@ const List = ({ title, options, className = "", morePath = "" }) => {
       <h2 className={style.title}>{title}</h2>
       <ul className={style.optionsList}>
         {options.map((item) => (
-          <li className={style.optionsItem}>
+          <li className={style.optionsItem} key={item.id}>
             <Link to={item.link} className={style.link}>
               <span className={style.name}>{item.title}</span>
             </Link>

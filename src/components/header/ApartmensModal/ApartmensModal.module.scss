@@ -37,6 +37,9 @@
   line-height: 17px;
   li {
     padding: 10px 0;
+    &:hover {
+      background: #f8f8f8;
+    }
   }
 }
 

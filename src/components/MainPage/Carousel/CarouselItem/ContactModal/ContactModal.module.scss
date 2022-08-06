@@ -1,0 +1,70 @@
+img.avatar {
+  margin-top: 22px;
+  width: 67px;
+  height: 67px;
+  border-radius: 50%;
+  border: 4px solid #664ef9;
+}
+
+.owner {
+  margin-top: 11px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  color: #bdbdbd;
+}
+
+.name {
+  margin-top: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #1e2123;
+}
+
+a.tel {
+  margin-top: 18px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  color: #1e2123;
+}
+
+a.email {
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #664ef9;
+  border-bottom: 1px solid #664ef9;
+}
+
+.socials {
+  margin-top: 26px;
+  width: 148px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.viber,
+.whatsapp,
+.mail {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 9px;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+}
+
+.viber {
+  background: #7b519d;
+}
+.whatsapp {
+  background: #0dbb41;
+}
+
+.mail {
+  background: #664ef9;
+}

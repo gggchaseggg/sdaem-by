@@ -1,5 +1,4 @@
 .swiper {
-  padding-top: 60px;
   width: 1280px;
   overflow: visible;
 }
@@ -7,8 +6,7 @@
 .swiper-slide {
   width: 406px !important;
   height: 522px;
-  //background: #fffefe;
-  background: aqua;
+  background: #fffefe;
   border-radius: 10px;
   filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
   opacity: 0;

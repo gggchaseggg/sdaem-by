@@ -75,7 +75,7 @@ const About = ({ className }) => {
         <h3 className={clsx(style.subtitle, style.newsTitle)}>Новости</h3>
         <ul className={style.newsList}>
           {news.map((item) => (
-            <li className={style.newsItem}>
+            <li className={style.newsItem} key={item.id}>
               <Link to="/news" className={style.newsText}>
                 {item.text}
               </Link>

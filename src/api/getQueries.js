@@ -5,6 +5,11 @@ export const getUsers = () =>
     .get(`https://62c166972af60be89ec64660.mockapi.io/users`)
     .then(({ data }) => data);
 
+export const getUserById = (id) =>
+  axios
+    .get(`https://62c166972af60be89ec64660.mockapi.io/users?id=${id}`)
+    .then(({ data }) => data);
+
 export const getNews = (page) =>
   axios
     .get(

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UserIcon({
+export default function InputLockIcon({
   fillColor = "currentColor",
   className = "",
   width = "16",
