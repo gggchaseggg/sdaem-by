@@ -1,5 +1,7 @@
 .header,
-.rent {
+.rent,
+.about,
+.carousel {
   margin-left: auto;
   margin-right: auto;
 }
@@ -8,8 +10,17 @@
   width: 1285px;
 }
 
+.carousel {
+  width: 1380px;
+}
+
 .rent {
   margin-top: 86px;
   width: 1280px;
   display: flex;
+}
+
+.about {
+  width: 1280px;
+  margin-bottom: 100px;
 }

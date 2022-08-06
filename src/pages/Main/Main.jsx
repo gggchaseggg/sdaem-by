@@ -6,6 +6,8 @@ import Rent from "../../components/MainPage/Rent/Rent";
 
 import style from "./Main.module.scss";
 import ApartmentsSearch from "../../components/MainPage/ApartmensSearch/ApartmentsSearch";
+import About from "../../components/MainPage/About/About";
+import Carousel from "../../components/MainPage/Carousel/Carousel";
 
 export default function Main() {
   const dispatch = useDispatch();
@@ -18,7 +20,9 @@ export default function Main() {
     <>
       <MainPageHeader className={style.header} />
       <Rent className={style.rent} />
+      <Carousel className={style.carousel} />
       <ApartmentsSearch />
+      <About className={style.about} />
     </>
   );
 }

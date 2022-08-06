@@ -14,6 +14,18 @@
   flex-direction: column;
   align-items: center;
   padding-top: 75px;
+  &::before {
+    content: url("../../../../public/img/NotFound/yellowCircle.svg");
+    position: absolute;
+    bottom: -339px;
+    right: 396px;
+  }
+  &::after {
+    content: url("../../../../public/img/NotFound/whiteCircle.svg");
+    position: absolute;
+    top: 47px;
+    right: 365px;
+  }
 }
 
 h2.title {

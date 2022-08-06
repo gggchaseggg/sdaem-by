@@ -25,6 +25,7 @@
     "react-select": "^5.4.0",
     "react-tabs": "^5.1.0",
     "sass": "^1.53.0",
+    "swiper": "^8.3.2",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },
