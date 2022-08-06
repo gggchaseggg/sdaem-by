@@ -124,3 +124,9 @@ option.selectOption {
 
 @import "../components/Select/Select";
 @import "../components/MainPage/Carousel/CarouselSwiper";
+@at-root {
+  :root {
+    --swiper-navigation-size: 13px;
+    //Переопределение размеров навигационных кнопок слайдера
+  }
+}

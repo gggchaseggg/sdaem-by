@@ -20,7 +20,9 @@ export default function Main() {
     <>
       <MainPageHeader className={style.header} />
       <Rent className={style.rent} />
-      <Carousel className={style.carousel} />
+      <div className={style.carouselContainer}>
+        <Carousel className={style.carousel} />
+      </div>
       <ApartmentsSearch />
       <About className={style.about} />
     </>
