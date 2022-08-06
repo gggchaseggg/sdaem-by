@@ -19,6 +19,7 @@ h2.title {
 }
 
 h3.subtitle {
+  margin-top: 14px;
   font-weight: 700;
   font-size: 25px;
   line-height: 30px;
@@ -28,11 +29,15 @@ h3.subtitle {
 .backgroundRectangle {
   z-index: -1;
   position: relative;
-  top: -33px;
-  left: 563px;
+  top: -114px;
+  left: 554px;
   width: 848.5px;
   height: 999.21px;
   background: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
   opacity: 0.1;
   border-radius: 40px;
+}
+
+.carousel {
+  margin-top: -1019px;
 }
