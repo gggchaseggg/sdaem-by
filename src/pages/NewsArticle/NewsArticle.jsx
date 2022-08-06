@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import NewsItem from "../../components/NewsItem/NewsItem";
+import NewsItem from "../../components/NewsPage/NewsItem/NewsItem";
 import DateLabel from "../../components/DateLabel/DateLabel";
 import VkIcon from "../../components/SvgIcons/VkIcon";
 

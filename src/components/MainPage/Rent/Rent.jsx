@@ -35,7 +35,7 @@ const Rent = ({ className }) => {
   return (
     <div className={className}>
       <div className={style.card}>
-        <Link to="/catalog">
+        <Link to="/catalog" className={style.catalogLink}>
           <RentCard
             width={516}
             height={270}
@@ -44,7 +44,7 @@ const Rent = ({ className }) => {
             subtitle="Снять квартиру"
           />
         </Link>
-        <Link to="/catalog">
+        <Link to="/catalog" className={style.catalogLink}>
           <RentCard
             width={407}
             height={270}
@@ -53,7 +53,7 @@ const Rent = ({ className }) => {
             subtitle="Снять коттедж на праздник"
           />
         </Link>
-        <Link to="/catalog">
+        <Link to="/catalog" className={style.catalogLink}>
           <RentCard
             width={407}
             height={270}
@@ -62,7 +62,7 @@ const Rent = ({ className }) => {
             subtitle="Попариться в бане с друзьями"
           />
         </Link>
-        <Link to="/catalog">
+        <Link to="/catalog" className={style.catalogLink}>
           <RentCard
             width={516}
             height={270}

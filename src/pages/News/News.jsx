@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import Search from "../../components/NewsPage/Search/Search";
-import NewsItem from "../../components/NewsItem/NewsItem";
+import NewsItem from "../../components/NewsPage/NewsItem/NewsItem";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 

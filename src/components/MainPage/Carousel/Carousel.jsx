@@ -7,6 +7,26 @@ import "swiper/scss/navigation";
 import style from "./Carousel.module.scss";
 import clsx from "clsx";
 
+const carouselItems = [
+  {
+    title: "4-комн. апартаменты на Грушевке ",
+    price: "65",
+    priceFor: "сутки",
+    currency: "BYN",
+    address: "Минск, б-р Мулявина, д. 10",
+    tenants: "4 (2+2)",
+    rooms: "4",
+    metro: "Грушевка",
+    district: "Шабаны",
+    description:
+      "Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ...",
+    contactsId: "1",
+    area: "179",
+    status: "Gold",
+    img: "",
+  },
+];
+
 const Carousel = ({ className }) => {
   return (
     <div className={clsx(style.container, className)}>

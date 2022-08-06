@@ -15,8 +15,8 @@ export const newsListInitialState = [
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
     date: "14 Января 2008",
-    photoUrl: "/img/newsPhotoExample.png",
-    photoUrlBig: "/img/newsPhotoExampleBig.png",
+    photoUrl: "/img/apartmentsPhotoGorizontal.png",
+    photoUrlBig: "/img/apartmentsPhotoGorizontalBig.png",
     key: "NewsItem-1",
   },
   {
@@ -31,8 +31,8 @@ export const newsListInitialState = [
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
     date: "14 Января 2008",
-    photoUrl: "/img/newsPhotoExample.png",
-    photoUrlBig: "/img/newsPhotoExampleBig.png",
+    photoUrl: "/img/apartmentsPhotoGorizontal.png",
+    photoUrlBig: "/img/apartmentsPhotoGorizontalBig.png",
     key: "NewsItem-2",
   },
   {
@@ -47,8 +47,8 @@ export const newsListInitialState = [
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
     date: "14 Января 2008",
-    photoUrl: "/img/newsPhotoExample.png",
-    photoUrlBig: "/img/newsPhotoExampleBig.png",
+    photoUrl: "/img/apartmentsPhotoGorizontal.png",
+    photoUrlBig: "/img/apartmentsPhotoGorizontalBig.png",
     key: "NewsItem-3",
   },
   {
@@ -63,8 +63,8 @@ export const newsListInitialState = [
       'Отличная усадьба в 10 км от "Линии Сталина".',
     ],
     date: "14 Января 2008",
-    photoUrl: "/img/newsPhotoExample.png",
-    photoUrlBig: "/img/newsPhotoExampleBig.png",
+    photoUrl: "/img/apartmentsPhotoGorizontal.png",
+    photoUrlBig: "/img/apartmentsPhotoGorizontalBig.png",
     key: "NewsItem-4",
   },
 ];
