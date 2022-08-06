@@ -8,6 +8,7 @@ import style from "./Carousel.module.scss";
 import clsx from "clsx";
 import GreaterSign from "../../SvgIcons/GreaterSign";
 import { Link } from "react-router-dom";
+import Separator from "../../Separator/Separator";
 
 const carouselItems = [
   {
@@ -64,6 +65,12 @@ const Carousel = ({ className }) => {
             Предложений по Минску
           </span>
         </h4>
+        <Separator
+          height={70}
+          width={2}
+          color="linear-gradient(90deg, #94AFFF 0%, #4E64F9 94.5%)"
+          className={style.separator}
+        />
         <Link to="/catalog" className={style.button}>
           <span>Посмотреть все</span> <GreaterSign className={style.sign} />
         </Link>
