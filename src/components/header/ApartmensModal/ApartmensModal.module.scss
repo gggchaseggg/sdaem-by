@@ -26,7 +26,6 @@
 }
 
 .modalBody {
-  padding-left: 13px;
   width: 242px;
   height: 222px;
   border-radius: 10px;
@@ -36,9 +35,10 @@
   font-weight: 500;
   line-height: 17px;
   li {
-    padding: 10px 0;
+    padding: 10px 0 10px 13px;
     &:hover {
       background: #f8f8f8;
+      border-radius: 10px;
     }
   }
 }

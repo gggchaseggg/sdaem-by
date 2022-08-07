@@ -72,8 +72,13 @@ const CarouselItem = ({ apartment }) => {
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => !isClick && setIsOpen(false)}
             onClick={() => {
-              setIsOpen(true);
-              setIsClick(true);
+              if (isClick) {
+                setIsOpen(false);
+                setIsClick(false);
+              } else {
+                setIsOpen(true);
+                setIsClick(true);
+              }
             }}
           >
             <PhoneIcon className={style.phoneIcon} fillColor="#664EF9" />

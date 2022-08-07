@@ -8,19 +8,36 @@ import style from "./ApartmensModal.module.scss";
 
 export default function ApartmensModal() {
   const [isOpen, setIsOpen] = React.useState(false);
-  //TODO: Сделать чтобы модалка вылезала не по нажатию, а при наведении
+  const [isClick, setIsClick] = React.useState(false);
+
   return (
     <>
       <div
         className={clsx(style.apartButton, style.active)}
-        onClick={() => setIsOpen((prev) => !prev)}
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => !isClick && setIsOpen(false)}
+        onClick={() => {
+          if (isClick) {
+            setIsOpen(false);
+            setIsClick(false);
+          } else {
+            setIsOpen(true);
+            setIsClick(true);
+          }
+        }}
       >
         <span>Квартиры на сутки</span>
         <MarkIcon fillColor={"#FFD54F"} />
       </div>
 
       {isOpen && (
-        <div className={style.modal}>
+        <div
+          className={style.modal}
+          onMouseLeave={() => {
+            setIsOpen(false);
+            setIsClick(false);
+          }}
+        >
           <ul className={style.modalBody}>
             {apartCity.map((item) => (
               <li key={item.key}>{item.title}</li>
