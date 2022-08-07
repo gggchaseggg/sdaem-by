@@ -3,8 +3,6 @@ import ReactPaginate from "react-paginate";
 
 import style from "./NewsPaginator.module.scss";
 
-//TODO: renderOnZeroPageCount - сделать рендер надписи, что новости не загрузились(лоадер)
-
 const NewsPaginator = (props) => {
   const handlePageClick = (event) => {
     props.pageSwitcher(event.selected + 1);

@@ -28,6 +28,10 @@ h2.title {
   text-transform: uppercase;
 }
 
+.newsList {
+  height: 305px;
+}
+
 h3 {
   &.subtitle {
     font-weight: 700;
@@ -104,6 +108,9 @@ a.newsText {
   font-size: 14px;
   line-height: 17px;
   color: #1e2123;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
   &:hover {
     color: #664ef9;
   }

@@ -1,40 +1,15 @@
-import React from "react";
-
-import style from "./About.module.scss";
 import clsx from "clsx";
+import React from "react";
 import { Link } from "react-router-dom";
+
 import GreaterSign from "../../SvgIcons/GreaterSign";
 
-//TODO: Брать новости с мока
+import style from "./About.module.scss";
+import { logDOM } from "@testing-library/react";
+import { useNewsByCount } from "../../../api/getQueries";
 
 const About = ({ className }) => {
-  const news = [
-    {
-      id: "1",
-      text: "Линия Сталина: суровый отдых в усадьбах  на сутки",
-      date: "14 Январь",
-    },
-    {
-      id: "2",
-      text: "Аренда квартиры посуточно",
-      date: "14 Январь",
-    },
-    {
-      id: "3",
-      text: "Дворцово-парковый комплекс Чапских",
-      date: "14 Январь",
-    },
-    {
-      id: "4",
-      text: "Дворцово-парковый комплекс Чапских",
-      date: "14 Январь",
-    },
-    {
-      id: "5",
-      text: "Дворцово-парковый комплекс Чапских",
-      date: "14 Январь",
-    },
-  ];
+  const newsList = useNewsByCount(5);
 
   return (
     <div className={clsx(style.container, className)}>
@@ -74,14 +49,17 @@ const About = ({ className }) => {
       <div className={style.news}>
         <h3 className={clsx(style.subtitle, style.newsTitle)}>Новости</h3>
         <ul className={style.newsList}>
-          {news.map((item) => (
-            <li className={style.newsItem} key={item.id}>
-              <Link to="/news" className={style.newsText}>
-                {item.text}
-              </Link>
-              <span className={style.newsDate}>{item.date}</span>
-            </li>
-          ))}
+          {newsList.map(
+            (item, idx) =>
+              idx < 5 && (
+                <li className={style.newsItem} key={item.id}>
+                  <Link to="/news" className={style.newsText}>
+                    {item.title}
+                  </Link>
+                  <span className={style.newsDate}>{item.date}</span>
+                </li>
+              )
+          )}
         </ul>
         <Link to="/news" className={style.viewAll}>
           <span>Посмотреть все</span>

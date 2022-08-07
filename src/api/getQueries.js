@@ -46,3 +46,17 @@ export const useContacts = () => {
 
   return contacts;
 };
+
+export const useNewsByCount = (count) => {
+  const [news, setNews] = React.useState([]);
+
+  React.useEffect(() => {
+    axios
+      .get(
+        `https://62c166972af60be89ec64660.mockapi.io/news?page=1&limit=${count}`
+      )
+      .then(({ data }) => setNews(data.items));
+  }, []);
+
+  return news;
+};
