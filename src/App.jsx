@@ -10,9 +10,7 @@ import Contacts from "./pages/Contacts/Contacts";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 
-//TODO: Сделать компонент кнопки и компонент инпутов(возможно)))
-//TODO: На страницах регистрации и логина сделать лоадер пока не загрузятся данные из мока
-//TODO: На страницах, где будет лоадер анимация сделать минимальную высоту блоков
+//TODO: Сделать компонент кнопки и компонент инпутов
 //TODO: Сделать скелетон лоадер для карточек новостей
 
 function App() {

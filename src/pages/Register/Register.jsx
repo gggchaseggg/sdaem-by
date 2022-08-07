@@ -19,7 +19,7 @@ import { useUsers } from "../../api/dataHooks";
 export default function Register() {
   const [sentEmail, setSentEmail] = React.useState(false);
   const [isExistingUser, setIsExistingUser] = React.useState(false);
-  const { data: userList } = useUsers();
+  const { data: userList, isLoading: isUserLoading } = useUsers();
   const validationSchema = yup.object({
     login: yup
       .string()
@@ -173,7 +173,13 @@ export default function Register() {
                     )}
                   />
 
-                  <button className={style.button}>Зарегистрироваться</button>
+                  <button className={style.button} disabled={isUserLoading}>
+                    {isUserLoading ? (
+                      <div className={style.ldsDualRing}></div>
+                    ) : (
+                      "Зарегистрироваться"
+                    )}
+                  </button>
                 </form>
               </div>
               <div className={style.info}>

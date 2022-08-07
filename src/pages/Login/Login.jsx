@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
-import { getUsers } from "../../api/getQueries";
 import { useUsers } from "../../api/dataHooks";
 import UserIcon from "../../components/SvgIcons/UserIcon";
 import { setUser } from "../../Redux/Reducers/userReducer";
