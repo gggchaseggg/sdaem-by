@@ -34,12 +34,15 @@ h1.title {
 .feed {
   margin-top: -980px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .newsItem {
   margin-bottom: 30px;
+  margin-right: 30px;
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 .paginator {

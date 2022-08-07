@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
@@ -13,49 +13,16 @@ import FacebookIcon from "../../components/SvgIcons/FacebookIcon";
 import WhatsappIcon from "../../components/SvgIcons/WhatsappIcon";
 import TelegramIcon from "../../components/SvgIcons/TelegramIcon";
 import ViberIcon from "../../components/SvgIcons/ViberIcon";
-import { useQuery } from "@tanstack/react-query";
-import { getNewsById, getSimilarNews } from "../../api/getQueries";
-import { logDOM } from "@testing-library/react";
+import { useNewsById, useSimilarNewsById } from "../../api/dataHooks";
 
 export default function NewsArticle() {
+  const IconFillColor = "#664EF9";
   const { id } = useParams();
   const dispatch = useDispatch();
-  const newsList = useSelector((state) => state.newsList);
-  const [news, setNews] = useState(null);
   const [readMoreNews, setReadMoreNews] = useState(null);
 
-  const { status: statusArticle } = useQuery(
-    ["oneNews", id],
-    () => getNewsById(id),
-    {
-      onSuccess: (data) => {
-        console.log(`News ${id} loading success`);
-        setNews(data[0]);
-      },
-      onError: (err) => {
-        console.log("Ошибка: ", err);
-      },
-    }
-  );
-
-  const { status: statusSimilar } = useQuery(
-    ["similarNews", id],
-    () => getSimilarNews(id),
-    {
-      onSuccess: (data) => {
-        console.log(`Similar news loading success`);
-        setReadMoreNews(data);
-      },
-      onError: (err) => {
-        console.log("Ошибка: ", err);
-      },
-    }
-  );
-  // console.log(readMoreNews);
-  // console.log(news);
-  const IconFillColor = "#664EF9";
-
-  // const readMoreNews = newsList.filter((item) => item.id != id && item.id < 5);
+  const news = useNewsById(id);
+  const similarNews = useSimilarNewsById(id);
 
   React.useEffect(() => {
     dispatch(setActivePage(1));
@@ -64,7 +31,7 @@ export default function NewsArticle() {
   return (
     <>
       <div className={style.backgroundRectangle} />
-      {statusArticle === "success" && news && (
+      {news && (
         <div className={style.container}>
           <Breadcrumbs
             page={[
@@ -110,9 +77,9 @@ export default function NewsArticle() {
       <div className={style.readMore}>
         <div className={style.readMoreContainer}>
           <h2 className={style.read}>Читайте также</h2>
-          {statusSimilar === "success" && readMoreNews && (
+          {similarNews && (
             <ul className={style.feed}>
-              {readMoreNews.map((item) => (
+              {similarNews.map((item) => (
                 <li className={style.newsItem} key={item.key}>
                   <NewsItem novost={item} />
                 </li>

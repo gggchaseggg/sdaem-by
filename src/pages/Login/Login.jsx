@@ -3,34 +3,34 @@ import React from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { useQuery } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
 import { getUsers } from "../../api/getQueries";
+import { useUsers } from "../../api/dataHooks";
 import UserIcon from "../../components/SvgIcons/UserIcon";
 import { setUser } from "../../Redux/Reducers/userReducer";
 import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
 
 import style from "./Login.module.scss";
 
-//
-
 export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { data: userList, isLoading: isUserLoading } = useUsers();
+
   const validationSchema = yup.object({
     login: yup
       .string()
       .required()
       .test("existing-login", "not-existing-login", (value) =>
-        data.find((elem) => elem.login === value)
+        userList.find((elem) => elem.login === value)
       ),
     password: yup
       .string()
       .required()
       .test("valid-password", "not-valid-password", (value) =>
-        data.find((elem) => elem.password === value)
+        userList.find((elem) => elem.password === value)
       ),
   });
 
@@ -42,19 +42,8 @@ export default function Login() {
     resolver: yupResolver(validationSchema),
   });
 
-  console.log(errors);
-
-  const { data, isLoading } = useQuery(["users"], getUsers, {
-    onSuccess: () => {
-      console.log("Users loading success");
-    },
-    onError: (err) => {
-      console.log("Ошибка: ", err);
-    },
-  });
-
   const logUp = (login, rememberMe) => {
-    const user = data.find((elem) => elem.login === login);
+    const user = userList.find((elem) => elem.login === login);
 
     rememberMe
       ? localStorage.setItem("login", login)
@@ -123,8 +112,12 @@ export default function Login() {
                 Забыли пароль?
               </Link>
             </div>
-            <button className={style.login} disabled={isLoading}>
-              {isLoading ? <div className={style.ldsDualRing}></div> : "Войти"}
+            <button className={style.login} disabled={isUserLoading}>
+              {isUserLoading ? (
+                <div className={style.ldsDualRing}></div>
+              ) : (
+                "Войти"
+              )}
             </button>
           </form>
           <div className={style.register}>

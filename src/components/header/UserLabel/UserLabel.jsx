@@ -3,34 +3,24 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import style from "./UserLabel.module.scss";
-import { useQuery } from "@tanstack/react-query";
-import { getUsers } from "../../../api/getQueries";
 import { setUser } from "../../../Redux/Reducers/userReducer";
 import GreaterSign from "../../SvgIcons/GreaterSign";
+import { useUsers } from "../../../api/dataHooks";
 
 const UserLabel = () => {
   const user = useSelector((state) => state.user);
-
+  const { data: userList, status: getUsersStatus } = useUsers();
   const login = localStorage.getItem("login");
   const dispatch = useDispatch();
-  const { data, status } = useQuery(["users"], getUsers, {
-    onSuccess: () => {
-      console.log("Users loading success");
-    },
-    onError: (err) => {
-      console.log("Ошибка: ", err);
-    },
-    staleTime: Infinity,
-  });
 
   React.useEffect(() => {
-    if (login && status === "success") {
-      const userQuery = data.find((elem) => elem.login === login);
+    if (login && getUsersStatus === "success") {
+      const userQuery = userList.find((elem) => elem.login === login);
       if (userQuery) {
         dispatch(setUser({ name: userQuery.name, email: userQuery.email }));
       }
     }
-  }, [data]);
+  }, [userList]);
 
   if (!user.isLogin) {
     return (

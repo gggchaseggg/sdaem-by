@@ -1,26 +1,18 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getUsers } from "../../../../../api/getQueries";
 
 import style from "./ContactModal.module.scss";
 import ViberIcon from "../../../../SvgIcons/WhatsappIcon";
 import WhatsappIcon from "../../../../SvgIcons/ViberIcon";
 import MailIcon from "../../../../SvgIcons/MailIcon";
-
-//TODO: Наверное мемоизация поможет при том,чтобы при повторном возвращалось тоже самое
+import { useUsers } from "../../../../../api/dataHooks";
 
 const ContactModal = ({ ownerId }) => {
   const [owner, setOwner] = React.useState({});
+  const { data: userList } = useUsers();
 
-  const { data, status } = useQuery(["owners"], getUsers, {
-    onSuccess: (dat) => {
-      setOwner(dat.find((elem) => elem.id === ownerId));
-      console.log("Owner loading success");
-    },
-    onError: (err) => {
-      console.log("Ошибка: ", err);
-    },
-  });
+  React.useEffect(() => {
+    setOwner(userList.find((elem) => elem.id === ownerId));
+  }, [userList]);
 
   return (
     <>

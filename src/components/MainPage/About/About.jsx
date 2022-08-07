@@ -6,7 +6,7 @@ import GreaterSign from "../../SvgIcons/GreaterSign";
 
 import style from "./About.module.scss";
 import { logDOM } from "@testing-library/react";
-import { useNewsByCount } from "../../../api/getQueries";
+import { useNewsByCount } from "../../../api/dataHooks";
 
 const About = ({ className }) => {
   const newsList = useNewsByCount(5);

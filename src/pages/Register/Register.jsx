@@ -3,11 +3,9 @@ import React from "react";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useQuery } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useForm, Controller } from "react-hook-form";
-import { getUsers } from "../../api/getQueries";
 import UserIcon from "../../components/SvgIcons/UserIcon";
 import InputMailIcon from "../../components/SvgIcons/InputMailIcon";
 import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
@@ -16,10 +14,12 @@ import InputErrorIcon from "../../components/SvgIcons/InputErrorIcon";
 import SentEmailRegister from "../../components/Register/SentEmailRegister/SentEmailRegister";
 import style from "./Register.module.scss";
 import { createUser } from "../../api/postQueries";
+import { useUsers } from "../../api/dataHooks";
 
 export default function Register() {
   const [sentEmail, setSentEmail] = React.useState(false);
   const [isExistingUser, setIsExistingUser] = React.useState(false);
+  const { data: userList } = useUsers();
   const validationSchema = yup.object({
     login: yup
       .string()
@@ -47,17 +47,8 @@ export default function Register() {
   } = useForm({ resolver: yupResolver(validationSchema) });
   const captchaRef = React.useRef();
 
-  const { data } = useQuery(["users"], getUsers, {
-    onSuccess: () => {
-      console.log("Users loading success");
-    },
-    onError: (err) => {
-      console.log("Ошибка: ", err);
-    },
-  });
-
   const registry = (formData) => {
-    const user = data.find((elem) => elem.login === formData.login);
+    const user = userList.find((elem) => elem.login === formData.login);
     if (!user) {
       console.log("no user with this login");
       return true;

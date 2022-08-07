@@ -8,26 +8,18 @@ import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
 import style from "./News.module.scss";
 import NewsPaginator from "../../components/NewsPage/NewsPaginator/NewsPaginator";
-import { getNews } from "../../api/getQueries";
-import { useQuery } from "@tanstack/react-query";
-import { logDOM } from "@testing-library/react";
+import { useNews } from "../../api/dataHooks";
 
 export default function News() {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
-  const [newsList, setNewsList] = useState(null);
 
-  const { data, status } = useQuery(["news", page], () => getNews(page), {
-    onSuccess: (data) => {
-      console.log("News loading success");
-      setPageCount(Math.ceil(data.count / 9));
-      setNewsList(data.items);
-    },
-    onError: (err) => {
-      console.log("Ошибка: ", err);
-    },
-  });
+  const { data: newsList, status: newsStatus } = useNews(page);
+
+  React.useEffect(() => {
+    if (newsStatus === "success") setPageCount(Math.ceil(newsList.count / 9));
+  }, [newsList]);
 
   React.useEffect(() => {
     dispatch(setActivePage(1));
@@ -44,10 +36,10 @@ export default function News() {
           </div>
           <div className={style.backgroundRectangle} />
         </div>
-        {status === "success" && newsList && (
+        {newsStatus === "success" && newsList && (
           <>
             <ul className={style.feed}>
-              {newsList.map((item) => (
+              {newsList.items.map((item) => (
                 <li className={style.newsItem} key={item.key}>
                   <NewsItem novost={item} />
                 </li>

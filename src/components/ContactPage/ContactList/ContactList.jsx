@@ -1,8 +1,6 @@
 import clsx from "clsx";
 import React from "react";
 
-import { useContacts } from "../../../api/getQueries";
-
 import MailIcon from "../../SvgIcons/MailIcon";
 import MarkIcon from "../../SvgIcons/MarkIcon";
 import ClockIcon from "../../SvgIcons/ClockIcon";
@@ -12,6 +10,7 @@ import ViberIcon from "../../SvgIcons/WhatsappIcon";
 import TelegramIcon from "../../SvgIcons/TelegramIcon";
 
 import style from "./ContactList.module.scss";
+import { useContacts } from "../../../api/dataHooks";
 
 export default function ContactList() {
   const contacts = useContacts();
