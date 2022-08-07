@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import style from "./ApartmentsSearch.module.scss";
-import MarkIcon from "../../SvgIcons/MarkIcon";
 import InfoCards from "./InfoCards/InfoCards";
+import MarkIcon from "../../SvgIcons/MarkIcon";
+import { MAP_PATH } from "../../../data/pathConstants";
+
+import style from "./ApartmentsSearch.module.scss";
 
 const ApartmentsSearch = () => {
   return (
@@ -15,7 +17,7 @@ const ApartmentsSearch = () => {
             Ищите квартиры на сутки в центре города, возле парка или в
             живописном районе
           </p>
-          <Link to="/map" className={style.link}>
+          <Link to={MAP_PATH} className={style.link}>
             <MarkIcon fillColor="#FFD54F" />
             <span>Открыть карту</span>
           </Link>

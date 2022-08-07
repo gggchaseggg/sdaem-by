@@ -3,18 +3,19 @@ import React from "react";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { useForm, Controller } from "react-hook-form";
+import { useUsers } from "../../api/dataHooks";
+import { createUser } from "../../api/postQueries";
 import UserIcon from "../../components/SvgIcons/UserIcon";
 import InputMailIcon from "../../components/SvgIcons/InputMailIcon";
 import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
 import InputErrorIcon from "../../components/SvgIcons/InputErrorIcon";
-
 import SentEmailRegister from "../../components/Register/SentEmailRegister/SentEmailRegister";
+import { LOGIN_PATH } from "../../data/pathConstants";
+
 import style from "./Register.module.scss";
-import { createUser } from "../../api/postQueries";
-import { useUsers } from "../../api/dataHooks";
 
 export default function Register() {
   const [sentEmail, setSentEmail] = React.useState(false);
@@ -207,7 +208,7 @@ export default function Register() {
                   </li>
                 </ul>
                 <span>Уже есть аккаунт? </span>
-                <Link to="/login" className={style.link}>
+                <Link to={LOGIN_PATH} className={style.link}>
                   Войдите
                 </Link>
               </div>

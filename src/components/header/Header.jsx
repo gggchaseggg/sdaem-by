@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import style from "./Header.module.scss";
-import ApartmentsModal from "./ApartmentsModal/ApartmentsModal";
-import PlaceAd from "./PlaceAd/PlaceAd";
-import { routeMenu, rentMenu } from "../../data/layoutData";
 import { useSelector } from "react-redux";
-import FavoritesHeart from "../SvgIcons/FavoritesHeartIcon";
+
+import PlaceAd from "./PlaceAd/PlaceAd";
 import MarkIcon from "../SvgIcons/MarkIcon";
 import UserLabel from "./UserLabel/UserLabel";
+import FavoritesHeart from "../SvgIcons/FavoritesHeartIcon";
+import ApartmentsModal from "./ApartmentsModal/ApartmentsModal";
+import { MAIN_PATH } from "../../data/pathConstants";
+import { routeMenu, rentMenu } from "../../data/layoutData";
+
+import style from "./Header.module.scss";
 
 export default function Header() {
   const [headerMenu, setHeaderMenu] = React.useState(routeMenu);
@@ -62,7 +65,7 @@ export default function Header() {
         </div>
         <div className={style.lower}>
           <div className={style.container}>
-            <Link to="/">
+            <Link to={MAIN_PATH}>
               <img src="/img/logo.png" alt="Лого" className={style.logo} />
             </Link>
             <div className={style.type}>

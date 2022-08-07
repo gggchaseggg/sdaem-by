@@ -7,9 +7,10 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
 import MarkIcon from "../../SvgIcons/MarkIcon";
+import Separator from "../../Separator/Separator";
 import GreaterSign from "../../SvgIcons/GreaterSign";
 import MoreOptionsIcon from "../../SvgIcons/MoreOptionsIcon";
-import Separator from "../../Separator/Separator";
+import { CATALOG_PATH, MAP_PATH } from "../../../data/pathConstants";
 
 import style from "./MainPageFilter.module.scss";
 
@@ -123,14 +124,14 @@ const MainPageFilter = () => {
         </label>
         {separator}
         <div className={style.moreOptions}>
-          <Link to="/catalog" className={style.link}>
+          <Link to={CATALOG_PATH} className={style.link}>
             Больше опций
             <MoreOptionsIcon fillColor="#664EF9" className={style.icon} />
           </Link>
         </div>
         {separator}
         <div className={style.onMap}>
-          <Link to="/map" className={style.link}>
+          <Link to={MAP_PATH} className={style.link}>
             <span>На карте</span>
             <MarkIcon fillColor="#664EF9" className={style.icon} width={12} />
           </Link>

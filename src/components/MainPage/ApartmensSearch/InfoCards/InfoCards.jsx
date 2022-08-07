@@ -2,10 +2,12 @@ import clsx from "clsx";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import style from "./InfoCards.module.scss";
+import MoveAdIcon from "../../../SvgIcons/MoveAdIcon";
 import GreaterSign from "../../../SvgIcons/GreaterSign";
 import TargetClientIcon from "../../../SvgIcons/TargetClientIcon";
-import MoveAdIcon from "../../../SvgIcons/MoveAdIcon";
+import { MAIN_PATH } from "../../../../data/pathConstants";
+
+import style from "./InfoCards.module.scss";
 
 const InfoCards = ({ className }) => {
   return (
@@ -24,7 +26,7 @@ const InfoCards = ({ className }) => {
           котором возможно <b>бесплатно создавать и публиковать</b> объявления
           на сайте.
         </p>
-        <Link to="/" className={style.link}>
+        <Link to={MAIN_PATH} className={style.link}>
           + Разместить объявление
         </Link>
       </div>
@@ -41,7 +43,7 @@ const InfoCards = ({ className }) => {
           каталога, они разместятся сразу после платных объявлений до тех пор,
           пока другой пользователь не повторит процедуру.
         </p>
-        <Link to="/" className={style.link}>
+        <Link to={MAIN_PATH} className={style.link}>
           <span>Узнать стоимость услуги</span>
           <GreaterSign className={style.sign} width={12} />
         </Link>
@@ -56,7 +58,7 @@ const InfoCards = ({ className }) => {
           Gold объявления <b>перемещаются каждые 5 мин</b> на 1 позицию, что
           делает размещение одинаковым для всех.
         </p>
-        <Link to="/" className={clsx(style.link, style.purpleLink)}>
+        <Link to={MAIN_PATH} className={clsx(style.link, style.purpleLink)}>
           Еще о тарифе Gold
           <GreaterSign className={style.sign} width={12} />
         </Link>

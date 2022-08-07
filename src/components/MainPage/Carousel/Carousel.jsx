@@ -1,16 +1,18 @@
+import clsx from "clsx";
 import React from "react";
 import { Navigation } from "swiper";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import Select from "../../Select/Select";
+import Separator from "../../Separator/Separator";
+import GreaterSign from "../../SvgIcons/GreaterSign";
+import CarouselItem from "./CarouselItem/CarouselItem";
+import { CATALOG_PATH } from "../../../data/pathConstants";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
 import style from "./Carousel.module.scss";
-import clsx from "clsx";
-import GreaterSign from "../../SvgIcons/GreaterSign";
-import { Link } from "react-router-dom";
-import Separator from "../../Separator/Separator";
-import Select from "../../Select/Select";
-import CarouselItem from "./CarouselItem/CarouselItem";
 
 const carouselItems = [
   {
@@ -134,7 +136,7 @@ const Carousel = ({ className }) => {
           color="linear-gradient(90deg, #94AFFF 0%, #4E64F9 94.5%)"
           className={style.separator}
         />
-        <Link to="/catalog" className={style.button}>
+        <Link to={CATALOG_PATH} className={style.button}>
           <span>Посмотреть все</span> <GreaterSign className={style.sign} />
         </Link>
       </div>

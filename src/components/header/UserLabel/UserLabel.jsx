@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import style from "./UserLabel.module.scss";
-import { setUser } from "../../../Redux/Reducers/userReducer";
-import GreaterSign from "../../SvgIcons/GreaterSign";
 import { useUsers } from "../../../api/dataHooks";
+import GreaterSign from "../../SvgIcons/GreaterSign";
+import { LOGIN_PATH } from "../../../data/pathConstants";
+import { setUser } from "../../../Redux/Reducers/userReducer";
+
+import style from "./UserLabel.module.scss";
 
 const UserLabel = () => {
   const user = useSelector((state) => state.user);
@@ -25,7 +27,7 @@ const UserLabel = () => {
   if (!user.isLogin) {
     return (
       <div className={style.user}>
-        <Link to="/login" className={style.link}>
+        <Link to={LOGIN_PATH} className={style.link}>
           Вход и регистрация
         </Link>
       </div>

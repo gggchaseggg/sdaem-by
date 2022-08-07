@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
+import { useNews } from "../../api/dataHooks";
 import Search from "../../components/NewsPage/Search/Search";
 import NewsItem from "../../components/NewsPage/NewsItem/NewsItem";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import NewsPaginator from "../../components/NewsPage/NewsPaginator/NewsPaginator";
+import { NEWS_PATH } from "../../data/pathConstants";
 import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
 import style from "./News.module.scss";
-import NewsPaginator from "../../components/NewsPage/NewsPaginator/NewsPaginator";
-import { useNews } from "../../api/dataHooks";
 
 export default function News() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ export default function News() {
     <>
       <div className={style.container}>
         <div className={style.header}>
-          <Breadcrumbs page={[{ title: "Новости", path: "/news" }]} />
+          <Breadcrumbs page={[{ title: "Новости", path: { NEWS_PATH } }]} />
           <h1 className={style.title}>Новости</h1>
           <div className={style.search}>
             <Search />

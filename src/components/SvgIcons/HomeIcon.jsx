@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { MAIN_PATH } from "../../data/pathConstants";
+
 export default function HomeIcon({
   fillColor = "currentColor",
   className = "",
@@ -9,7 +11,7 @@ export default function HomeIcon({
 }) {
   return (
     <div className={className}>
-      <Link to="/">
+      <Link to={MAIN_PATH}>
         <svg
           width={width}
           height={height}

@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
-import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import NewsItem from "../../components/NewsPage/NewsItem/NewsItem";
-import DateLabel from "../../components/DateLabel/DateLabel";
 import VkIcon from "../../components/SvgIcons/VkIcon";
-
-import style from "./NewsArticle.module.scss";
+import ViberIcon from "../../components/SvgIcons/ViberIcon";
+import DateLabel from "../../components/DateLabel/DateLabel";
 import FacebookIcon from "../../components/SvgIcons/FacebookIcon";
 import WhatsappIcon from "../../components/SvgIcons/WhatsappIcon";
 import TelegramIcon from "../../components/SvgIcons/TelegramIcon";
-import ViberIcon from "../../components/SvgIcons/ViberIcon";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import NewsItem from "../../components/NewsPage/NewsItem/NewsItem";
 import { useNewsById, useSimilarNewsById } from "../../api/dataHooks";
+import { NEWS_PATH } from "../../data/pathConstants";
+import { setActivePage } from "../../Redux/Reducers/activePageReducer";
+
+import style from "./NewsArticle.module.scss";
 
 export default function NewsArticle() {
   const IconFillColor = "#664EF9";
@@ -35,7 +36,7 @@ export default function NewsArticle() {
         <div className={style.container}>
           <Breadcrumbs
             page={[
-              { title: "Новости", path: "/news" },
+              { title: "Новости", path: { NEWS_PATH } },
               { title: news.title, path: `/news/${news.id}` },
             ]}
           />

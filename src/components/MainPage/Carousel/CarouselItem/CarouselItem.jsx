@@ -1,13 +1,15 @@
+import clsx from "clsx";
 import React from "react";
+import { Link } from "react-router-dom";
 
-import style from "./CarouselItem.module.scss";
 import UserIcon from "../../../SvgIcons/UserIcon";
 import MarkIcon from "../../../SvgIcons/MarkIcon";
-import MetroIcon from "../../../SvgIcons/MetroIcon";
-import clsx from "clsx";
-import { Link } from "react-router-dom";
 import PhoneIcon from "../../../SvgIcons/PhoneIcon";
+import MetroIcon from "../../../SvgIcons/MetroIcon";
 import ContactModal from "./ContactModal/ContactModal";
+import { CATALOG_PATH } from "../../../../data/pathConstants";
+
+import style from "./CarouselItem.module.scss";
 
 const CarouselItem = ({ apartment }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -96,7 +98,7 @@ const CarouselItem = ({ apartment }) => {
             </div>
           )}
 
-          <Link to="/catalog" className={style.more}>
+          <Link to={CATALOG_PATH} className={style.more}>
             Подробнее
           </Link>
         </div>

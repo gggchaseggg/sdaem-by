@@ -3,10 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import GreaterSign from "../../SvgIcons/GreaterSign";
+import { useNewsByCount } from "../../../api/dataHooks";
+import { NEWS_PATH } from "../../../data/pathConstants";
 
 import style from "./About.module.scss";
-import { logDOM } from "@testing-library/react";
-import { useNewsByCount } from "../../../api/dataHooks";
 
 const About = ({ className }) => {
   const newsList = useNewsByCount(5);
@@ -53,7 +53,7 @@ const About = ({ className }) => {
             (item, idx) =>
               idx < 5 && (
                 <li className={style.newsItem} key={item.id}>
-                  <Link to="/news" className={style.newsText}>
+                  <Link to={NEWS_PATH} className={style.newsText}>
                     {item.title}
                   </Link>
                   <span className={style.newsDate}>{item.date}</span>
@@ -61,7 +61,7 @@ const About = ({ className }) => {
               )
           )}
         </ul>
-        <Link to="/news" className={style.viewAll}>
+        <Link to={NEWS_PATH} className={style.viewAll}>
           <span>Посмотреть все</span>
           <GreaterSign className={style.sign} />
         </Link>

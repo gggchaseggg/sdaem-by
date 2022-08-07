@@ -1,33 +1,78 @@
 import React from "react";
-import RentCard from "./RentCard/RentCard";
 import { Link } from "react-router-dom";
 
-import style from "./Rent.module.scss";
 import List from "./List/List";
+import RentCard from "./RentCard/RentCard";
+import { CATALOG_PATH } from "../../../data/pathConstants";
+
+import style from "./Rent.module.scss";
 
 const apartments = [
-  { id: "1", title: "Квартиры в Минске", amount: "3567", link: "/catalog" },
-  { id: "2", title: "Квартиры в Гомеле", amount: "2032", link: "/catalog" },
-  { id: "3", title: "Квартиры в Гродно", amount: "2302", link: "/catalog" },
-  { id: "4", title: "Квартиры в Могилеве", amount: "110", link: "/catalog" },
-  { id: "5", title: "Квартиры в Бресте", amount: "110", link: "/catalog" },
-  { id: "6", title: "Квартиры в Витебске", amount: "110", link: "/catalog" },
+  {
+    id: "1",
+    title: "Квартиры в Минске",
+    amount: "3567",
+    link: { CATALOG_PATH },
+  },
+  {
+    id: "2",
+    title: "Квартиры в Гомеле",
+    amount: "2032",
+    link: { CATALOG_PATH },
+  },
+  {
+    id: "3",
+    title: "Квартиры в Гродно",
+    amount: "2302",
+    link: { CATALOG_PATH },
+  },
+  {
+    id: "4",
+    title: "Квартиры в Могилеве",
+    amount: "110",
+    link: { CATALOG_PATH },
+  },
+  {
+    id: "5",
+    title: "Квартиры в Бресте",
+    amount: "110",
+    link: { CATALOG_PATH },
+  },
+  {
+    id: "6",
+    title: "Квартиры в Витебске",
+    amount: "110",
+    link: { CATALOG_PATH },
+  },
 ];
 
 const cottage = [
-  { id: "1", title: "Агроусадьбы", amount: "110", link: "/catalog" },
-  { id: "2", title: "Коттеджи", amount: "110", link: "/catalog" },
-  { id: "3", title: "Загородный комплекс", amount: "110", link: "/catalog" },
-  { id: "4", title: "Базы отдыха", amount: "110", link: "/catalog" },
+  { id: "1", title: "Агроусадьбы", amount: "110", link: { CATALOG_PATH } },
+  { id: "2", title: "Коттеджи", amount: "110", link: { CATALOG_PATH } },
+  {
+    id: "3",
+    title: "Загородный комплекс",
+    amount: "110",
+    link: { CATALOG_PATH },
+  },
+  { id: "4", title: "Базы отдыха", amount: "110", link: { CATALOG_PATH } },
 ];
 
 const popularDestinations = [
-  { id: "1", title: "Коттеджи и усадьбы на о. Брасласких ", link: "/catalog" },
-  { id: "2", title: "Коттеджи и усадьбы (жилье) на Нарочи", link: "/catalog" },
+  {
+    id: "1",
+    title: "Коттеджи и усадьбы на о. Брасласких ",
+    link: { CATALOG_PATH },
+  },
+  {
+    id: "2",
+    title: "Коттеджи и усадьбы (жилье) на Нарочи",
+    link: { CATALOG_PATH },
+  },
   {
     id: "3",
     title: "Коттеджи и усадьбы (жилье) у воды, на берегу, на озере",
-    link: "/catalog",
+    link: { CATALOG_PATH },
   },
 ];
 
@@ -35,7 +80,7 @@ const Rent = ({ className }) => {
   return (
     <div className={className}>
       <div className={style.card}>
-        <Link to="/catalog" className={style.catalogLink}>
+        <Link to={CATALOG_PATH} className={style.catalogLink}>
           <RentCard
             width={516}
             height={270}
@@ -44,7 +89,7 @@ const Rent = ({ className }) => {
             subtitle="Снять квартиру"
           />
         </Link>
-        <Link to="/catalog" className={style.catalogLink}>
+        <Link to={CATALOG_PATH} className={style.catalogLink}>
           <RentCard
             width={407}
             height={270}
@@ -53,7 +98,7 @@ const Rent = ({ className }) => {
             subtitle="Снять коттедж на праздник"
           />
         </Link>
-        <Link to="/catalog" className={style.catalogLink}>
+        <Link to={CATALOG_PATH} className={style.catalogLink}>
           <RentCard
             width={407}
             height={270}
@@ -62,7 +107,7 @@ const Rent = ({ className }) => {
             subtitle="Попариться в бане с друзьями"
           />
         </Link>
-        <Link to="/catalog" className={style.catalogLink}>
+        <Link to={CATALOG_PATH} className={style.catalogLink}>
           <RentCard
             width={516}
             height={270}
@@ -78,7 +123,7 @@ const Rent = ({ className }) => {
           title="Коттеджи и усадьбы"
           options={cottage}
           className={style.list}
-          morePath="/catalog"
+          morePath={CATALOG_PATH}
         />
         <List
           title="Популярные направления"

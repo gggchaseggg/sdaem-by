@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
 import HomeIcon from "../../components/SvgIcons/HomeIcon";
+import { MAIN_PATH } from "../../data/pathConstants";
 
 export default function NotFound() {
   const dispath = useDispatch();
@@ -24,7 +25,7 @@ export default function NotFound() {
                 Возможно, у вас опечатка в адресе страницы, или её просто не
                 существует
               </p>
-              <Link to={"/"} className={style.link}>
+              <Link to={MAIN_PATH} className={style.link}>
                 <HomeIcon />
                 <span className={style.returnText}>Вернуться на главную</span>
               </Link>

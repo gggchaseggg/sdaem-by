@@ -8,8 +8,9 @@ import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
 import { useUsers } from "../../api/dataHooks";
 import UserIcon from "../../components/SvgIcons/UserIcon";
-import { setUser } from "../../Redux/Reducers/userReducer";
 import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
+import { setUser } from "../../Redux/Reducers/userReducer";
+import { MAIN_PATH, REGISTER_PATH } from "../../data/pathConstants";
 
 import style from "./Login.module.scss";
 
@@ -48,7 +49,7 @@ export default function Login() {
       ? localStorage.setItem("login", login)
       : localStorage.setItem("login", "");
     dispatch(setUser({ name: user.name, email: user.email }));
-    navigate("/");
+    navigate(MAIN_PATH);
   };
 
   const onSubmit = (formData) => {
@@ -107,7 +108,7 @@ export default function Login() {
                 Запомнить меня
               </label>
 
-              <Link to="/" className={style.link}>
+              <Link to={MAIN_PATH} className={style.link}>
                 Забыли пароль?
               </Link>
             </div>
@@ -121,7 +122,7 @@ export default function Login() {
           </form>
           <div className={style.register}>
             <span>Еще нет акканута? </span>
-            <Link to="/register">Создайте аккаунт</Link>
+            <Link to={REGISTER_PATH}>Создайте аккаунт</Link>
           </div>
         </div>
       </div>
