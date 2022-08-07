@@ -104,7 +104,7 @@ const MainPageFilter = () => {
               className={clsx(
                 "textInputs",
                 style.input,
-                errors.priceFrom ? "errorInputBorder" : ""
+                errors.priceFrom && "errorInputBorder"
               )}
               {...register("priceFrom")}
             />
@@ -115,7 +115,7 @@ const MainPageFilter = () => {
               className={clsx(
                 "textInputs",
                 style.input,
-                errors.priceFrom ? "errorInputBorder" : ""
+                errors.priceFrom && "errorInputBorder"
               )}
               {...register("priceTo")}
             />

@@ -16,7 +16,7 @@ export default function Header() {
   React.useEffect(() => {
     setHeaderMenu(
       headerMenu.map((item, idx) => {
-        idx === activePage ? (item.active = true) : (item.active = false);
+        item.active = idx === activePage;
         return item;
       })
     );
@@ -30,10 +30,7 @@ export default function Header() {
             <nav>
               <ul>
                 {headerMenu.map((item, idx) => (
-                  <li
-                    key={item.key}
-                    className={item.active ? style.active : ""}
-                  >
+                  <li key={item.key} className={item.active && style.active}>
                     {idx === 3 ? (
                       <MarkIcon
                         width={8}

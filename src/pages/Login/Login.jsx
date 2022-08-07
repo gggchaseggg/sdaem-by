@@ -1,21 +1,48 @@
 import clsx from "clsx";
 import React from "react";
+import * as yup from "yup";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
-import UserIcon from "../../components/SvgIcons/UserIcon";
-import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
 import { getUsers } from "../../api/getQueries";
+import UserIcon from "../../components/SvgIcons/UserIcon";
+import { setUser } from "../../Redux/Reducers/userReducer";
+import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
 
 import style from "./Login.module.scss";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../Redux/Reducers/userReducer";
 
-export default function Login(options) {
-  const { register, handleSubmit, reset } = useForm({});
+//
+
+export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const validationSchema = yup.object({
+    login: yup
+      .string()
+      .required()
+      .test("existing-login", "not-existing-login", (value) =>
+        data.find((elem) => elem.login === value)
+      ),
+    password: yup
+      .string()
+      .required()
+      .test("valid-password", "not-valid-password", (value) =>
+        data.find((elem) => elem.password === value)
+      ),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
+  console.log(errors);
 
   const { data, isLoading } = useQuery(["users"], getUsers, {
     onSuccess: () => {
@@ -26,20 +53,14 @@ export default function Login(options) {
     },
   });
 
-  const logUp = (login, password, rememberMe) => {
-    //TODO: Сравнение с данными логин пароль на mockapi(если такого нет, то подсветить красным)
-
+  const logUp = (login, rememberMe) => {
     const user = data.find((elem) => elem.login === login);
 
-    if (user && user.password === password) {
-      rememberMe
-        ? localStorage.setItem("login", login)
-        : localStorage.setItem("login", "");
-      dispatch(setUser({ name: user.name, email: user.email }));
-      navigate("/");
-    } else {
-      console.log("Something wrong");
-    }
+    rememberMe
+      ? localStorage.setItem("login", login)
+      : localStorage.setItem("login", "");
+    dispatch(setUser({ name: user.name, email: user.email }));
+    navigate("/");
   };
 
   const onSubmit = (formData) => {
@@ -57,7 +78,11 @@ export default function Login(options) {
           <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
             <label className={style.textInputsLabel}>
               <input
-                className={clsx("textInputs", style.textInput)}
+                className={clsx(
+                  "textInputs",
+                  style.textInput,
+                  errors.login && "errorInputBorder"
+                )}
                 type="text"
                 placeholder="Логин"
                 {...register("login", { required: true })}
@@ -68,7 +93,11 @@ export default function Login(options) {
             </label>
             <label className={style.textInputsLabel}>
               <input
-                className={clsx("textInputs", style.textInput)}
+                className={clsx(
+                  "textInputs",
+                  style.textInput,
+                  errors.login && "errorInputBorder"
+                )}
                 type="password"
                 placeholder="Пароль"
                 {...register("password", { required: true })}

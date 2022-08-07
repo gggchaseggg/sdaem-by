@@ -51,7 +51,7 @@ export default function ContactForm() {
                 type="text"
                 className={clsx(
                   "textInputs",
-                  errors.name ? "errorInputBorder" : ""
+                  errors.name && "errorInputBorder"
                 )}
                 placeholder="Имя"
               />
@@ -71,7 +71,7 @@ export default function ContactForm() {
                 type="text"
                 className={clsx(
                   "textInputs",
-                  errors.email ? "errorInputBorder" : ""
+                  errors.email && "errorInputBorder"
                 )}
                 placeholder="Почта"
               />
@@ -92,7 +92,7 @@ export default function ContactForm() {
                 {...register("message")}
                 className={clsx(
                   style.text,
-                  errors.message ? "errorInputBorder" : ""
+                  errors.message && "errorInputBorder"
                 )}
                 placeholder="Сообщение"
               />

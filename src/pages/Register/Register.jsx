@@ -47,7 +47,7 @@ export default function Register() {
   } = useForm({ resolver: yupResolver(validationSchema) });
   const captchaRef = React.useRef();
 
-  const { data, status, error } = useQuery(["users"], getUsers, {
+  const { data } = useQuery(["users"], getUsers, {
     onSuccess: () => {
       console.log("Users loading success");
     },
@@ -95,7 +95,7 @@ export default function Register() {
                       className={clsx(
                         "textInputs",
                         style.textInput,
-                        errors.login || isExistingUser ? "errorInputBorder" : ""
+                        (errors.login || isExistingUser) && "errorInputBorder"
                       )}
                       type="text"
                       placeholder="Логин"
@@ -117,7 +117,7 @@ export default function Register() {
                       className={clsx(
                         "textInputs",
                         style.textInput,
-                        errors.email ? "errorInputBorder" : ""
+                        errors.email && "errorInputBorder"
                       )}
                       placeholder="Электронная почта"
                       {...register("email", { required: true })}
@@ -136,7 +136,7 @@ export default function Register() {
                       className={clsx(
                         "textInputs",
                         style.textInput,
-                        errors.password ? "errorInputBorder" : ""
+                        errors.password && "errorInputBorder"
                       )}
                       type="password"
                       placeholder="Пароль"
@@ -156,7 +156,7 @@ export default function Register() {
                       className={clsx(
                         "textInputs",
                         style.textInput,
-                        errors.passwordRepeat ? "errorInputBorder" : ""
+                        errors.passwordRepeat && "errorInputBorder"
                       )}
                       type="password"
                       placeholder="Повторите пароль"
