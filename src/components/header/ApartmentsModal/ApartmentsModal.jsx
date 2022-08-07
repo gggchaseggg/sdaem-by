@@ -6,7 +6,7 @@ import { apartCity } from "../../../data/layoutData";
 
 import style from "./ApartmensModal.module.scss";
 
-export default function ApartmensModal() {
+export default function ApartmentsModal() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isClick, setIsClick] = React.useState(false);
 

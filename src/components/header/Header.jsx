@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./Header.module.scss";
-import ApartmensModal from "./ApartmensModal/ApartmensModal";
+import ApartmentsModal from "./ApartmentsModal/ApartmentsModal";
 import PlaceAd from "./PlaceAd/PlaceAd";
 import { routeMenu, rentMenu } from "../../data/layoutData";
 import { useSelector } from "react-redux";
@@ -65,7 +65,7 @@ export default function Header() {
             <div className={style.type}>
               <ul className={style.lowerMenu}>
                 <li>
-                  <ApartmensModal />
+                  <ApartmentsModal />
                 </li>
                 {rentMenu.map((item) => (
                   <li key={item.key} className={style.rentItem}>
