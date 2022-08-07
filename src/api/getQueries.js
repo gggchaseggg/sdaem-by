@@ -1,4 +1,5 @@
 import axios from "axios";
+import React from "react";
 
 export const getUsers = () =>
   axios
@@ -28,3 +29,20 @@ export const getSimilarNews = (id) =>
     .then(({ data }) =>
       data.items.filter((item) => item.id !== id.toString() && item.id < 5)
     );
+
+export const useContacts = () => {
+  const [contacts, setContacts] = React.useState({
+    address: "",
+    phone: "",
+    email: "",
+    workTime: "",
+  });
+
+  React.useEffect(() => {
+    axios
+      .get("https://62c166972af60be89ec64660.mockapi.io/rest")
+      .then(({ data }) => setContacts(data[0].contacts));
+  }, []);
+
+  return contacts;
+};

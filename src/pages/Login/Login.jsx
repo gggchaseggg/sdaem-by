@@ -81,7 +81,7 @@ export default function Login() {
                 className={clsx(
                   "textInputs",
                   style.textInput,
-                  errors.login && "errorInputBorder"
+                  errors.login ? "errorInputBorder" : ""
                 )}
                 type="text"
                 placeholder="Логин"
@@ -96,7 +96,7 @@ export default function Login() {
                 className={clsx(
                   "textInputs",
                   style.textInput,
-                  errors.login && "errorInputBorder"
+                  errors.password ? "errorInputBorder" : ""
                 )}
                 type="password"
                 placeholder="Пароль"

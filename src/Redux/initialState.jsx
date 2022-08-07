@@ -69,13 +69,6 @@ export const newsListInitialState = [
   },
 ];
 
-export const contactListInitialState = {
-  address: "220068, РБ, г. Минск, ул. Осипенко, 21, кв.23",
-  phone: "+375 29 621-48-33",
-  email: "sdaem@sdaem.by",
-  workTime: "08:00-22:00",
-};
-
 export const userInitialState = {
   isLogin: false,
   info: {

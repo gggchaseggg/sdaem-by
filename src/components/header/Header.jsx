@@ -30,7 +30,10 @@ export default function Header() {
             <nav>
               <ul>
                 {headerMenu.map((item, idx) => (
-                  <li key={item.key} className={item.active && style.active}>
+                  <li
+                    key={item.key}
+                    className={item.active ? style.active : ""}
+                  >
                     {idx === 3 ? (
                       <MarkIcon
                         width={8}

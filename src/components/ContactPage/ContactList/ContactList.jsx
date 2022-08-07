@@ -1,34 +1,35 @@
+import clsx from "clsx";
 import React from "react";
-import { useSelector } from "react-redux";
-import style from "./ContactList.module.scss";
+
+import { useContacts } from "../../../api/getQueries";
+
+import MailIcon from "../../SvgIcons/MailIcon";
 import MarkIcon from "../../SvgIcons/MarkIcon";
+import ClockIcon from "../../SvgIcons/ClockIcon";
 import PhoneIcon from "../../SvgIcons/PhoneIcon";
+import WhatsappIcon from "../../SvgIcons/ViberIcon";
 import ViberIcon from "../../SvgIcons/WhatsappIcon";
 import TelegramIcon from "../../SvgIcons/TelegramIcon";
-import WhatsappIcon from "../../SvgIcons/ViberIcon";
-import MailIcon from "../../SvgIcons/MailIcon";
-import ClockIcon from "../../SvgIcons/ClockIcon";
-import clsx from "clsx";
 
-//TODO: Брать данные для этой страницы с мока
+import style from "./ContactList.module.scss";
 
 export default function ContactList() {
-  const contactList = useSelector((state) => state.contactList);
+  const contacts = useContacts();
 
   return (
     <div className={style.container}>
       <ul className={style.contactList}>
         <li className={style.contactItem}>
           <MarkIcon className={style.marker} width={12} height={15} />
-          <span className={style.text}>{contactList.address}</span>
+          <span className={style.text}>{contacts.address}</span>
         </li>
         <li className={style.contactItem}>
           <PhoneIcon className={style.marker} />
           <a
-            href={`tel:${contactList.phone}`}
+            href={`tel:${contacts.phone}`}
             className={clsx(style.text, style.phone)}
           >
-            {contactList.phone}
+            {contacts.phone}
           </a>
           <ViberIcon
             className={clsx(style.marker, style.tel)}
@@ -49,18 +50,18 @@ export default function ContactList() {
         <li className={style.contactItem}>
           <MailIcon className={style.marker} width={15} height={12} />
           <a
-            href={`mailto:${contactList.email}`}
+            href={`mailto:${contacts.email}`}
             className={style.text}
             style={{ borderBottom: "solid 2px white", height: "25px" }}
           >
-            {contactList.email}
+            {contacts.email}
           </a>
         </li>
         <li className={style.contactItem}>
           <ClockIcon className={style.marker} width={15} height={15} />
           <span className={style.text}>
             <span className={style.unbold}>Режим работы: </span>
-            {contactList.workTime}
+            {contacts.workTime}
           </span>
         </li>
       </ul>

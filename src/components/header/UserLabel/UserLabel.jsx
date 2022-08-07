@@ -8,8 +8,6 @@ import { getUsers } from "../../../api/getQueries";
 import { setUser } from "../../../Redux/Reducers/userReducer";
 import GreaterSign from "../../SvgIcons/GreaterSign";
 
-//TODO: Говнокод какой-то с использованием редакса и QUERY, переделать с выносом QUERY отдельно
-
 const UserLabel = () => {
   const user = useSelector((state) => state.user);
 
