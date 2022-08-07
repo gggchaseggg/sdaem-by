@@ -17,7 +17,7 @@ export default function Login(options) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { data } = useQuery(["users"], getUsers, {
+  const { data, isLoading } = useQuery(["users"], getUsers, {
     onSuccess: () => {
       console.log("Users loading success");
     },
@@ -27,7 +27,6 @@ export default function Login(options) {
   });
 
   const logUp = (login, password, rememberMe) => {
-    //TODO: При отправлении запроса блокировать кнопку ВОЙТИ и вывести там лоадер
     //TODO: Сравнение с данными логин пароль на mockapi(если такого нет, то подсветить красным)
 
     const user = data.find((elem) => elem.login === login);
@@ -95,7 +94,9 @@ export default function Login(options) {
                 Забыли пароль?
               </Link>
             </div>
-            <button className={style.login}>Войти</button>
+            <button className={style.login} disabled={isLoading}>
+              {isLoading ? <div className={style.ldsDualRing}></div> : "Войти"}
+            </button>
           </form>
           <div className={style.register}>
             <span>Еще нет акканута? </span>
