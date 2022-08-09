@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Select from "../../Select/Select";
 import Separator from "../../Separator/Separator";
 import GreaterSign from "../../SvgIcons/GreaterSign";
-import CarouselItem from "./CarouselItem/CarouselItem";
+import ApartmentItem from "../../ApartmentItem/ApartmentItem";
 import { CATALOG_PATH } from "../../../data/pathConstants";
 
 import "swiper/scss";
@@ -108,10 +108,10 @@ const Carousel = ({ className }) => {
           speed={800}
         >
           <SwiperSlide>
-            <CarouselItem apartment={carouselItems[0]} />
+            <ApartmentItem apartment={carouselItems[0]} />
           </SwiperSlide>
           <SwiperSlide>
-            <CarouselItem apartment={carouselItems[1]} />
+            <ApartmentItem apartment={carouselItems[1]} />
           </SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
           <SwiperSlide>Slide 4</SwiperSlide>

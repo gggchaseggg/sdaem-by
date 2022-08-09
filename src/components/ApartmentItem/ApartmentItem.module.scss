@@ -138,6 +138,22 @@ hr.hr {
   justify-content: space-between;
 }
 
+button.favorites {
+  outline: none;
+  border: none;
+  width: 33px;
+  height: 33px;
+  padding: 7px;
+  background: rgba(235, 87, 87, 0.1);
+  border-radius: 22px;
+  cursor: pointer;
+  &:hover {
+    path {
+      fill: rgba(235, 87, 87, 0.4);
+    }
+  }
+}
+
 .contacts {
   padding: 10px 16px;
   background: #ffffff;

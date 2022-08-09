@@ -2,16 +2,17 @@ import clsx from "clsx";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import UserIcon from "../../../SvgIcons/UserIcon";
-import MarkIcon from "../../../SvgIcons/MarkIcon";
-import PhoneIcon from "../../../SvgIcons/PhoneIcon";
-import MetroIcon from "../../../SvgIcons/MetroIcon";
+import UserIcon from "../SvgIcons/UserIcon";
+import MarkIcon from "../SvgIcons/MarkIcon";
+import PhoneIcon from "../SvgIcons/PhoneIcon";
+import MetroIcon from "../SvgIcons/MetroIcon";
 import ContactModal from "./ContactModal/ContactModal";
-import { CATALOG_PATH } from "../../../../data/pathConstants";
+import { CATALOG_PATH } from "../../data/pathConstants";
 
-import style from "./CarouselItem.module.scss";
+import style from "./ApartmentItem.module.scss";
+import FavoritesHeartIcon from "../SvgIcons/FavoritesHeartIcon";
 
-const CarouselItem = ({ apartment }) => {
+const ApartmentItem = ({ apartment }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isClick, setIsClick] = React.useState(false);
 
@@ -69,6 +70,9 @@ const CarouselItem = ({ apartment }) => {
         <div className={style.description}>{apartment.description}</div>
         <hr className={style.hr} width="367px" align="left" />
         <div className={style.footer}>
+          <button className={style.favorites}>
+            <FavoritesHeartIcon strokeColor="#EB5757" fillColor="transparent" />
+          </button>
           <button
             className={style.contacts}
             onMouseEnter={() => setIsOpen(true)}
@@ -107,4 +111,4 @@ const CarouselItem = ({ apartment }) => {
   );
 };
 
-export default CarouselItem;
+export default ApartmentItem;

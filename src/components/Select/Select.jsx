@@ -5,11 +5,39 @@ const Select = ({
   options,
   value,
   onChange,
-  className,
+  className = "",
   placeholder = "Выберите",
   isMetro = false,
+  isCatalog = false,
+  isSorting = false,
+  field,
 }) => {
   if (isMetro)
+    return (
+      <div className={className}>
+        <ReactSelect
+          className="selectContainer"
+          classNamePrefix="selectPrefix"
+          options={options}
+          placeholder={placeholder}
+          isSearchable
+        />
+      </div>
+    );
+  else if (isCatalog)
+    return (
+      <div className={className}>
+        <ReactSelect
+          {...field}
+          className="selectContainer"
+          classNamePrefix="selectPrefix"
+          options={options}
+          placeholder={placeholder}
+          isSearchable
+        />
+      </div>
+    );
+  else if (isSorting)
     return (
       <div className={className}>
         <ReactSelect

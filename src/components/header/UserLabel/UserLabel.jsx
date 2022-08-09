@@ -41,9 +41,9 @@ const UserLabel = () => {
           className={style.image}
         />
         <span className={style.name}>{user.info.name}</span>
-        <button type="button" className={style.arrowButton}>
+        <Link to="/login" type="button" className={style.arrowButton}>
           <GreaterSign fillColor={"#4E64F9"} />
-        </button>
+        </Link>
       </div>
     );
   }

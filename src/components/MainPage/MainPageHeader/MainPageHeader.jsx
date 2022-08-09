@@ -1,7 +1,7 @@
 import React from "react";
 
 import style from "./MainPageHeader.module.scss";
-import MainPageTabs from "../MainPageTabs/MainPageTabs";
+import MainPageTabs from "./MainPageTabs/MainPageTabs";
 import Rent from "../Rent/Rent";
 import clsx from "clsx";
 

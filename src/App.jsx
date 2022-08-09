@@ -6,11 +6,13 @@ import Layout from "./Layout/Layout";
 import Main from "./pages/Main/Main";
 import Login from "./pages/Login/Login";
 import ScrollToTop from "./util/ScrollToTop";
+import Catalog from "./pages/Catalog/Catalog";
 import Contacts from "./pages/Contacts/Contacts";
 import Register from "./pages/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
 import NewsArticle from "./pages/NewsArticle/NewsArticle";
 import {
+  CATALOG_PATH,
   CONTACTS_PATH,
   LOGIN_PATH,
   MAIN_PATH,
@@ -36,6 +38,7 @@ function App() {
             {/*<Route path={TARIFFS_PATH} element={<Tariffs />} /> */}
             {/*<Route path={MAP_PATH} element={<Map />} /> */}
             <Route path={CONTACTS_PATH} element={<Contacts />} />
+            <Route path={CATALOG_PATH} element={<Catalog />} />
             <Route path="*" element={<NotFound />} />
           </Route>
           <Route path={LOGIN_PATH} element={<Login />} />

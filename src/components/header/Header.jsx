@@ -37,15 +37,13 @@ export default function Header() {
                     key={item.key}
                     className={item.active ? style.active : ""}
                   >
-                    {idx === 3 ? (
+                    {idx === 3 && (
                       <MarkIcon
                         width={8}
                         height={10}
                         fillColor={"#1E2123"}
                         className={style.mark}
                       />
-                    ) : (
-                      ""
                     )}
                     <Link to={item.link}>{item.text}</Link>
                   </li>
@@ -56,7 +54,11 @@ export default function Header() {
               <div className={style.favorites}>
                 <Link to="/favorites">
                   <span>Закладки</span>
-                  <FavoritesHeart width={16} header={17} />
+                  <FavoritesHeart
+                    width={17}
+                    height={15}
+                    fillColor="transparent"
+                  />
                 </Link>
               </div>
               <UserLabel />

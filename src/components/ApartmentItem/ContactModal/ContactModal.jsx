@@ -1,10 +1,10 @@
 import React from "react";
 
 import style from "./ContactModal.module.scss";
-import ViberIcon from "../../../../SvgIcons/WhatsappIcon";
-import WhatsappIcon from "../../../../SvgIcons/ViberIcon";
-import MailIcon from "../../../../SvgIcons/MailIcon";
-import { useUsers } from "../../../../../api/dataHooks";
+import ViberIcon from "../../SvgIcons/WhatsappIcon";
+import WhatsappIcon from "../../SvgIcons/ViberIcon";
+import MailIcon from "../../SvgIcons/MailIcon";
+import { useUsers } from "../../../api/dataHooks";
 
 const ContactModal = ({ ownerId }) => {
   const [owner, setOwner] = React.useState({});

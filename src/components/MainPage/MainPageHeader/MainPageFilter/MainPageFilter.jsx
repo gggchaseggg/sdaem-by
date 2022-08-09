@@ -1,16 +1,16 @@
 import clsx from "clsx";
 import React from "react";
 import * as yup from "yup";
-import Select from "../../Select/Select";
-import { Link } from "react-router-dom";
+import Select from "../../../Select/Select";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
-import MarkIcon from "../../SvgIcons/MarkIcon";
-import Separator from "../../Separator/Separator";
-import GreaterSign from "../../SvgIcons/GreaterSign";
-import MoreOptionsIcon from "../../SvgIcons/MoreOptionsIcon";
-import { CATALOG_PATH, MAP_PATH } from "../../../data/pathConstants";
+import MarkIcon from "../../../SvgIcons/MarkIcon";
+import Separator from "../../../Separator/Separator";
+import GreaterSign from "../../../SvgIcons/GreaterSign";
+import MoreOptionsIcon from "../../../SvgIcons/MoreOptionsIcon";
+import { CATALOG_PATH, MAP_PATH } from "../../../../data/pathConstants";
 
 import style from "./MainPageFilter.module.scss";
 
@@ -25,9 +25,9 @@ const cities = [
 
 const rooms = [
   { id: "1", value: "Студия", label: "Студия" },
-  { id: "2", value: "1 комната", label: "1 комната" },
-  { id: "3", value: "2 комнаты", label: "2 комнаты" },
-  { id: "5", value: "3 комнаты", label: "3 комнаты" },
+  { id: "2", value: "1комната", label: "1 комната" },
+  { id: "3", value: "2комнаты", label: "2 комнаты" },
+  { id: "5", value: "3комнаты", label: "3 комнаты" },
 ];
 
 const MainPageFilter = () => {
@@ -56,10 +56,17 @@ const MainPageFilter = () => {
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
-  // console.log("errors: ", errors);
-  // console.log("yupRef: ", yup.ref("priceFrom"));
+
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     console.log("data: ", data);
+    let linkParams = "";
+    for (const param in data) {
+      linkParams += `${param.toString()}=${data[param]}&`;
+    }
+    if (linkParams) navigate(`/catalog?${linkParams}`);
+    else navigate("/catalog");
   };
 
   const separator = (
