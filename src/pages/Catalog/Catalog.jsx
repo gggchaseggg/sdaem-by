@@ -9,6 +9,7 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import RecommendSee from "../../components/CatalogPage/RecommendSee/RecommendSee";
 import CatalogFilter from "../../components/CatalogPage/CatalogFilter/CatalogFilter";
 import ApartmentsList from "../../components/CatalogPage/ApartmentsList/ApartmentsList";
+import ShowOnMap from "../../components/CatalogPage/ShowOnMap/ShowOnMap";
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -27,9 +28,8 @@ const Catalog = () => {
         </div>
       </div>
       <CatalogFilter className={style.filter} />
-      <div className={style.container}>
-        <ApartmentsList />
-      </div>
+      <ApartmentsList className={style.container} />
+      <ShowOnMap />
     </>
   );
 };

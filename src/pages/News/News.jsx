@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { useNews } from "../../api/dataHooks";
+import { useNewsByPage } from "../../api/dataHooks";
 import Search from "../../components/NewsPage/Search/Search";
 import NewsItem from "../../components/NewsPage/NewsItem/NewsItem";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import NewsPaginator from "../../components/NewsPage/NewsPaginator/NewsPaginator";
+import Paginator from "../../components/Paginator/Paginator";
+import { NEWS_COUNT_OF_PAGE } from "../../config";
 import { NEWS_PATH } from "../../data/pathConstants";
 import { setActivePage } from "../../Redux/Reducers/activePageReducer";
 
@@ -16,10 +17,11 @@ export default function News() {
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
 
-  const { data: newsList, status: newsStatus } = useNews(page);
+  const { data: newsList, status: newsStatus } = useNewsByPage(page);
 
   React.useEffect(() => {
-    if (newsStatus === "success") setPageCount(Math.ceil(newsList.count / 9));
+    if (newsStatus === "success")
+      setPageCount(Math.ceil(newsList.count / NEWS_COUNT_OF_PAGE));
   }, [newsList]);
 
   React.useEffect(() => {
@@ -49,7 +51,7 @@ export default function News() {
           </>
         )}
         {pageCount !== 1 ? (
-          <NewsPaginator
+          <Paginator
             className={style.paginator}
             pageSwitcher={setPage}
             pageCount={pageCount}

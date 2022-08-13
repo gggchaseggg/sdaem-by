@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import { APARTMENTS_COUNT_OF_PAGE, NEWS_COUNT_OF_PAGE } from "../config";
 
 export const getUsers = () =>
   axios
@@ -9,6 +9,13 @@ export const getUsers = () =>
 export const getNewsByPage = (page) =>
   axios
     .get(
-      `https://62c166972af60be89ec64660.mockapi.io/news?page=${page}&limit=9`
+      `https://62c166972af60be89ec64660.mockapi.io/news?page=${page}&limit=${NEWS_COUNT_OF_PAGE}`
+    )
+    .then(({ data }) => data);
+
+export const getApartmentsByPage = (page) =>
+  axios
+    .get(
+      `https://62c166972af60be89ec64660.mockapi.io/apartments?page=${page}&limit=${APARTMENTS_COUNT_OF_PAGE}`
     )
     .then(({ data }) => data);

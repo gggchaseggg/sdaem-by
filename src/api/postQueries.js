@@ -11,7 +11,13 @@ export const createUser = (user) => {
 };
 
 export const addPost = (data) => {
+  let obj = {};
+  obj[data.email] = {
+    name: data.name,
+    message: data.message,
+  };
+
   axios
-    .post("https://62c166972af60be89ec64660.mockapi.io/posts", data)
+    .put("https://62c166972af60be89ec64660.mockapi.io/rest/2", obj)
     .then((r) => console.log(r));
 };

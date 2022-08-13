@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getNewsByPage, getUsers } from "./getQueries";
+import { getApartmentsByPage, getNewsByPage, getUsers } from "./getQueries";
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -15,7 +15,7 @@ export const useUsers = () => {
   });
 };
 
-export const useNews = (page) => {
+export const useNewsByPage = (page) => {
   return useQuery(["news", page], () => getNewsByPage(page), {
     onSuccess: (data) => {
       console.log("useNews hook loading success");
@@ -24,23 +24,6 @@ export const useNews = (page) => {
       console.log("Ошибка: ", err);
     },
   });
-};
-
-export const useContacts = () => {
-  const [contacts, setContacts] = React.useState({
-    address: "",
-    phone: "",
-    email: "",
-    workTime: "",
-  });
-  //Эффект, чтобы оно только 1 раз посмотрело
-  React.useEffect(() => {
-    axios
-      .get("https://62c166972af60be89ec64660.mockapi.io/rest")
-      .then(({ data }) => setContacts(data[0].contacts));
-  }, []);
-
-  return contacts;
 };
 
 export const useNewsByCount = (count) => {
@@ -83,4 +66,32 @@ export const useSimilarNewsById = (id) => {
   }, []);
 
   return news;
+};
+
+export const useContacts = () => {
+  const [contacts, setContacts] = React.useState({
+    address: "",
+    phone: "",
+    email: "",
+    workTime: "",
+  });
+  //Эффект, чтобы оно только 1 раз посмотрело
+  React.useEffect(() => {
+    axios
+      .get("https://62c166972af60be89ec64660.mockapi.io/rest")
+      .then(({ data }) => setContacts(data[0].contacts));
+  }, []);
+
+  return contacts;
+};
+
+export const useApartmentsByPage = (page) => {
+  return useQuery(["apartments", page], () => getApartmentsByPage(page), {
+    onSuccess: (data) => {
+      console.log("useApartments hook loading success");
+    },
+    onError: (err) => {
+      console.log("Ошибка: ", err);
+    },
+  });
 };

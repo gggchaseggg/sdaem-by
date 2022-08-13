@@ -1,7 +1,12 @@
 .container {
+  position: relative;
+  background: #fffefe;
+  border-radius: 10px;
+  height: 522px;
 }
 
 .imgContainer {
+  position: relative;
   width: 406px;
   height: 226px;
   background: #e0e0e0;
@@ -101,6 +106,7 @@ span.infoLabel {
 }
 
 .locationIcons {
+  height: min-content;
   margin-right: 7px;
 }
 
@@ -182,7 +188,7 @@ button.favorites {
   width: 274px;
   height: 297px;
   background: #ffffff;
-  box-shadow: 0px 0px 40px rgba(135, 124, 202, 0.3);
+  box-shadow: 0 0 40px rgba(135, 124, 202, 0.3);
   border-radius: 10px;
   position: absolute;
   bottom: 75px;
@@ -203,4 +209,105 @@ a.more {
   &:hover {
     background: rgba(255, 213, 79, 0.2);
   }
+}
+
+.listView {
+  display: flex;
+  width: 1280px;
+  height: 300px;
+}
+
+.imgContainerListView {
+  width: 535px;
+  height: 300px;
+}
+
+.infoListView {
+  padding-top: 26px;
+  padding-left: 28px;
+  width: 745px;
+}
+
+h4.apartmentTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #1e2123;
+}
+
+.listViewCardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+h5.priceListView {
+  font-size: 25px !important;
+  margin-top: -4px;
+  margin-right: 25px !important;
+}
+
+span.intervalListView {
+  margin-top: 5px;
+  text-align: right;
+}
+
+.locationSpanListView {
+  margin-top: 19px;
+  span {
+    margin-top: -6px;
+  }
+}
+
+.locationIconsListView {
+  margin-right: 10px !important;
+}
+
+span.district {
+  color: #664ef9;
+}
+
+.labels {
+  margin-top: 13px;
+  display: flex;
+}
+
+.infoLabelListView {
+  padding: 8px 14px !important;
+  margin-right: 15px !important;
+}
+
+.descriptionListView {
+  margin-top: 14px !important;
+  width: 683px !important;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.footerListView {
+  width: 692px !important;
+  margin-top: 25px;
+}
+
+.leftButtonsFooter {
+  display: flex;
+}
+
+.favoritesListView {
+  margin-left: 16px;
+  width: 133px !important;
+  height: 37px !important;
+  padding: 9px 14px !important;
+  display: flex;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #eb5757;
+  .heartIcon {
+    margin-left: 10px;
+  }
+}
+
+.modalContactListView {
+  bottom: 87px !important;
+  left: 491px !important;
 }

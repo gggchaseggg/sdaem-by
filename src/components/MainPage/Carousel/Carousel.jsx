@@ -13,6 +13,7 @@ import { CATALOG_PATH } from "../../../data/pathConstants";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import style from "./Carousel.module.scss";
+import { useApartmentsByPage } from "../../../api/dataHooks";
 
 const carouselItems = [
   {
@@ -76,6 +77,9 @@ const district = [
 ];
 
 const Carousel = ({ className }) => {
+  const { data: apartmentsList, status: apartmentsStatus } =
+    useApartmentsByPage(1);
+
   return (
     <div className={clsx(style.container, className)}>
       <div className={style.header}>
@@ -107,20 +111,19 @@ const Carousel = ({ className }) => {
           spaceBetween={30}
           speed={800}
         >
-          <SwiperSlide>
-            <ApartmentItem apartment={carouselItems[0]} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ApartmentItem apartment={carouselItems[1]} />
-          </SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
-          <SwiperSlide>Slide 10</SwiperSlide>
+          <ul>
+            {apartmentsStatus === "success" &&
+              apartmentsList.items.map((item) => (
+                <li key={item.id}>
+                  <SwiperSlide>
+                    <ApartmentItem
+                      apartment={item}
+                      className={style.carouselItem}
+                    />
+                  </SwiperSlide>
+                </li>
+              ))}
+          </ul>
         </Swiper>
       </div>
       <div className={style.footer}>

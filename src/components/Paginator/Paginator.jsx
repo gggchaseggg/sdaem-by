@@ -1,17 +1,17 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
 
-import style from "./NewsPaginator.module.scss";
+import style from "./Paginator.module.scss";
 
-const NewsPaginator = (props) => {
+const Paginator = ({ className, pageCount, pageSwitcher }) => {
   const handlePageClick = (event) => {
-    props.pageSwitcher(event.selected + 1);
+    pageSwitcher(event.selected + 1);
   };
   return (
-    <div className={props.className}>
+    <div className={className}>
       <ReactPaginate
         onPageChange={handlePageClick}
-        pageCount={props.pageCount}
+        pageCount={pageCount}
         pageRangeDisplayed={7}
         marginPagesDisplayed={1}
         breakLabel="..."
@@ -26,4 +26,4 @@ const NewsPaginator = (props) => {
   );
 };
 
-export default NewsPaginator;
+export default Paginator;
