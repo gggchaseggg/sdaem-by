@@ -20,7 +20,6 @@ export default function NewsArticle() {
   const IconFillColor = "#664EF9";
   const { id } = useParams();
   const dispatch = useDispatch();
-  const [readMoreNews, setReadMoreNews] = useState(null);
 
   const news = useNewsById(id);
   const similarNews = useSimilarNewsById(id);
@@ -36,7 +35,7 @@ export default function NewsArticle() {
         <div className={style.container}>
           <Breadcrumbs
             page={[
-              { title: "Новости", path: { NEWS_PATH } },
+              { title: "Новости", path: NEWS_PATH },
               { title: news.title, path: `/news/${news.id}` },
             ]}
           />
