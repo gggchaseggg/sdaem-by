@@ -25,7 +25,7 @@ import {
 //TODO: Сделать компонент кнопки и компонент инпутов
 //TODO: Сделать скелетон лоадер для карточек новостей
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <Router>
@@ -47,6 +47,6 @@ function App() {
       </Router>
     </>
   );
-}
+};
 
 export default App;
