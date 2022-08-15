@@ -15,49 +15,6 @@ import "swiper/scss/navigation";
 import style from "./Carousel.module.scss";
 import { useApartmentsByPage } from "../../../api/dataHooks";
 
-const carouselItems = [
-  {
-    id: "1",
-    title: "4-комн. апартаменты на Грушевке ",
-    price: { price: "85.00", interval: "сутки", currency: "BYN" },
-    info: {
-      address: "Минск, б-р Мулявина, д. 10",
-      tenants: "4 (2+2)",
-      rooms: "4",
-      metro: "Грушевка",
-      district: "Шабаны",
-      area: "179",
-    },
-    description:
-      "Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ...",
-    ownerId: "1",
-
-    status: "Gold",
-    img: "/img/apartmentsPhotoVertical.png",
-  },
-  {
-    id: "2",
-    title: "8-комн. апартаменты на Грушевке ",
-    price: { price: "65.00", interval: "сутки", currency: "BYN" },
-    info: {
-      address: "Минск, б-р Мулявина, д. 10",
-      tenants: "8 (2+2)",
-      rooms: "8",
-      metro: "Грушевка",
-      district: "Шабаны",
-      area: "179",
-    },
-    description:
-      "Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ...",
-    description2:
-      "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
-    ownerId: "2",
-
-    status: "Gold",
-    img: "/img/apartmentsPhotoGorizontal.png",
-  },
-];
-
 const metro = [
   { id: "1", value: "Метро 1", label: "Метро 1" },
   { id: "2", value: "Метро 2", label: "Метро 2" },
@@ -111,19 +68,15 @@ const Carousel = ({ className }) => {
           spaceBetween={30}
           speed={800}
         >
-          <ul>
-            {apartmentsStatus === "success" &&
-              apartmentsList.items.map((item) => (
-                <li key={item.id}>
-                  <SwiperSlide>
-                    <ApartmentItem
-                      apartment={item}
-                      className={style.carouselItem}
-                    />
-                  </SwiperSlide>
-                </li>
-              ))}
-          </ul>
+          {apartmentsStatus === "success" &&
+            apartmentsList.items.map((item) => (
+              <SwiperSlide key={item.id}>
+                <ApartmentItem
+                  apartment={item}
+                  className={style.carouselItem}
+                />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
       <div className={style.footer}>

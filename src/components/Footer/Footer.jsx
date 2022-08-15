@@ -1,11 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./Footer.module.scss";
-import {
-  routeMenu,
-  rentMenu,
-  apartCityShorty as apartCity,
-} from "../../data/layoutData";
+import { ROUTE_MENU, RENT_MENU, APART_CITY } from "../../data/layoutData";
 import InstagramIcon from "../SvgIcons/InstagramIcon";
 import VkIcon from "../SvgIcons/VkIcon";
 import FacebookInnerIcon from "../SvgIcons/FacebookInnerIcon";
@@ -31,8 +27,8 @@ export default function Footer() {
             <div className={style.pages}>
               <div className={style.rent}>
                 <ul>
-                  {rentMenu.map((item) => (
-                    <li key={item.key} className={style.rentItem}>
+                  {RENT_MENU.map((item) => (
+                    <li key={item.keyFooter} className={style.rentItem}>
                       <Link to={item.link}>{item.text}</Link>
                     </li>
                   ))}
@@ -41,14 +37,16 @@ export default function Footer() {
               <div className={style.apart}>
                 <p>Квартиры</p>
                 <ul>
-                  {apartCity.map((item) => (
-                    <li key={item.key}>{item.title}</li>
+                  {APART_CITY.map((item) => (
+                    <li key={item.forShortKey}>
+                      <Link to={item.link}>{item.shortTitle}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>
               <div className={style.links}>
                 <ul>
-                  {routeMenu.map(
+                  {ROUTE_MENU.map(
                     (item, idx) =>
                       idx !== 0 && (
                         <li key={item.key}>

@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function VkIcon({
+const VkIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "18",
-  height = "11",
-}) {
+  width = 18,
+  height = 11,
+}) => {
   return (
     <div className={className}>
       <a href="https://www.vk.com" target="_blank" rel="noreferrer">
@@ -24,4 +25,6 @@ export default function VkIcon({
       </a>
     </div>
   );
-}
+};
+
+export default VkIcon;

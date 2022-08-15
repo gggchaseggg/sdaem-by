@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function UserIcon({
+const UserIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "20",
-  height = "20",
-}) {
+  width = 20,
+  height = 20,
+}) => {
   return (
     <svg
       className={className}
@@ -32,4 +33,6 @@ export default function UserIcon({
       </defs>
     </svg>
   );
-}
+};
+
+export default UserIcon;

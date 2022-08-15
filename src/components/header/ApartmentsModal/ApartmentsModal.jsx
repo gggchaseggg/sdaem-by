@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 
 import MarkIcon from "../../SvgIcons/MarkIcon";
-import { apartCity } from "../../../data/layoutData";
+import { APART_CITY } from "../../../data/layoutData";
 
 import style from "./ApartmensModal.module.scss";
 
@@ -39,7 +39,7 @@ export default function ApartmentsModal() {
           }}
         >
           <ul className={style.modalBody}>
-            {apartCity.map((item) => (
+            {APART_CITY.map((item) => (
               <li key={item.key}>{item.title}</li>
             ))}
           </ul>

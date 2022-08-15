@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function ViberIcon({
+const ViberIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "18",
-  height = "18",
-}) {
+  width = 18,
+  height = 18,
+}) => {
   return (
     <div className={className}>
       <a href="https://www.whatsapp.com" target="_blank" rel="noreferrer">
@@ -24,4 +25,6 @@ export default function ViberIcon({
       </a>
     </div>
   );
-}
+};
+
+export default ViberIcon;

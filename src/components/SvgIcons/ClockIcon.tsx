@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function ClockIcon({
+const ClockIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "15",
-  height = "15",
-}) {
+  width = 15,
+  height = 15,
+}) => {
   return (
     <div className={className}>
       <svg
@@ -26,4 +27,6 @@ export default function ClockIcon({
       </svg>
     </div>
   );
-}
+};
+
+export default ClockIcon;

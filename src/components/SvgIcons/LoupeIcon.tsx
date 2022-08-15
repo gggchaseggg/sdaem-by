@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function LoupeIcon({
+const LoupeIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "18",
-  height = "18",
-}) {
+  width = 18,
+  height = 18,
+}) => {
   return (
     <div className={className}>
       <svg
@@ -22,4 +23,5 @@ export default function LoupeIcon({
       </svg>
     </div>
   );
-}
+};
+export default LoupeIcon;

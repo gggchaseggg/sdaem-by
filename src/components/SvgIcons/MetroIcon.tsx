@@ -1,10 +1,11 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-const MetroIcon = ({
+const MetroIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "20",
-  height = "13",
+  width = 20,
+  height = 13,
 }) => {
   return (
     <div className={className}>

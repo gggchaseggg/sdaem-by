@@ -1,18 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import style from "./Breadcrumbs.module.scss";
-import BreadcrumbsHomeIcon from "../SvgIcons/HomeIcon";
 
-//В пропс массив объектов с названиями и путями
-//page={[{ title: 'Новости', path: '/news' }]}
-export default function Breadcrumbs(props) {
+import BreadcrumbsHomeIcon from "../SvgIcons/HomeIcon";
+import { PathConstants } from "../../data/pathConstants";
+
+import style from "./Breadcrumbs.module.scss";
+
+type PageProp = {
+  title: string;
+  path: PathConstants;
+};
+
+type BreadcrumbsProps = {
+  page: PageProp[];
+};
+
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page }) => {
   return (
     <>
       <ul className={style.breadcrumbsList}>
         <BreadcrumbsHomeIcon fillColor={"#4E64F9"} />
-        {props.page.map((item, idx) => (
+        {page.map((item, idx) => (
           <li key={idx} className={style.breadcrumbsItem}>
-            {idx !== props.page.length - 1 ? (
+            {idx !== page.length - 1 ? (
               <Link to={item.path}>{item.title}</Link>
             ) : (
               <>{item.title}</>
@@ -22,4 +32,6 @@ export default function Breadcrumbs(props) {
       </ul>
     </>
   );
-}
+};
+
+export default Breadcrumbs;

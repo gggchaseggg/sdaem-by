@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function InputLockIcon({
+const InputLockIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "16",
-  height = "20",
-}) {
+  width = 16,
+  height = 20,
+}) => {
   return (
     <svg
       className={className}
@@ -23,4 +24,6 @@ export default function InputLockIcon({
       </g>
     </svg>
   );
-}
+};
+
+export default InputLockIcon;

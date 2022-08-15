@@ -60,7 +60,9 @@ export const useSimilarNewsById = (id) => {
       .get(`https://62c166972af60be89ec64660.mockapi.io/news`)
       .then(({ data }) =>
         setNews(
-          data.items.filter((item) => item.id !== id.toString() && item.id < 5)
+          data.items
+            .filter((item) => item.id !== id.toString() && item.id < 5)
+            .slice(0, 3)
         )
       );
   }, []);

@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function FacebookInnerIcon({
+const FacebookInnerIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "21",
-  height = "21",
-}) {
+  width = 21,
+  height = 21,
+}) => {
   return (
     <div className={className}>
       <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
@@ -24,4 +25,6 @@ export default function FacebookInnerIcon({
       </a>
     </div>
   );
-}
+};
+
+export default FacebookInnerIcon;

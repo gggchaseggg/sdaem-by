@@ -1,8 +1,13 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-const MoveAdIcon = ({ className = "", width = "55", height = "55" }) => {
+const MoveAdIcon: React.FC<SvgIconProp> = ({
+  className = "",
+  width = 55,
+  height = 55,
+}) => {
   return (
-    <div>
+    <div className={className}>
       <svg
         width={width}
         height={height}

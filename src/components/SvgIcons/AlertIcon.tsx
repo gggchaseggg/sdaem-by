@@ -1,16 +1,17 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function AlertIcon({
+const AlertIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "33",
-  height = "35",
-}) {
+  width = 33,
+  height = 35,
+}) => {
   return (
     <div className={className}>
       <svg
-        width="35"
-        height="35"
+        width={width}
+        height={height}
         viewBox="0 0 35 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -22,4 +23,6 @@ export default function AlertIcon({
       </svg>
     </div>
   );
-}
+};
+
+export default AlertIcon;

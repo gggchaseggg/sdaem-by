@@ -8,12 +8,12 @@ import UserLabel from "./UserLabel/UserLabel";
 import FavoritesHeart from "../SvgIcons/FavoritesHeartIcon";
 import ApartmentsModal from "./ApartmentsModal/ApartmentsModal";
 import { MAIN_PATH } from "../../data/pathConstants";
-import { routeMenu, rentMenu } from "../../data/layoutData";
+import { ROUTE_MENU, RENT_MENU } from "../../data/layoutData";
 
 import style from "./Header.module.scss";
 
 export default function Header() {
-  const [headerMenu, setHeaderMenu] = React.useState(routeMenu);
+  const [headerMenu, setHeaderMenu] = React.useState(ROUTE_MENU);
   const activePage = useSelector((state) => state.activePage.page);
 
   React.useEffect(() => {
@@ -75,8 +75,8 @@ export default function Header() {
                 <li>
                   <ApartmentsModal />
                 </li>
-                {rentMenu.map((item) => (
-                  <li key={item.key} className={style.rentItem}>
+                {RENT_MENU.map((item) => (
+                  <li key={item.keyHeader} className={style.rentItem}>
                     <Link to={item.link}>{item.text}</Link>
                   </li>
                 ))}

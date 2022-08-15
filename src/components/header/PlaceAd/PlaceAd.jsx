@@ -7,7 +7,7 @@ import { MAIN_PATH } from "../../../data/pathConstants";
 export default function PlaceAd({ className }) {
   return (
     <Link to={MAIN_PATH} className={clsx(style.adButton, className)}>
-      + Разместить объявление
+      <span>+ Разместить объявление</span>
     </Link>
   );
 }

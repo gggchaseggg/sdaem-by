@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function TelegramIcon({
+const TelegramIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "18",
-  height = "15",
-}) {
+  width = 18,
+  height = 15,
+}) => {
   return (
     <div className={className}>
       <a href="https://www.telegram.com" target="_blank" rel="noreferrer">
@@ -24,4 +25,6 @@ export default function TelegramIcon({
       </a>
     </div>
   );
-}
+};
+
+export default TelegramIcon;

@@ -1,10 +1,11 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-const CheckboxTilesIcon = ({
+const CheckboxTilesIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "15",
-  height = "14",
+  width = 15,
+  height = 14,
 }) => {
   return (
     <div className={className}>

@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function InstagramIcon({
+const InstagramIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "24",
-  height = "25",
-}) {
+  width = 24,
+  height = 25,
+}) => {
   return (
     <div className={className}>
       <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
@@ -24,4 +25,6 @@ export default function InstagramIcon({
       </a>
     </div>
   );
-}
+};
+
+export default InstagramIcon;

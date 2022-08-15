@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function CheckboxListIcon({
+const CheckboxListIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "15",
-  height = "15",
-}) {
+  width = 15,
+  height = 15,
+}) => {
   return (
     <div className={className}>
       <svg
@@ -39,4 +40,6 @@ export default function CheckboxListIcon({
       </svg>
     </div>
   );
-}
+};
+
+export default CheckboxListIcon;

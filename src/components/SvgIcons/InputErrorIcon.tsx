@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function InputErrorIcon({
+const InputErrorIcon: React.FC<SvgIconProp> = ({
   fillColor = "#EB5757",
   className = "",
-  width = "21",
-  height = "20",
-}) {
+  width = 21,
+  height = 20,
+}) => {
   return (
     <svg
       className={className}
@@ -21,4 +22,6 @@ export default function InputErrorIcon({
       />
     </svg>
   );
-}
+};
+
+export default InputErrorIcon;

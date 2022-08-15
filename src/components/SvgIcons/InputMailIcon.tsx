@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function InputMailIcon({
+const InputMailIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "18",
-  height = "18",
-}) {
+  width = 18,
+  height = 18,
+}) => {
   return (
     <svg
       className={className}
@@ -40,4 +41,6 @@ export default function InputMailIcon({
       </defs>
     </svg>
   );
-}
+};
+
+export default InputMailIcon;

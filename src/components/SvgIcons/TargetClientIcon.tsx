@@ -1,8 +1,13 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-const TargetClientIcon = ({ className = "", width = "66", height = "66" }) => {
+const TargetClientIcon: React.FC<SvgIconProp> = ({
+  className = "",
+  width = 66,
+  height = 66,
+}) => {
   return (
-    <div>
+    <div className={className}>
       <svg
         width={width}
         height={height}

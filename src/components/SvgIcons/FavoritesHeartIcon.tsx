@@ -1,13 +1,14 @@
 import React from "react";
+import { FavoritesHeartIconProp } from "./types/SvgIcons";
 
-export default function FavoritesHeartIcon({
+const FavoritesHeartIcon: React.FC<FavoritesHeartIconProp> = ({
   fillColor = "currentColor",
   fillOpacity = 1,
   strokeColor = "currentColor",
   className = "",
   width = "16",
   height = "15",
-}) {
+}) => {
   return (
     <div className={className}>
       <svg
@@ -47,4 +48,6 @@ export default function FavoritesHeartIcon({
       </svg>
     </div>
   );
-}
+};
+
+export default FavoritesHeartIcon;

@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { MAIN_PATH } from "../../data/pathConstants";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function HomeIcon({
+const HomeIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "12",
-  height = "12",
-}) {
+  width = 12,
+  height = 12,
+}) => {
   return (
     <div className={className}>
       <Link to={MAIN_PATH}>
@@ -38,4 +39,6 @@ export default function HomeIcon({
       </Link>
     </div>
   );
-}
+};
+
+export default HomeIcon;

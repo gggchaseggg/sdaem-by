@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function FacebookIcon({
+const FacebookIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "10",
-  height = "19",
-}) {
+  width = 10,
+  height = 19,
+}) => {
   return (
     <div className={className}>
       <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
@@ -24,4 +25,6 @@ export default function FacebookIcon({
       </a>
     </div>
   );
-}
+};
+
+export default FacebookIcon;

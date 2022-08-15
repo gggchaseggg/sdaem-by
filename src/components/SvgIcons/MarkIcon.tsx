@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function MarkIcon({
+const MarkIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "13",
-  height = "15",
-}) {
+  width = 13,
+  height = 15,
+}) => {
   return (
     <div className={className}>
       <svg
@@ -22,4 +23,6 @@ export default function MarkIcon({
       </svg>
     </div>
   );
-}
+};
+
+export default MarkIcon;

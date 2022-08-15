@@ -1,8 +1,18 @@
-export const CATALOG_PATH: string = "/catalog";
-export const MAIN_PATH: string = "/";
-export const NEWS_PATH: string = "/news";
-export const TARIFFS_PATH: string = "/tariffs";
-export const MAP_PATH: string = "/map";
-export const CONTACTS_PATH: string = "/contacts";
-export const LOGIN_PATH: string = "/login";
-export const REGISTER_PATH: string = "/register";
+export type PathConstants =
+  | "/"
+  | "/news"
+  | "/catalog"
+  | "/tariffs"
+  | "/map"
+  | "/contacts"
+  | "/login"
+  | "/register";
+
+export const CATALOG_PATH: PathConstants = "/catalog";
+export const MAIN_PATH: PathConstants = "/";
+export const NEWS_PATH: PathConstants = "/news";
+export const TARIFFS_PATH: PathConstants = "/tariffs";
+export const MAP_PATH: PathConstants = "/map";
+export const CONTACTS_PATH: PathConstants = "/contacts";
+export const LOGIN_PATH: PathConstants = "/login";
+export const REGISTER_PATH: PathConstants = "/register";

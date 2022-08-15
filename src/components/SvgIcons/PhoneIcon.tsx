@@ -1,11 +1,12 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-export default function PhoneIcon({
+const PhoneIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "9",
-  height = "15",
-}) {
+  width = 9,
+  height = 15,
+}) => {
   return (
     <div className={className}>
       <svg
@@ -22,4 +23,6 @@ export default function PhoneIcon({
       </svg>
     </div>
   );
-}
+};
+
+export default PhoneIcon;

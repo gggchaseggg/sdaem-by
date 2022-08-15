@@ -1,10 +1,11 @@
 import React from "react";
+import { SvgIconProp } from "./types/SvgIcons";
 
-const MoreOptionsIcon = ({
+const MoreOptionsIcon: React.FC<SvgIconProp> = ({
   fillColor = "currentColor",
   className = "",
-  width = "16",
-  height = "18",
+  width = 16,
+  height = 18,
 }) => {
   return (
     <div className={className}>
