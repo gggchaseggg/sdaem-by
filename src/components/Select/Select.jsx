@@ -7,12 +7,12 @@ const Select = ({
   onChange,
   className = "",
   placeholder = "Выберите",
-  isMetro = false,
-  isCatalog = false,
-  isSorting = false,
+  isCarousel,
+  isCatalog,
+  isSorting,
   field,
 }) => {
-  if (isMetro)
+  if (isCarousel || isSorting)
     return (
       <div className={className}>
         <ReactSelect
@@ -21,6 +21,7 @@ const Select = ({
           options={options}
           placeholder={placeholder}
           isSearchable
+          isClearable
         />
       </div>
     );
@@ -29,18 +30,6 @@ const Select = ({
       <div className={className}>
         <ReactSelect
           {...field}
-          className="selectContainer"
-          classNamePrefix="selectPrefix"
-          options={options}
-          placeholder={placeholder}
-          isSearchable
-        />
-      </div>
-    );
-  else if (isSorting)
-    return (
-      <div className={className}>
-        <ReactSelect
           className="selectContainer"
           classNamePrefix="selectPrefix"
           options={options}

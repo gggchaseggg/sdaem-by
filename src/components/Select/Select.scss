@@ -90,10 +90,13 @@
   padding-left: 5px !important;
 }
 
-.mainPageCarouselMetroSelect .selectPrefix__placeholder::before {
-  padding-left: 4px;
-  content: url("../../../public/img/MainPage/metroIcon.svg");
-  margin-right: 8px;
+.mainPageCarouselMetroSelect .selectPrefix__value-container {
+  display: flex;
+  &::before {
+    padding-left: 4px;
+    content: url("../../../public/img/MainPage/metroIcon.svg");
+    margin-right: 8px;
+  }
 }
 
 .CatalogMoreFilterLongSelect .selectPrefix {

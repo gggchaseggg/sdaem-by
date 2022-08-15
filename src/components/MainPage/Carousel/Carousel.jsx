@@ -90,13 +90,13 @@ const Carousel = ({ className }) => {
         <div className={style.selects}>
           <Select
             options={metro}
-            isMetro={true}
+            isCarousel
             className="mainPageCarouselMetroSelect"
             placeholder="Метро"
           />
           <Select
             options={district}
-            isMetro={true}
+            isCarousel
             className="mainPageCarouselDistrictSelect"
             placeholder="Район"
           />

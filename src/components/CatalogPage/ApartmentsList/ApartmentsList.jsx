@@ -27,7 +27,7 @@ const sortingList = [
 ];
 
 const ApartmentsList = ({ className }) => {
-  const [isTilesActive, setIsTilesActive] = React.useState(false);
+  const [isTilesActive, setIsTilesActive] = React.useState(true);
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
 
@@ -37,7 +37,7 @@ const ApartmentsList = ({ className }) => {
   React.useEffect(() => {
     if (apartmentsStatus === "success")
       setPageCount(Math.ceil(apartmentsList.count / APARTMENTS_COUNT_OF_PAGE));
-  }, [apartmentsList]);
+  }, [apartmentsList, apartmentsStatus]);
 
   return (
     <div className={clsx(style.container, className)}>
