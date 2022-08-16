@@ -44,7 +44,7 @@ const ApartmentsList = ({ className }) => {
       <div className={style.header}>
         <Select
           options={sortingList}
-          isSorting={true}
+          isSorting
           className="catalogSortingSelect"
         />
         <div className={style.right}>

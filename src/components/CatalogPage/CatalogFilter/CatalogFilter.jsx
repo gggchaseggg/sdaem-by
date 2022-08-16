@@ -224,7 +224,7 @@ const CatalogFilter = ({ className }) => {
               name="rooms"
               control={control}
               render={({ field }) => (
-                <Select options={rooms} field={field} isCatalog={true} />
+                <Select options={rooms} field={field} isCatalog />
               )}
             />
           </label>
@@ -300,7 +300,7 @@ const CatalogFilter = ({ className }) => {
                   <Select
                     options={rooms}
                     field={field}
-                    isCatalog={true}
+                    isCatalog
                     className="CatalogMoreFilterLongSelect"
                   />
                 )}
@@ -316,7 +316,7 @@ const CatalogFilter = ({ className }) => {
                   <Select
                     options={rooms}
                     field={field}
-                    isCatalog={true}
+                    isCatalog
                     className="CatalogMoreFilterLongSelect"
                   />
                 )}
@@ -331,7 +331,7 @@ const CatalogFilter = ({ className }) => {
                   <Select
                     options={rooms}
                     field={field}
-                    isCatalog={true}
+                    isCatalog
                     className="CatalogMoreFilterLongSelect"
                   />
                 )}
