@@ -4,7 +4,7 @@ header {
 
 .container {
   min-width: 1280px;
-  padding: 0 80px;
+  padding: 0 75px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -13,7 +13,7 @@ header {
 
 .upper {
   height: 40px;
-  min-width: 1440px;
+  min-width: 1280px;
   background-color: #f8f8f8;
   color: #8291a3;
   ul {
@@ -80,7 +80,7 @@ header {
 
 .lower {
   height: 60px;
-  min-width: 1440px;
+  min-width: 1280px;
   background-color: #ffffff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -105,7 +105,7 @@ header {
   li {
     cursor: pointer;
   }
-  //li.rentItem {
-  //  margin-left: 80px;
-  //}
+  .placeAd {
+    margin-left: 92px;
+  }
 }

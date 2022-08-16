@@ -82,7 +82,7 @@ export default function Header() {
                 ))}
               </ul>
             </div>
-            <PlaceAd />
+            <PlaceAd className={style.placeAd} />
           </div>
         </div>
       </header>
