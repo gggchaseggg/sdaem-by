@@ -11,8 +11,19 @@ import { CATALOG_PATH } from "../../data/pathConstants";
 
 import style from "./ApartmentItem.module.scss";
 import FavoritesHeartIcon from "../SvgIcons/FavoritesHeartIcon";
+import { ApartmentTypes } from "../../types/types";
 
-const ApartmentItem = ({ apartment, className = "", isTiles = true }) => {
+type ApartmentItemProps = {
+  apartment: ApartmentTypes;
+  className?: string;
+  isTiles?: boolean;
+};
+
+const ApartmentItem: React.FC<ApartmentItemProps> = ({
+  apartment,
+  className = "",
+  isTiles = true,
+}) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isClick, setIsClick] = React.useState(false);
 
@@ -74,7 +85,7 @@ const ApartmentItem = ({ apartment, className = "", isTiles = true }) => {
             </div>
           </div>
           <div className={style.description}>{apartment.description}</div>
-          <hr className={style.hr} width="367px" align="left" />
+          <hr className={style.hr} />
           <div className={style.footer}>
             <button className={style.favorites}>
               <FavoritesHeartIcon

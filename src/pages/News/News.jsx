@@ -14,7 +14,7 @@ import style from "./News.module.scss";
 
 export default function News() {
   const dispatch = useDispatch();
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState("1");
   const [pageCount, setPageCount] = useState(1);
 
   const { data: newsList, status: newsStatus } = useNewsByPage(page);
@@ -29,16 +29,16 @@ export default function News() {
   }, []);
 
   return (
-    <>
+    <div className={style.wrapper}>
       <div className={style.container}>
         <div className={style.header}>
-          <Breadcrumbs page={[{ title: "Новости", path: { NEWS_PATH } }]} />
+          <Breadcrumbs page={[{ title: "Новости", path: NEWS_PATH }]} />
           <h1 className={style.title}>Новости</h1>
           <div className={style.search}>
             <Search />
           </div>
-          <div className={style.backgroundRectangle} />
         </div>
+        <div className={style.backgroundRectangle} />
         {newsStatus === "success" && newsList && (
           <>
             <ul className={style.feed}>
@@ -60,6 +60,6 @@ export default function News() {
           <div className={style.paginator}></div>
         )}
       </div>
-    </>
+    </div>
   );
 }

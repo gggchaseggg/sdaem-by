@@ -1,17 +1,23 @@
 import React from "react";
 
-import style from "./ContactModal.module.scss";
 import ViberIcon from "../../SvgIcons/WhatsappIcon";
 import WhatsappIcon from "../../SvgIcons/ViberIcon";
 import MailIcon from "../../SvgIcons/MailIcon";
 import { useUsers } from "../../../api/dataHooks";
+import { UserTypes } from "../../../types/types";
 
-const ContactModal = ({ ownerId }) => {
-  const [owner, setOwner] = React.useState({});
+import style from "./ContactModal.module.scss";
+
+type ContactModalProp = {
+  ownerId: string;
+};
+
+const ContactModal: React.FC<ContactModalProp> = ({ ownerId }) => {
+  const [owner, setOwner] = React.useState<UserTypes | undefined>(undefined);
   const { data: userList } = useUsers();
 
   React.useEffect(() => {
-    setOwner(userList.find((elem) => elem.id === ownerId));
+    if (userList) setOwner(userList.find((elem) => elem.id === ownerId));
   }, [userList]);
 
   return (

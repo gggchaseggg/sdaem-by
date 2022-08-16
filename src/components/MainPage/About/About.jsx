@@ -9,7 +9,7 @@ import { NEWS_PATH } from "../../../data/pathConstants";
 import style from "./About.module.scss";
 
 const About = ({ className }) => {
-  const newsList = useNewsByCount(5);
+  const newsList = useNewsByCount("5");
 
   return (
     <div className={clsx(style.container, className)}>
@@ -49,17 +49,18 @@ const About = ({ className }) => {
       <div className={style.news}>
         <h3 className={clsx(style.subtitle, style.newsTitle)}>Новости</h3>
         <ul className={style.newsList}>
-          {newsList.map(
-            (item, idx) =>
-              idx < 5 && (
-                <li className={style.newsItem} key={item.id}>
-                  <Link to={NEWS_PATH} className={style.newsText}>
-                    {item.title}
-                  </Link>
-                  <span className={style.newsDate}>{item.date}</span>
-                </li>
-              )
-          )}
+          {newsList &&
+            newsList.map(
+              (item, idx) =>
+                idx < 5 && (
+                  <li className={style.newsItem} key={item.id}>
+                    <Link to={NEWS_PATH} className={style.newsText}>
+                      {item.title}
+                    </Link>
+                    <span className={style.newsDate}>{item.date}</span>
+                  </li>
+                )
+            )}
         </ul>
         <Link to={NEWS_PATH} className={style.viewAll}>
           <span>Посмотреть все</span>
