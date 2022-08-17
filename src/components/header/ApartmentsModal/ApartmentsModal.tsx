@@ -6,9 +6,9 @@ import { APART_CITY } from "../../../data/layoutData";
 
 import style from "./ApartmensModal.module.scss";
 
-export default function ApartmentsModal() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [isClick, setIsClick] = React.useState(false);
+const ApartmentsModal = () => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isClick, setIsClick] = React.useState<boolean>(false);
 
   return (
     <>
@@ -47,4 +47,6 @@ export default function ApartmentsModal() {
       )}
     </>
   );
-}
+};
+
+export default ApartmentsModal;

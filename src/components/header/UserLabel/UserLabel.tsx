@@ -1,19 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 
 import { useUsers } from "../../../api/dataHooks";
 import GreaterSign from "../../SvgIcons/GreaterSign";
 import { LOGIN_PATH } from "../../../data/pathConstants";
-import { setUser } from "../../../Redux/Reducers/userReducer";
-
 import style from "./UserLabel.module.scss";
+import { useAppDispatch, useAppSelector } from "../../../Redux/hooks";
+import { setUser } from "../../../Redux/userSlice";
 
 const UserLabel = () => {
-  const user = useSelector((state) => state.user);
+  const user = useAppSelector((state) => state.user);
   const { data: userList, status: getUsersStatus } = useUsers();
   const login = localStorage.getItem("login");
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
     if (login && getUsersStatus === "success") {

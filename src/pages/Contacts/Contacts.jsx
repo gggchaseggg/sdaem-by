@@ -2,12 +2,12 @@ import React from "react";
 import ContactForm from "../../components/ContactPage/ContactForm/ContactForm";
 import ContactList from "../../components/ContactPage/ContactList/ContactList";
 import style from "./Contacts.module.scss";
-import { useDispatch } from "react-redux";
-import { setActivePage } from "../../Redux/Reducers/activePageReducer";
+import { useAppDispatch } from "../../Redux/hooks";
+import { setActivePage } from "../../Redux/activePageSlice";
 import AlertIcon from "../../components/SvgIcons/AlertIcon";
 
 export default function Contacts() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
     dispatch(setActivePage(4));

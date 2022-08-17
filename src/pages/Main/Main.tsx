@@ -1,6 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { setActivePage } from "../../Redux/Reducers/activePageReducer";
+import { useAppDispatch } from "../../Redux/hooks";
+import { setActivePage } from "../../Redux/activePageSlice";
 import MainPageHeader from "../../components/MainPage/MainPageHeader/MainPageHeader";
 import Rent from "../../components/MainPage/Rent/Rent";
 
@@ -9,8 +9,8 @@ import ApartmentsSearch from "../../components/MainPage/ApartmensSearch/Apartmen
 import About from "../../components/MainPage/About/About";
 import Carousel from "../../components/MainPage/Carousel/Carousel";
 
-export default function Main() {
-  const dispatch = useDispatch();
+const Main = () => {
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
     dispatch(setActivePage(0));
@@ -27,4 +27,6 @@ export default function Main() {
       <About className={style.about} />
     </>
   );
-}
+};
+
+export default Main;

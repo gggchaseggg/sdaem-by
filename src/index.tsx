@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 
-import { store } from "./Redux/Stores/store";
+import { store } from "./Redux/store";
 
 import "./css/global.scss";
 

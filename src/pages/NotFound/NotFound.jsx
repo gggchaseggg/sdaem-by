@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./NotFound.module.scss";
-import { useDispatch } from "react-redux";
-import { setActivePage } from "../../Redux/Reducers/activePageReducer";
+import { useAppDispatch } from "../../Redux/hooks";
+import { setActivePage } from "../../Redux/activePageSlice";
 
 import HomeIcon from "../../components/SvgIcons/HomeIcon";
 import { MAIN_PATH } from "../../data/pathConstants";
 
 export default function NotFound() {
-  const dispath = useDispatch();
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
-    dispath(setActivePage(-1));
+    dispatch(setActivePage(-1));
   }, []);
 
   return (

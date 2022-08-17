@@ -2,21 +2,21 @@ import clsx from "clsx";
 import React from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../Redux/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
 import { useUsers } from "../../api/dataHooks";
 import UserIcon from "../../components/SvgIcons/UserIcon";
 import InputLockIcon from "../../components/SvgIcons/InputLockIcon";
-import { setUser } from "../../Redux/Reducers/userReducer";
+import { setUser } from "../../Redux/userSlice";
 import { MAIN_PATH, REGISTER_PATH } from "../../data/pathConstants";
 
 import style from "./Login.module.scss";
 
 export default function Login() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { data: userList, isLoading: isUserLoading } = useUsers();
 
   const validationSchema = yup.object({

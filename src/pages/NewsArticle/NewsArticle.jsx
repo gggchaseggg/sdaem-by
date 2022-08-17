@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../Redux/hooks";
 
 import VkIcon from "../../components/SvgIcons/VkIcon";
 import ViberIcon from "../../components/SvgIcons/ViberIcon";
@@ -12,14 +12,14 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import NewsItem from "../../components/NewsPage/NewsItem/NewsItem";
 import { useNewsById, useSimilarNewsById } from "../../api/dataHooks";
 import { NEWS_PATH } from "../../data/pathConstants";
-import { setActivePage } from "../../Redux/Reducers/activePageReducer";
+import { setActivePage } from "../../Redux/activePageSlice";
 
 import style from "./NewsArticle.module.scss";
 
 export default function NewsArticle() {
   const IconFillColor = "#664EF9";
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const news = useNewsById(id);
   const similarNews = useSimilarNewsById(id);

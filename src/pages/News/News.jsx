@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../Redux/hooks";
 
 import { useNewsByPage } from "../../api/dataHooks";
 import Search from "../../components/NewsPage/Search/Search";
@@ -8,12 +8,12 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Paginator from "../../components/Paginator/Paginator";
 import { NEWS_COUNT_OF_PAGE } from "../../config";
 import { NEWS_PATH } from "../../data/pathConstants";
-import { setActivePage } from "../../Redux/Reducers/activePageReducer";
+import { setActivePage } from "../../Redux/activePageSlice";
 
 import style from "./News.module.scss";
 
 export default function News() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [page, setPage] = useState("1");
   const [pageCount, setPageCount] = useState(1);
 

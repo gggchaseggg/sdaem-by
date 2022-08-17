@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 import PlaceAd from "./PlaceAd/PlaceAd";
 import MarkIcon from "../SvgIcons/MarkIcon";
@@ -11,10 +10,11 @@ import { MAIN_PATH } from "../../data/pathConstants";
 import { ROUTE_MENU, RENT_MENU } from "../../data/layoutData";
 
 import style from "./Header.module.scss";
+import { useAppSelector } from "../../Redux/hooks";
 
-export default function Header() {
+const Header = () => {
   const [headerMenu, setHeaderMenu] = React.useState(ROUTE_MENU);
-  const activePage = useSelector((state) => state.activePage.page);
+  const activePage = useAppSelector((state) => state.activePage.page);
 
   React.useEffect(() => {
     setHeaderMenu(
@@ -88,4 +88,6 @@ export default function Header() {
       </header>
     </>
   );
-}
+};
+
+export default Header;
