@@ -6,7 +6,7 @@ import { APART_CITY } from "../../../data/layoutData";
 
 import style from "./ApartmensModal.module.scss";
 
-const ApartmentsModal = () => {
+const ApartmentsModal: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [isClick, setIsClick] = React.useState<boolean>(false);
 

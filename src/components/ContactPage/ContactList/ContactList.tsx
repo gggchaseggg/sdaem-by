@@ -12,7 +12,7 @@ import TelegramIcon from "../../SvgIcons/TelegramIcon";
 import style from "./ContactList.module.scss";
 import { useContacts } from "../../../api/dataHooks";
 
-export default function ContactList() {
+const ContactList = () => {
   const contacts = useContacts();
 
   return (
@@ -20,15 +20,15 @@ export default function ContactList() {
       <ul className={style.contactList}>
         <li className={style.contactItem}>
           <MarkIcon className={style.marker} width={12} height={15} />
-          <span className={style.text}>{contacts.address}</span>
+          <span className={style.text}>{contacts?.address}</span>
         </li>
         <li className={style.contactItem}>
           <PhoneIcon className={style.marker} />
           <a
-            href={`tel:${contacts.phone}`}
+            href={`tel:${contacts?.phone}`}
             className={clsx(style.text, style.phone)}
           >
-            {contacts.phone}
+            {contacts?.phone}
           </a>
           <ViberIcon
             className={clsx(style.marker, style.tel)}
@@ -49,21 +49,23 @@ export default function ContactList() {
         <li className={style.contactItem}>
           <MailIcon className={style.marker} width={15} height={12} />
           <a
-            href={`mailto:${contacts.email}`}
+            href={`mailto:${contacts?.email}`}
             className={style.text}
             style={{ borderBottom: "solid 2px white", height: "25px" }}
           >
-            {contacts.email}
+            {contacts?.email}
           </a>
         </li>
         <li className={style.contactItem}>
           <ClockIcon className={style.marker} width={15} height={15} />
           <span className={style.text}>
             <span className={style.unbold}>Режим работы: </span>
-            {contacts.workTime}
+            {contacts?.workTime}
           </span>
         </li>
       </ul>
     </div>
   );
-}
+};
+
+export default ContactList;

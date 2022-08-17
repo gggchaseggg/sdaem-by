@@ -56,6 +56,7 @@ const MainPageFilter: React.FC = () => {
       .number()
       .transform((value) => (isNaN(value) ? undefined : value)),
   });
+
   const {
     register,
     control,

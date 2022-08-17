@@ -11,7 +11,7 @@ export const createUser = (user: UserTypes): void => {
     .then((r) => console.log(r));
 };
 
-export const addPost = (data: PostTypes): void => {
+export const addPost = (data: PostTypes) => {
   let obj = {};
   // Ввиду "особенностей" хранения данных:
   // посты обратной связи хранять на mockapi на эндпоинте rest

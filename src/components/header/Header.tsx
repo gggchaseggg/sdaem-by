@@ -12,7 +12,7 @@ import { ROUTE_MENU, RENT_MENU } from "../../data/layoutData";
 import style from "./Header.module.scss";
 import { useAppSelector } from "../../Redux/hooks";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [headerMenu, setHeaderMenu] = React.useState(ROUTE_MENU);
   const activePage = useAppSelector((state) => state.activePage.page);
 

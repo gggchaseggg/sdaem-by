@@ -1,8 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 import * as yup from "yup";
-import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import UserIcon from "../../SvgIcons/UserIcon";
@@ -11,9 +10,10 @@ import InputMailIcon from "../../SvgIcons/InputMailIcon";
 import InputErrorIcon from "../../SvgIcons/InputErrorIcon";
 
 import style from "./ContactForm.module.scss";
+import { PostTypes } from "../../../types/types";
 
-export default function ContactForm() {
-  const [isOpen, setIsOpen] = React.useState(false);
+const ContactForm: React.FC = () => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   const validationSchema = yup.object({
     name: yup.string().required(),
@@ -26,15 +26,13 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm({
+  } = useForm<PostTypes>({
     resolver: yupResolver(validationSchema),
   });
 
-  const mutation = useMutation(addPost);
-
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<PostTypes> = (data: PostTypes) => {
     console.log(data);
-    mutation.mutate(data);
+    addPost(data);
     setIsOpen((prev) => !prev);
     reset();
   };
@@ -122,4 +120,6 @@ export default function ContactForm() {
       </div>
     </>
   );
-}
+};
+
+export default ContactForm;

@@ -6,7 +6,9 @@ import InstagramIcon from "../SvgIcons/InstagramIcon";
 import VkIcon from "../SvgIcons/VkIcon";
 import FacebookInnerIcon from "../SvgIcons/FacebookInnerIcon";
 
-export default function Footer() {
+//TODO: Брать контактные данные с мока(добавить их на мок и useContacts)
+
+const Footer: React.FC = () => {
   return (
     <>
       <footer>
@@ -84,4 +86,6 @@ export default function Footer() {
       </footer>
     </>
   );
-}
+};
+
+export default Footer;

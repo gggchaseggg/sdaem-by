@@ -8,7 +8,7 @@ import style from "./UserLabel.module.scss";
 import { useAppDispatch, useAppSelector } from "../../../Redux/hooks";
 import { setUser } from "../../../Redux/userSlice";
 
-const UserLabel = () => {
+const UserLabel: React.FC = () => {
   const user = useAppSelector((state) => state.user);
   const { data: userList, status: getUsersStatus } = useUsers();
   const login = localStorage.getItem("login");

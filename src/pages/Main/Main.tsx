@@ -9,7 +9,7 @@ import ApartmentsSearch from "../../components/MainPage/ApartmensSearch/Apartmen
 import About from "../../components/MainPage/About/About";
 import Carousel from "../../components/MainPage/Carousel/Carousel";
 
-const Main = () => {
+const Main: React.FC = () => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
