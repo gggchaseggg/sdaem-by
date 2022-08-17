@@ -4,11 +4,11 @@ import DateLabel from "../../DateLabel/DateLabel";
 import style from "./NewsItem.module.scss";
 import { NewsTypes } from "../../../types/types";
 
-type NewsIteProp = {
+type NewsItemProp = {
   novost: NewsTypes;
 };
 
-const NewsItem: React.FC<NewsIteProp> = ({ novost }) => {
+const NewsItem: React.FC<NewsItemProp> = ({ novost }) => {
   return (
     <>
       <div className={style.container}>
