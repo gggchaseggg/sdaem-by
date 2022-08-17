@@ -2,10 +2,15 @@ export type UserTypes = {
   login: string;
   password: string;
   email: string;
-  phoneNumber: string;
-  name: string;
-  photoPath: string;
-  id: string;
+  phoneNumber?: string;
+  name?: string;
+  photoPath?: string;
+  id?: string;
+};
+
+export type RegistryUserTypes = UserTypes & {
+  passwordRepeat: string;
+  captcha: string;
 };
 
 export type NewsTypes = {

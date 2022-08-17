@@ -18,7 +18,12 @@ const UserLabel: React.FC = () => {
     if (login && getUsersStatus === "success") {
       const userQuery = userList.find((elem) => elem.login === login);
       if (userQuery) {
-        dispatch(setUser({ name: userQuery.name, email: userQuery.email }));
+        dispatch(
+          setUser({
+            name: userQuery.name ? userQuery.name : userQuery.login,
+            email: userQuery.email,
+          })
+        );
       }
     }
   }, [userList]);

@@ -2,8 +2,9 @@ import clsx from "clsx";
 import React from "react";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
+// @ts-ignore
 import ReCAPTCHA from "react-google-recaptcha";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useUsers } from "../../api/dataHooks";
@@ -16,8 +17,17 @@ import SentEmailRegister from "../../components/Register/SentEmailRegister/SentE
 import { LOGIN_PATH } from "../../data/pathConstants";
 
 import style from "./Register.module.scss";
+import { RegistryUserTypes } from "../../types/types";
 
-export default function Register() {
+type FormValuesTypes = {
+  login: string;
+  email: string;
+  password: string;
+  passwordRepeat: string;
+  captcha: string;
+};
+
+const Register: React.FC = () => {
   const [sentEmail, setSentEmail] = React.useState(false);
   const [isExistingUser, setIsExistingUser] = React.useState(false);
   const { data: userList, isLoading: isUserLoading } = useUsers();
@@ -45,11 +55,11 @@ export default function Register() {
     reset,
     control,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(validationSchema) });
-  const captchaRef = React.useRef();
+  } = useForm<FormValuesTypes>({ resolver: yupResolver(validationSchema) });
+  const captchaRef = React.useRef<ReCAPTCHA>();
 
-  const registry = (formData) => {
-    const user = userList.find((elem) => elem.login === formData.login);
+  const registry = (formData: RegistryUserTypes) => {
+    const user = userList?.find((elem) => elem.login === formData.login);
     if (!user) {
       console.log("no user with this login");
       return true;
@@ -60,7 +70,7 @@ export default function Register() {
     }
   };
 
-  const onSubmit = (user) => {
+  const onSubmit: SubmitHandler<FormValuesTypes> = (user) => {
     if (registry(user)) {
       createUser(user);
       reset();
@@ -218,4 +228,6 @@ export default function Register() {
       </div>
     </>
   );
-}
+};
+
+export default Register;

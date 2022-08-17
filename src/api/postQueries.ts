@@ -1,7 +1,7 @@
 import axios from "axios";
-import { PostTypes, UserTypes } from "../types/types";
+import { PostTypes, RegistryUserTypes } from "../types/types";
 
-export const createUser = (user: UserTypes): void => {
+export const createUser = (user: RegistryUserTypes): void => {
   axios
     .post("https://62c166972af60be89ec64660.mockapi.io/users", {
       login: user.login,
