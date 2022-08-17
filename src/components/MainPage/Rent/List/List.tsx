@@ -3,8 +3,21 @@ import React from "react";
 import style from "./List.module.scss";
 import { Link } from "react-router-dom";
 import GreaterSign from "../../../SvgIcons/GreaterSign";
+import { RentItemTypes } from "../types/types";
 
-const List = ({ title, options, className = "", morePath = "" }) => {
+type ListProps = {
+  title: string;
+  options: RentItemTypes[];
+  className?: string;
+  morePath?: string;
+};
+
+const List: React.FC<ListProps> = ({
+  title,
+  options,
+  className = "",
+  morePath = "",
+}) => {
   return (
     <div className={className}>
       <h2 className={style.title}>{title}</h2>
@@ -14,7 +27,9 @@ const List = ({ title, options, className = "", morePath = "" }) => {
             <Link to={item.link} className={style.link}>
               <span className={style.name}>{item.title}</span>
             </Link>
-            {item.amount && <span className={style.amount}>{item.amount}</span>}
+            {item.amount !== "" && (
+              <span className={style.amount}>{item.amount}</span>
+            )}
           </li>
         ))}
       </ul>

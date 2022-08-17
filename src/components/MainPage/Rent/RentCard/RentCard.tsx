@@ -4,7 +4,21 @@ import style from "./RentCard.module.scss";
 import RentButton from "./RentButton/RentButton";
 import RentCardArrow from "../../../SvgIcons/RentCardArrow";
 
-const RentCard = ({ width, height, title, subtitle, img }) => {
+type RentCardProps = {
+  width: number;
+  height: number;
+  title: string;
+  subtitle: string;
+  img: string;
+};
+
+const RentCard: React.FC<RentCardProps> = ({
+  width,
+  height,
+  title,
+  subtitle,
+  img,
+}) => {
   return (
     <div
       className={style.container}

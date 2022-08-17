@@ -6,77 +6,85 @@ import RentCard from "./RentCard/RentCard";
 import { CATALOG_PATH } from "../../../data/pathConstants";
 
 import style from "./Rent.module.scss";
+import { RentItemTypes } from "./types/types";
 
-const apartments = [
+const apartments: RentItemTypes[] = [
   {
     id: "1",
     title: "Квартиры в Минске",
     amount: "3567",
-    link: { CATALOG_PATH },
+    link: CATALOG_PATH,
   },
   {
     id: "2",
     title: "Квартиры в Гомеле",
     amount: "2032",
-    link: { CATALOG_PATH },
+    link: CATALOG_PATH,
   },
   {
     id: "3",
     title: "Квартиры в Гродно",
     amount: "2302",
-    link: { CATALOG_PATH },
+    link: CATALOG_PATH,
   },
   {
     id: "4",
     title: "Квартиры в Могилеве",
     amount: "110",
-    link: { CATALOG_PATH },
+    link: CATALOG_PATH,
   },
   {
     id: "5",
     title: "Квартиры в Бресте",
     amount: "110",
-    link: { CATALOG_PATH },
+    link: CATALOG_PATH,
   },
   {
     id: "6",
     title: "Квартиры в Витебске",
     amount: "110",
-    link: { CATALOG_PATH },
+    link: CATALOG_PATH,
   },
 ];
 
-const cottage = [
-  { id: "1", title: "Агроусадьбы", amount: "110", link: { CATALOG_PATH } },
-  { id: "2", title: "Коттеджи", amount: "110", link: { CATALOG_PATH } },
+const cottage: RentItemTypes[] = [
+  { id: "1", title: "Агроусадьбы", amount: "110", link: CATALOG_PATH },
+  { id: "2", title: "Коттеджи", amount: "110", link: CATALOG_PATH },
   {
     id: "3",
     title: "Загородный комплекс",
     amount: "110",
-    link: { CATALOG_PATH },
+    link: CATALOG_PATH,
   },
-  { id: "4", title: "Базы отдыха", amount: "110", link: { CATALOG_PATH } },
+  { id: "4", title: "Базы отдыха", amount: "110", link: CATALOG_PATH },
 ];
 
-const popularDestinations = [
+const popularDestinations: RentItemTypes[] = [
   {
     id: "1",
     title: "Коттеджи и усадьбы на о. Брасласких ",
-    link: { CATALOG_PATH },
+    amount: "",
+    link: CATALOG_PATH,
   },
   {
     id: "2",
     title: "Коттеджи и усадьбы (жилье) на Нарочи",
-    link: { CATALOG_PATH },
+    amount: "",
+    link: CATALOG_PATH,
   },
   {
     id: "3",
     title: "Коттеджи и усадьбы (жилье) у воды, на берегу, на озере",
-    link: { CATALOG_PATH },
+    amount: "",
+    link: CATALOG_PATH,
   },
 ];
 
-const Rent = ({ className }) => {
+type RentProps = {
+  className?: string;
+};
+
+const Rent: React.FC<RentProps> = ({ className = "" }) => {
   return (
     <div className={className}>
       <div className={style.card}>
