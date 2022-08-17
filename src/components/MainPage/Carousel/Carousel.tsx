@@ -33,9 +33,13 @@ const district = [
   { id: "6", value: "Район 6", label: "Район 6" },
 ];
 
-const Carousel = ({ className }) => {
+type CarouselProps = {
+  className: string;
+};
+
+const Carousel: React.FC<CarouselProps> = ({ className }) => {
   const { data: apartmentsList, status: apartmentsStatus } =
-    useApartmentsByPage(1);
+    useApartmentsByPage("1");
 
   return (
     <div className={clsx(style.container, className)}>
