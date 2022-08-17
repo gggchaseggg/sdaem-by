@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../Redux/hooks";
 import { setActivePage } from "../../Redux/activePageSlice";
 import AlertIcon from "../../components/SvgIcons/AlertIcon";
 
-const Contacts = () => {
+const Contacts: React.FC = () => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {

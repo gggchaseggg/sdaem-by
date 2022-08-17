@@ -10,7 +10,7 @@ import ShowOnMap from "../../components/CatalogPage/ShowOnMap/ShowOnMap";
 import { useAppDispatch } from "../../Redux/hooks";
 import { setActivePage } from "../../Redux/activePageSlice";
 
-const Catalog = () => {
+const Catalog: React.FC = () => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
@@ -21,7 +21,7 @@ const Catalog = () => {
     <>
       <div className={style.headerBackground}>
         <div className={style.header}>
-          <Breadcrumbs page={[{ title: "Квартиры", path: { CATALOG_PATH } }]} />
+          <Breadcrumbs page={[{ title: "Квартиры", path: CATALOG_PATH }]} />
           <h1 className={style.title}>Аренда квартир на сутки в Минске</h1>
           <RecommendSee className={style.recommendSee} />
         </div>
