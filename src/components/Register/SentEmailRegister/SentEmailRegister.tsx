@@ -5,7 +5,7 @@ import { MAIN_PATH } from "../../../data/pathConstants";
 
 import style from "./SentEmailRegister.module.scss";
 
-export default function SentEmailRegister() {
+const SentEmailRegister = () => {
   return (
     <div className={style.container}>
       <h1 className={style.title}>Подтвердите регистрацию</h1>
@@ -18,4 +18,6 @@ export default function SentEmailRegister() {
       </Link>
     </div>
   );
-}
+};
+
+export default SentEmailRegister;
