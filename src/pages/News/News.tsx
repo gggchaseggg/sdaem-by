@@ -12,7 +12,7 @@ import { setActivePage } from "../../Redux/activePageSlice";
 
 import style from "./News.module.scss";
 
-export default function News() {
+const News: React.FC = () => {
   const dispatch = useAppDispatch();
   const [page, setPage] = useState("1");
   const [pageCount, setPageCount] = useState(1);
@@ -62,4 +62,6 @@ export default function News() {
       </div>
     </div>
   );
-}
+};
+
+export default News;
