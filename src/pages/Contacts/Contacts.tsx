@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../Redux/hooks";
 import { setActivePage } from "../../Redux/activePageSlice";
 import AlertIcon from "../../components/SvgIcons/AlertIcon";
 
-export default function Contacts() {
+const Contacts = () => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
@@ -45,4 +45,6 @@ export default function Contacts() {
       </div>
     </>
   );
-}
+};
+
+export default Contacts;
