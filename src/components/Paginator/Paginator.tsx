@@ -3,8 +3,19 @@ import ReactPaginate from "react-paginate";
 
 import style from "./Paginator.module.scss";
 
-const Paginator = ({ className, pageCount, pageSwitcher }) => {
-  const handlePageClick = (event) => {
+type PaginatorProps = {
+  className?: string;
+  pageCount: number;
+  pageSwitcher: Function;
+};
+
+const Paginator: React.FC<PaginatorProps> = ({
+  className = "",
+  pageCount,
+  pageSwitcher,
+}) => {
+  const handlePageClick = (event: { selected: number }) => {
+    console.log(event);
     pageSwitcher(event.selected + 1);
   };
   return (
