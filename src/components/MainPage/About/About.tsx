@@ -8,7 +8,11 @@ import { NEWS_PATH } from "../../../data/pathConstants";
 
 import style from "./About.module.scss";
 
-const About = ({ className }) => {
+type AboutProp = {
+  className: string;
+};
+
+const About: React.FC<AboutProp> = ({ className }) => {
   const newsList = useNewsByCount("5");
 
   return (
