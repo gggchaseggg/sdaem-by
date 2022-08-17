@@ -1,11 +1,6 @@
 import React from "react";
 import ReactSelect from "react-select";
-
-type OptionsItem = {
-  id: string;
-  value: string;
-  label: string;
-};
+import { OptionsItem } from "../../types/types";
 
 //Не понял как типизировать пропсы:
 // value(из контроллера UseFormHook),

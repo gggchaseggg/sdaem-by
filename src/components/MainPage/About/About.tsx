@@ -9,7 +9,7 @@ import { NEWS_PATH } from "../../../data/pathConstants";
 import style from "./About.module.scss";
 
 type AboutProp = {
-  className: string;
+  className?: string;
 };
 
 const About: React.FC<AboutProp> = ({ className }) => {

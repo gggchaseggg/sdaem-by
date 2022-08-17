@@ -63,3 +63,9 @@ export type PostTypes = {
   name: string;
   message: string;
 };
+
+export type OptionsItem = {
+  id: string;
+  value: string;
+  label: string;
+};

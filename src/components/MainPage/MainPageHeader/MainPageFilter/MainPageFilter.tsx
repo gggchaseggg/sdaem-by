@@ -3,7 +3,7 @@ import React from "react";
 import * as yup from "yup";
 import Select from "../../../Select/Select";
 import { Link, useNavigate } from "react-router-dom";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 
 import MarkIcon from "../../../SvgIcons/MarkIcon";
@@ -13,8 +13,9 @@ import MoreOptionsIcon from "../../../SvgIcons/MoreOptionsIcon";
 import { CATALOG_PATH, MAP_PATH } from "../../../../data/pathConstants";
 
 import style from "./MainPageFilter.module.scss";
+import { OptionsItem } from "../../../../types/types";
 
-const cities = [
+const cities: OptionsItem[] = [
   { id: "1", value: "Минск", label: "Минск" },
   { id: "2", value: "Гомель", label: "Гомель" },
   { id: "3", value: "Брест", label: "Брест" },
@@ -23,14 +24,21 @@ const cities = [
   { id: "6", value: "Могилев", label: "Могилев" },
 ];
 
-const rooms = [
+const rooms: OptionsItem[] = [
   { id: "1", value: "Студия", label: "Студия" },
   { id: "2", value: "1комната", label: "1 комната" },
   { id: "3", value: "2комнаты", label: "2 комнаты" },
   { id: "5", value: "3комнаты", label: "3 комнаты" },
 ];
 
-const MainPageFilter = () => {
+type FormDataTypes = {
+  city: string;
+  rooms: string;
+  priceFrom: number;
+  priceTo: number;
+};
+
+const MainPageFilter: React.FC = () => {
   const validationSchema = yup.object({
     city: yup.string().nullable(),
     rooms: yup.string().nullable(),
@@ -38,7 +46,7 @@ const MainPageFilter = () => {
       .number()
       .transform((value) => (isNaN(value) ? undefined : value))
       .when("priceTo", {
-        is: (val) => !!val,
+        is: (val: number) => !!val,
         then: yup
           .number()
           .transform((value) => (isNaN(value) ? undefined : value))
@@ -53,20 +61,20 @@ const MainPageFilter = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<FormDataTypes>({
     resolver: yupResolver(validationSchema),
   });
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<FormDataTypes> = (data: FormDataTypes) => {
     console.log("data: ", data);
-    let linkParams = "";
-    for (const param in data) {
-      linkParams += `${param.toString()}=${data[param]}&`;
-    }
-    if (linkParams) navigate(`/catalog?${linkParams}`);
-    else navigate("/catalog");
+    // let linkParams = "";
+    // for (const param in data) {
+    //   linkParams += `${param.toString()}=${data[param]}&`;
+    // }
+    // if (linkParams) navigate(`/catalog?${linkParams}`);
+    navigate("/catalog");
   };
 
   const separator = (

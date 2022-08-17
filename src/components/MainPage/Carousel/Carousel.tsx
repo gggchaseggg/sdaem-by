@@ -34,7 +34,7 @@ const district = [
 ];
 
 type CarouselProps = {
-  className: string;
+  className?: string;
 };
 
 const Carousel: React.FC<CarouselProps> = ({ className }) => {

@@ -5,7 +5,11 @@ import MainPageTabs from "./MainPageTabs/MainPageTabs";
 import Rent from "../Rent/Rent";
 import clsx from "clsx";
 
-const MainPageHeader = ({ className }) => {
+type MainPageHeaderProps = {
+  className?: string;
+};
+
+const MainPageHeader: React.FC<MainPageHeaderProps> = ({ className }) => {
   return (
     <>
       <div className={clsx(style.main, className)}>

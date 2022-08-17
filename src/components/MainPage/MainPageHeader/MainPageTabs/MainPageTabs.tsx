@@ -4,7 +4,11 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import style from "./MainPageTabs.module.scss";
 import MainPageFilter from "../MainPageFilter/MainPageFilter";
 
-const MainPageTabs = ({ className }) => {
+type MainPageTabsProps = {
+  className?: string;
+};
+
+const MainPageTabs: React.FC<MainPageTabsProps> = ({ className = "" }) => {
   return (
     <div className={className}>
       <Tabs className={style.tabs}>

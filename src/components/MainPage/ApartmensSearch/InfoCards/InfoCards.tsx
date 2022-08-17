@@ -10,7 +10,7 @@ import { MAIN_PATH } from "../../../../data/pathConstants";
 import style from "./InfoCards.module.scss";
 
 type InfoCardsProps = {
-  className: string;
+  className?: string;
 };
 
 const InfoCards: React.FC<InfoCardsProps> = ({ className }) => {
