@@ -9,7 +9,11 @@ import { MAIN_PATH } from "../../../../data/pathConstants";
 
 import style from "./InfoCards.module.scss";
 
-const InfoCards = ({ className }) => {
+type InfoCardsProps = {
+  className: string;
+};
+
+const InfoCards: React.FC<InfoCardsProps> = ({ className }) => {
   return (
     <div className={clsx(style.container, className)}>
       <div className={style.white}>
