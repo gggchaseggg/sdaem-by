@@ -7,7 +7,7 @@ import { setActivePage } from "../../Redux/activePageSlice";
 import HomeIcon from "../../components/SvgIcons/HomeIcon";
 import { MAIN_PATH } from "../../data/pathConstants";
 
-export default function NotFound() {
+const NotFound: React.FC = () => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
@@ -38,4 +38,6 @@ export default function NotFound() {
       </div>
     </>
   );
-}
+};
+
+export default NotFound;
