@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAppDispatch } from "../../Redux/hooks";
 
 import VkIcon from "../../components/SvgIcons/VkIcon";
@@ -16,13 +16,14 @@ import { setActivePage } from "../../Redux/activePageSlice";
 
 import style from "./NewsArticle.module.scss";
 
-export default function NewsArticle() {
+const NewsArticle = () => {
   const IconFillColor = "#664EF9";
   const { id } = useParams();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
-  const news = useNewsById(id);
-  const similarNews = useSimilarNewsById(id);
+  const news = useNewsById(id as string);
+  const similarNews = useSimilarNewsById(id as string);
 
   React.useEffect(() => {
     dispatch(setActivePage(1));
@@ -31,7 +32,7 @@ export default function NewsArticle() {
   return (
     <>
       <div className={style.backgroundRectangle} />
-      {news && (
+      {news ? (
         <div className={style.container}>
           <Breadcrumbs
             page={[
@@ -72,6 +73,8 @@ export default function NewsArticle() {
             ))}
           </article>
         </div>
+      ) : (
+        navigate(NEWS_PATH)
       )}
 
       <div className={style.readMore}>
@@ -90,4 +93,6 @@ export default function NewsArticle() {
       </div>
     </>
   );
-}
+};
+
+export default NewsArticle;

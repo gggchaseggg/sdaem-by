@@ -6,7 +6,8 @@ export type PathConstants =
   | "/map"
   | "/contacts"
   | "/login"
-  | "/register";
+  | "/register"
+  | string;
 
 export const CATALOG_PATH: PathConstants = "/catalog";
 export const MAIN_PATH: PathConstants = "/";
