@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 import * as yup from "yup";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useAppDispatch } from "../../Redux/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
@@ -14,7 +14,13 @@ import { MAIN_PATH, REGISTER_PATH } from "../../data/pathConstants";
 
 import style from "./Login.module.scss";
 
-export default function Login() {
+type FormValuesTypes = {
+  login: string;
+  password: string;
+  rememberMe: boolean;
+};
+
+const Login: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { data: userList, isLoading: isUserLoading } = useUsers();
@@ -23,36 +29,43 @@ export default function Login() {
     login: yup
       .string()
       .required()
-      .test("existing-login", "not-existing-login", (value) =>
-        userList.find((elem) => elem.login === value)
-      ),
+      .test("existing-login", "not-existing-login", (value) => {
+        const user = userList?.find((elem) => elem.login === value);
+        return !!user;
+      }),
     password: yup
       .string()
       .required()
-      .test("valid-password", "not-valid-password", (value) =>
-        userList.find((elem) => elem.password === value)
-      ),
+      .test("valid-password", "not-valid-password", (value) => {
+        const user = userList?.find((elem) => elem.password === value);
+        return !!user;
+      }),
   });
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<FormValuesTypes>({
     resolver: yupResolver(validationSchema),
   });
 
-  const logUp = (login, rememberMe) => {
-    const user = userList.find((elem) => elem.login === login);
-
-    rememberMe
-      ? localStorage.setItem("login", login)
-      : localStorage.setItem("login", "");
-    dispatch(setUser({ name: user.name, email: user.email }));
-    navigate(MAIN_PATH);
+  const logUp = (login: string, password: string, rememberMe: boolean) => {
+    const user = userList?.find(
+      (elem) => elem.login === login && elem.password === password
+    );
+    if (user) {
+      rememberMe
+        ? localStorage.setItem("login", login)
+        : localStorage.setItem("login", "");
+      dispatch(
+        setUser({ name: user.name ? user.name : user.login, email: user.email })
+      );
+      navigate(MAIN_PATH);
+    }
   };
 
-  const onSubmit = (formData) => {
+  const onSubmit: SubmitHandler<FormValuesTypes> = (formData) => {
     logUp(formData.login, formData.password, formData.rememberMe);
   };
 
@@ -101,7 +114,6 @@ export default function Login() {
                 <input
                   className={style.rememberCheckbox}
                   type="checkbox"
-                  name="rememberSwitcher"
                   {...register("rememberMe")}
                 />
                 <div className={style.rememberSwitcher} />
@@ -128,4 +140,6 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+
+export default Login;
