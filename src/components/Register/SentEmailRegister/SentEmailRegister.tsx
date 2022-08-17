@@ -5,7 +5,7 @@ import { MAIN_PATH } from "../../../data/pathConstants";
 
 import style from "./SentEmailRegister.module.scss";
 
-const SentEmailRegister = () => {
+const SentEmailRegister: React.FC = () => {
   return (
     <div className={style.container}>
       <h1 className={style.title}>Подтвердите регистрацию</h1>

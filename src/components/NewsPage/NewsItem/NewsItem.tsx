@@ -2,8 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DateLabel from "../../DateLabel/DateLabel";
 import style from "./NewsItem.module.scss";
+import { NewsTypes } from "../../../types/types";
 
-export default function NewsItem({ novost }) {
+type NewsIteProp = {
+  novost: NewsTypes;
+};
+
+const NewsItem: React.FC<NewsIteProp> = ({ novost }) => {
   return (
     <>
       <div className={style.container}>
@@ -26,4 +31,6 @@ export default function NewsItem({ novost }) {
       </div>
     </>
   );
-}
+};
+
+export default NewsItem;
