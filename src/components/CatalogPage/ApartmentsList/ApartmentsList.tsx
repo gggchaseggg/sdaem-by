@@ -26,10 +26,14 @@ const sortingList = [
   { id: "4", label: "По рейтингу", value: "rating" },
 ];
 
-const ApartmentsList = ({ className }) => {
-  const [isTilesActive, setIsTilesActive] = React.useState(true);
-  const [page, setPage] = useState(1);
-  const [pageCount, setPageCount] = useState(1);
+type ApartmentsListProps = {
+  className?: string;
+};
+
+const ApartmentsList: React.FC<ApartmentsListProps> = ({ className = "" }) => {
+  const [isTilesActive, setIsTilesActive] = React.useState<boolean>(true);
+  const [page, setPage] = useState<string>("1");
+  const [pageCount, setPageCount] = useState<number>(1);
 
   const { data: apartmentsList, status: apartmentsStatus } =
     useApartmentsByPage(page);

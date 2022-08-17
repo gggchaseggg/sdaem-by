@@ -6,7 +6,11 @@ import { Link } from "react-router-dom";
 import { MAP_PATH } from "../../../data/pathConstants";
 import MarkIcon from "../../SvgIcons/MarkIcon";
 
-const ShowOnMap = ({ className }) => {
+type ShowOnMapProps = {
+  className?: string;
+};
+
+const ShowOnMap: React.FC<ShowOnMapProps> = ({ className = "" }) => {
   return (
     <div className={clsx(style.container, className)}>
       <div className={style.background}>

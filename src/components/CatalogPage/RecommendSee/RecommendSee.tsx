@@ -1,10 +1,17 @@
 import React from "react";
 
 import style from "./RecommendSee.module.scss";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CATALOG_PATH } from "../../../data/pathConstants";
 
-const buttons = [
+type ButtonsTypes = {
+  id: string;
+  label: string;
+  key: string;
+  params: string;
+};
+
+const buttons: ButtonsTypes[] = [
   {
     id: "1",
     label: "Недорогие",
@@ -72,7 +79,11 @@ const buttons = [
   },
 ];
 
-const RecommendSee = ({ className }) => {
+type RecommendSeeProps = {
+  className?: string;
+};
+
+const RecommendSee: React.FC<RecommendSeeProps> = ({ className = "" }) => {
   return (
     <div className={className}>
       <h3 className={style.title}>Рекомендуем посмотреть</h3>
