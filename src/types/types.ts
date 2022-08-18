@@ -57,6 +57,11 @@ export type ApartmentQueryTypes = {
 };
 
 export type ContactsTypes = {
+  IP: {
+    name: string;
+    UNP: string;
+    date: string;
+  };
   address: string;
   phone: string;
   email: string;

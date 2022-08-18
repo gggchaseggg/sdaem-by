@@ -5,10 +5,13 @@ import { ROUTE_MENU, RENT_MENU, APART_CITY } from "../../data/layoutData";
 import InstagramIcon from "../SvgIcons/InstagramIcon";
 import VkIcon from "../SvgIcons/VkIcon";
 import FacebookInnerIcon from "../SvgIcons/FacebookInnerIcon";
+import { useContacts } from "../../api/dataHooks";
 
 //TODO: Брать контактные данные с мока(добавить их на мок и useContacts)
 
 const Footer: React.FC = () => {
+  const contacts = useContacts();
+
   return (
     <>
       <footer>
@@ -17,12 +20,14 @@ const Footer: React.FC = () => {
             <img src="/img/logo.png" alt="Лого" />
             <p className={style.sdaem}>СДАЁМ БАЙ</p>
             <div className={style.IP}>
-              <p>ИП Шушкевич Андрей Викторович</p>
-              <p>УНП 192602485 Минским горисполкомом</p>
-              <p>10.02.2016</p>
-              <p>220068, РБ, г. Минск, ул. Осипенко, 21, кв.23</p>
-              <p>+375 29 621 48 33, sdaem@sdaem.by</p>
-              <p>Режим работы: 08:00-22:00</p>
+              <p>{contacts?.IP.name}</p>
+              <p>{contacts?.IP.UNP}</p>
+              <p>{contacts?.IP.date}</p>
+              <p>{contacts?.address}</p>
+              <p>
+                {contacts?.phone}, {contacts?.email}
+              </p>
+              <p>Режим работы: {contacts?.workTime}</p>
             </div>
           </div>
           <div className={style.routes}>
