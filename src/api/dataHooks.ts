@@ -56,7 +56,7 @@ export const useNewsById = (id: string): NewsTypes | undefined => {
         `https://62c166972af60be89ec64660.mockapi.io/news?id=${id}`
       )
       .then(({ data }) => setNews(data.items[0]));
-  }, []);
+  }, [id]);
 
   return news;
 };

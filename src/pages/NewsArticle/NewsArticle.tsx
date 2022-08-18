@@ -16,7 +16,7 @@ import { setActivePage } from "../../Redux/activePageSlice";
 
 import style from "./NewsArticle.module.scss";
 
-const NewsArticle = () => {
+const NewsArticle: React.FC = () => {
   const IconFillColor = "#664EF9";
   const { id } = useParams();
   const dispatch = useAppDispatch();
