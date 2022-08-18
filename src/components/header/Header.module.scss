@@ -4,7 +4,7 @@ header {
 
 .container {
   min-width: 1280px;
-  padding: 0 80px;
+  padding: 0 75px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -96,14 +96,16 @@ header {
     font-weight: 600;
   }
   ul.lowerMenu {
+    width: 742px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
   li {
     cursor: pointer;
   }
-  li.rentItem {
-    margin-left: 80px;
+  .placeAd {
+    margin-left: 92px;
   }
 }
