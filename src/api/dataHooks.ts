@@ -42,7 +42,7 @@ export const useNewsByCount = (count: string): NewsTypes[] | undefined => {
         `https://62c166972af60be89ec64660.mockapi.io/news?page=1&limit=${count}`
       )
       .then(({ data }) => setNews(data.items));
-  }, []);
+  }, [count]);
 
   return news;
 };
@@ -76,7 +76,7 @@ export const useSimilarNewsById = (id: string): NewsTypes[] | undefined => {
             .slice(0, 3)
         )
       );
-  }, []);
+  }, [id]);
 
   return news;
 };
