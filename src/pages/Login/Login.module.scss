@@ -1,0 +1,180 @@
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(1.09deg, #7e6af3 0.86%, #6540cd 99.01%);
+  background-size: 100%;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background: url("../../../public/img/NotFound/cityMap.png") no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 406px;
+  height: 536px;
+  background: #fffefe;
+  box-shadow: 0px 20px 40px rgba(39, 95, 158, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1.title {
+  width: min-content;
+  margin: 0;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+}
+
+p.text {
+  margin-top: 15px;
+  width: 290px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #686868;
+}
+
+form.form {
+  margin-top: 35px;
+}
+
+.textInputsLabel {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+input.textInput {
+  width: 306px !important;
+}
+
+input.rememberCheckbox {
+  display: none;
+}
+
+.remAndPass {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rememberSwitcher {
+  margin-right: 8px;
+  display: inline-block;
+  position: relative;
+  width: 34px;
+  height: 20px;
+  background: #bdbdbd;
+  border-radius: 100px;
+  opacity: 0.3;
+  transition: 0.3s;
+}
+
+.rememberSwitcher::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input.rememberCheckbox:checked ~ .rememberSwitcher::before {
+  left: 17px;
+}
+
+label.rememberLabel {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #686868;
+  width: max-content;
+  height: max-content;
+}
+
+a.link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #664ef9;
+}
+
+button.login {
+  margin-top: 38px;
+  border: none;
+  width: 306px;
+  height: 48px;
+  padding: 12px 15px;
+  background: #ffd54f;
+  border-radius: 33px;
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1e2123;
+  cursor: pointer;
+  &:hover {
+    background: #fec100;
+  }
+}
+
+.ldsDualRing {
+  margin-top: -2px;
+  margin-left: -3px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  &:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: rgba(0, 0, 0, 0.4) transparent rgba(0, 0, 0, 0.4) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+}
+
+.register {
+  margin-top: 50px;
+  width: max-content;
+  font-size: 14px;
+  span {
+    font-weight: 400;
+    line-height: 20px;
+    color: #686868;
+  }
+  a {
+    font-weight: 500;
+    line-height: 26px;
+    color: #664ef9;
+  }
+}

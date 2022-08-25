@@ -1,70 +1,56 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SDAEM.BY
+Проект со стажировки по направлению Фронтенд в Hawking.School
 
-## Available Scripts
+## Частичное описание проекта
 
-In the project directory, you can run:
 
-### `npm start`
+### Реализованные части
+В проекте реализованы следующие компоненты
+* С использованием mockapi была реализована система авторизации и регистрации с хранением данных на mockapi, также, если установить галочку согласия запомнить аккаунт, этот аккаунт сохранится в `localstorage` браузера и будет автоматически авторизовываться при перезагрузки страницы или перезапуске сервера
+* Контактная форма на странице "Контакты" сохраняет данные на mockapi
+* Страница логина открывается по нажатию стрелки, распологающейся у имени
+* При попытки перейти на страницы, компоненты которых не были реализованы, появится страница 404
+* При попытке открыть страницу новости, которой не существует, произойдет возврат на страницу всех новостей
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### "Особенности" проекта
+* В проекте имеется некоторые особенности хранения данных, связанные с ограничениями бесплатной версии mockapi:
+    + В связи с ограничением в созданиии максимум 4 эндпоинтов я был вынужден реализовать 3 отдельных эндпоинта под `новости, квартиры и пользователей` и оставшийся один под другие данные, такие как контактная информация и посты пользователей
+    + В виду тех же ограничений посты пользователей хранятся в виде:
+        ```
+        "email" : {
+            "name": NAME,
+            "message": MESSAGE
+        }
+        ```
+    + Также особенностей хранения данных является их разделение в эндпоинте, данный вид был нужен ввиду отсутствия в хедерах элемента, отвечающего за количество объектов
+        ```
+        {
+            "items": [{},{}, ...],
+            "count": $count
+        }
+        ```
+* При нажатии на ссылки, которые должны вести на различные вариации страницы каталога, открывается просто страница каталога
+* В проекте не была реализована сортировка каталога и поиск на странице списка новостей
+* Некоторые "особенности" также описаны в коментариях внутри кода
+## API Reference
 
-### `npm test`
+```http
+  GET https://62c166972af60be89ec64660.mockapi.io/{:endpoint}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Endpoint  | Описание                   |
+| :-------- | :------------------------- |
+| `news`    | Содержит объект с массивом `items`, хранящий в себе новости |
+| `users` | Содержит массив с пользователями |
+| `apartments` | Содержит объект с массивом `items`, хранящий в себе информацию о квартирах |
+| `rest` | Содержит объект с контактной информацией, а так же хранит посты пользователей |
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Связь
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [@VK - Даниил Грачев](https://vk.com/gggchaseggg)
+- [@Telegram - Даниил Грачев](https://t.me/gggchaseggg)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

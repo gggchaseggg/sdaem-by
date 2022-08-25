@@ -1,0 +1,31 @@
+.header,
+.rent,
+.about {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  width: 1285px;
+}
+
+.carouselContainer {
+  padding-top: 59px;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rent {
+  margin-top: 86px;
+  width: 1280px;
+  display: flex;
+}
+
+.about {
+  margin-top: 13px;
+  width: 1280px;
+  margin-bottom: 100px;
+}

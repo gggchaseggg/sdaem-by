@@ -1,0 +1,26 @@
+.user {
+  display: flex;
+  align-items: center;
+}
+
+a.link {
+  color: #664ef9;
+}
+
+img.image {
+  border-radius: 50%;
+}
+
+.name {
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1e2123;
+}
+
+a.arrowButton {
+  padding: 0;
+  margin-left: 15px;
+  background: inherit;
+}

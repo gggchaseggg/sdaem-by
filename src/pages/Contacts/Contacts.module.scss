@@ -1,0 +1,70 @@
+.background {
+  width: 100%;
+  height: 688px;
+  background: linear-gradient(0deg, #7e6af3 1.04%, #6540cd 100%);
+}
+.cityMap {
+  width: 100%;
+  height: 100%;
+  background: url("../../../public/img/NotFound/cityMap.png") no-repeat;
+  background-size: cover;
+  // mix-blend-mode: overlay;
+}
+
+.container {
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  padding-top: 74px;
+}
+
+.info {
+  color: #ffffff;
+  width: 515px;
+  margin-right: 31px;
+}
+
+h1.title {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+p.wishes {
+  margin-top: 27px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.contactList {
+  margin-top: 30px;
+}
+
+p.IP {
+  margin-top: 27px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.alert {
+  margin-top: 39px;
+  padding: 21px 28px;
+  background: rgba(80, 57, 189, 0.5);
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+}
+
+.alertImg {
+  margin-right: 22px;
+}
+
+p.text {
+  width: 395px;
+}

@@ -1,0 +1,111 @@
+header {
+  font-size: 14px;
+}
+
+.container {
+  min-width: 1280px;
+  padding: 0 75px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.upper {
+  height: 40px;
+  min-width: 1280px;
+  background-color: #f8f8f8;
+  color: #8291a3;
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  li {
+    width: max-content;
+    height: 40px;
+    margin-right: 57px;
+
+    display: flex;
+    align-items: center;
+
+    .mark {
+      margin-right: 5px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: #1e2123;
+      border-bottom: solid 3px #ffd54f;
+      transition: border 0.3s ease;
+    }
+  }
+
+  nav {
+    li {
+      padding-top: 3px;
+      border-bottom: solid 3px transparent;
+      transition: border 0.3s ease;
+    }
+    .active {
+      color: #1e2123;
+      border-bottom: solid 3px #ffd54f;
+      transition: border 0.3s ease;
+    }
+  }
+
+  .profileNav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-weight: 500;
+  }
+
+  .favorites {
+    margin-right: 40px;
+    margin-top: 3px;
+    color: #8291a3;
+    a {
+      display: flex;
+    }
+    span {
+      margin-right: 12px;
+    }
+  }
+}
+
+.lower {
+  height: 60px;
+  min-width: 1280px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  .logo {
+    margin-right: 83px;
+  }
+  .type {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+  }
+  ul.lowerMenu {
+    width: 742px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  li {
+    cursor: pointer;
+  }
+  .placeAd {
+    margin-left: 92px;
+  }
+}
