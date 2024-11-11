@@ -1,0 +1,37 @@
+.container {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+li.contactItem {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.marker {
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 17px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  margin-right: 21px;
+}
+
+.tel {
+  margin-right: 10px;
+}
+
+.text {
+  margin-left: 20px;
+}
+
+.unbold {
+  font-weight: 400;
+}

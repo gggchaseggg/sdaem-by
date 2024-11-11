@@ -1,0 +1,49 @@
+h2.title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #333333;
+}
+
+ul.optionsList {
+  margin-top: 14px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+li.optionsItem {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+span.name {
+  color: #feb700;
+}
+
+span.amount {
+  color: #bdbdbd;
+}
+
+a.link {
+  transition: padding 0.2s;
+  &:hover {
+    padding-left: 10px;
+    transition: padding 0.2s;
+  }
+}
+
+a.moreLink {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #feb700;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #f5bc03;
+}
+
+.icon {
+  margin-left: 5px;
+  display: inline;
+}

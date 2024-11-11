@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+}
+
+.pageItem {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #686868;
+  padding: 0 7px;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px solid #e4e2e2;
+  }
+}
+
+.activePage {
+  font-weight: 700;
+  color: #000000;
+  border-bottom: 2px solid #ffd54f;
+}
+
+.break {
+  padding: 2px 7px;
+}

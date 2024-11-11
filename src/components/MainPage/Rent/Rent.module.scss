@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list {
+  width: 297px;
+  margin-top: 41px;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.catalogLink {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}

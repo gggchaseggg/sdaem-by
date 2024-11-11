@@ -1,0 +1,314 @@
+.container {
+  position: relative;
+  background: #fffefe;
+  border-radius: 10px;
+  height: 522px;
+}
+
+.imgContainer {
+  position: relative;
+  width: 406px;
+  height: 226px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.goldStatus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(106.06deg, #ffd54f 1.12%, #fec100 97.96%);
+  border-radius: 0px 10px 0px 10px;
+  padding: 9px 12px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  text-shadow: 0px 1px 0px rgba(147, 79, 0, 0.3);
+}
+
+.info {
+  padding-top: 21px;
+  padding-left: 20px;
+}
+
+.priceAndLabels {
+  display: flex;
+  align-items: center;
+}
+
+h5.price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #664ef9;
+  margin-right: 31px;
+}
+
+span.interval {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #bdbdbd;
+}
+
+span.infoLabel {
+  height: 34px;
+  width: max-content;
+  padding: 8px;
+  background: #f8f8f8;
+  border-radius: 18px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #686868;
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.tenantsIcon {
+  margin-right: 7px;
+  g {
+    opacity: 1;
+  }
+}
+
+.location {
+  margin-top: 26px;
+}
+
+.address {
+  .locationIcons {
+    margin-right: 10px;
+  }
+}
+
+.landmarks {
+  margin-top: 10px;
+  margin-left: -3px;
+  display: flex;
+  span:last-of-type {
+    margin-left: 30px;
+  }
+}
+
+.locationSpan {
+  display: flex;
+  align-items: center;
+}
+
+.locationIcons {
+  height: min-content;
+  margin-right: 7px;
+}
+
+.circleIcon {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #bdbdbd;
+}
+
+.description {
+  width: 365px;
+  height: 62px;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #8291a3;
+  text-align: justify;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+hr.hr {
+  width: 367px;
+  margin: 12px 0 0 0;
+  border: 1px solid #664ef91a;
+}
+
+.footer {
+  width: 366px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button.favorites {
+  outline: none;
+  border: none;
+  width: 33px;
+  height: 33px;
+  padding: 7px;
+  background: rgba(235, 87, 87, 0.1);
+  border-radius: 22px;
+  cursor: pointer;
+  &:hover {
+    path {
+      fill: rgba(235, 87, 87, 0.4);
+    }
+  }
+}
+
+.contacts {
+  padding: 10px 16px;
+  background: #ffffff;
+  box-shadow: 0px 5px 20px rgba(0, 96, 206, 0.1);
+  border-radius: 18px;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #664ef9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  &:hover {
+    background: #f5f3ff;
+  }
+}
+
+.phoneIcon {
+  padding-top: 1px;
+  padding-left: 3px;
+  margin-right: 14px;
+}
+
+.modalContact {
+  width: 274px;
+  height: 297px;
+  background: #ffffff;
+  box-shadow: 0 0 40px rgba(135, 124, 202, 0.3);
+  border-radius: 10px;
+  position: absolute;
+  bottom: 75px;
+  left: -53px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a.more {
+  padding: 10px 15px;
+  background: rgba(255, 213, 79, 0.1);
+  border-radius: 17px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fec100;
+  &:hover {
+    background: rgba(255, 213, 79, 0.2);
+  }
+}
+
+.listView {
+  display: flex;
+  width: 1280px;
+  height: 300px;
+}
+
+.imgContainerListView {
+  width: 535px;
+  height: 300px;
+}
+
+.infoListView {
+  padding-top: 26px;
+  padding-left: 28px;
+  width: 745px;
+}
+
+h4.apartmentTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #1e2123;
+}
+
+.listViewCardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+h5.priceListView {
+  font-size: 25px !important;
+  margin-top: -4px;
+  margin-right: 25px !important;
+}
+
+span.intervalListView {
+  margin-top: 5px;
+  text-align: right;
+}
+
+.locationSpanListView {
+  margin-top: 19px;
+  span {
+    margin-top: -6px;
+  }
+}
+
+.locationIconsListView {
+  margin-right: 10px !important;
+}
+
+span.district {
+  color: #664ef9;
+}
+
+.labels {
+  margin-top: 13px;
+  display: flex;
+}
+
+.infoLabelListView {
+  padding: 8px 14px !important;
+  margin-right: 15px !important;
+}
+
+.descriptionListView {
+  margin-top: 14px !important;
+  width: 683px !important;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.footerListView {
+  width: 692px !important;
+  margin-top: 25px;
+}
+
+.leftButtonsFooter {
+  display: flex;
+}
+
+.favoritesListView {
+  margin-left: 16px;
+  width: 133px !important;
+  height: 37px !important;
+  padding: 9px 14px !important;
+  display: flex;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #eb5757;
+  .heartIcon {
+    margin-left: 10px;
+  }
+}
+
+.modalContactListView {
+  bottom: 87px !important;
+  left: 491px !important;
+}
